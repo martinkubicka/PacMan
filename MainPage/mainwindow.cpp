@@ -1,10 +1,13 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
+#include <QDebug>
+
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
 {
+
     ui->setupUi(this);
     this->setFixedSize(700, 700);
 
@@ -40,6 +43,8 @@ MainWindow::MainWindow(QWidget *parent) :
     dropdownMenu->setStyleSheet("QListView { background-color: black; padding-left: 5px;}");
     dropdownMenu->setMinimumWidth(212);
 
+    connect(comboBox, SIGNAL(activated(const QString &)), this, SLOT(setMap(const QString &)));
+
     // start button
     QPushButton *startButton = new QPushButton("Start", this);
     startButton->setGeometry(290, 340, 120, 30);
@@ -47,6 +52,7 @@ MainWindow::MainWindow(QWidget *parent) :
     QFont startButtonFont("Arial Black", 16);
     startButton->setFont(startButtonFont);
 
+    connect(startButton, &QPushButton::clicked, this, &MainWindow::start);
 }
 
 MainWindow::~MainWindow()
@@ -54,7 +60,20 @@ MainWindow::~MainWindow()
     delete ui;
 }
 
+void MainWindow::setMap(const QString &mapName) {
+    if (mapName == "PacMan's Playground") {
+        this->map = "map01.txt";
+    } else if (mapName == "Ghostly Maze") {
+        this->map = "map02.txt";
+    } else if (mapName == "Endless Journey") {
+        this->map = "map03.txt";
+    }
+}
+
+void MainWindow::start() {
+    std::cout << this->map << std::endl; //todo
+}
+
 
 // TODO CHANGE PATHS
 //  todo comments
-// todo add functions to start button adn set map button
