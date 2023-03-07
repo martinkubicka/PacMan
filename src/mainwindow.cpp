@@ -1,8 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
 
-#include <QDebug>
-
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
     ui(new Ui::MainWindow)
@@ -75,5 +73,6 @@ void MainWindow::start() {
 }
 
 
+// remove todos
 // TODO CHANGE PATHS
 //  todo comments
