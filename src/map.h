@@ -3,10 +3,10 @@
 
 #include <QWidget>
 
-class Map
+class Map : public QWidget
 {
 public:
-    Map();
+    explicit Map(QWidget *parent = nullptr);
 };
 
 #endif // MAP_H

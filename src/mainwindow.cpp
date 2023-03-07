@@ -1,5 +1,6 @@
 #include "mainwindow.h"
 #include "ui_mainwindow.h"
+#include "map.h"
 
 MainWindow::MainWindow(QWidget *parent) :
     QMainWindow(parent),
@@ -69,7 +70,9 @@ void MainWindow::setMap(const QString &mapName) {
 }
 
 void MainWindow::start() {
-    std::cout << this->map << std::endl; //todo
+   Map *map = new Map(this);
+   setCentralWidget(map);
+   // todo destructor nejaky??
 }
 
 

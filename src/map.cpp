@@ -1,6 +1,5 @@
 #include "map.h"
 
-Map::Map()
-{
+Map::Map(QWidget *parent) : QWidget(parent) {
 
 }
