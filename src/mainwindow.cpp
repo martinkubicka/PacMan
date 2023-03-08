@@ -8,7 +8,7 @@ MainWindow::MainWindow(QWidget *parent) :
 {
 
     ui->setupUi(this);
-    this->setFixedSize(700, 700);
+    this->setFixedSize(HEIGHT, WIDTH);
 
     // background
     this->setStyleSheet("background-image:url(/Users/martinkubicka/Documents/ICP/PacMan/images/background.jpg)");
@@ -61,18 +61,17 @@ MainWindow::~MainWindow()
 
 void MainWindow::setMap(const QString &mapName) {
     if (mapName == "PacMan's Playground") {
-        this->map = "map01.txt";
+        this->map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map01.txt";
     } else if (mapName == "Ghostly Maze") {
-        this->map = "map02.txt";
+        this->map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map02.txt";
     } else if (mapName == "Endless Journey") {
-        this->map = "map03.txt";
+        this->map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map03.txt";
     }
 }
 
 void MainWindow::start() {
-   Map *map = new Map(this);
-   setCentralWidget(map);
-   // todo destructor nejaky??
+   Map *mapObj = new Map(this, this->map);
+   setCentralWidget(mapObj);
 }
 
 

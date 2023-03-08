@@ -29,13 +29,15 @@ SOURCES += \
         mainwindow.cpp \
     map.cpp \
     wall.cpp \
-    key.cpp
+    key.cpp \
+    path.cpp
 
 HEADERS += \
         mainwindow.h \
     map.h \
     wall.h \
-    key.h
+    key.h \
+    path.h
 
 FORMS += \
         mainwindow.ui

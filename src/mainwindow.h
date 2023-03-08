@@ -9,6 +9,9 @@
 #include <string>
 #include <iostream>
 
+#define HEIGHT 700
+#define WIDTH 700
+
 namespace Ui {
 class MainWindow;
 }
@@ -22,7 +25,7 @@ public:
     ~MainWindow();
 
 private:
-    std::string map = "map01.txt";
+    std::string map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map01.txt";
     Ui::MainWindow *ui;
 
 private slots:
