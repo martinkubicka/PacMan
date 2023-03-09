@@ -10,13 +10,8 @@
 
 #include "pacman.h"
 
-Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2) {
-    this->x1 = x1;
-    this->y1 = y1;
-    this->x2 = x2;
-    this->y2 = y2;
-
-    QImage pacmanImage("/Users/martinkubicka/Documents/ICP/PacMan/images/pacman.png");
+Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, QString srcPath) : Field (x1, y1, x2, y2) {
+    QImage pacmanImage(srcPath + "/images/pacman.png");
     pacmanImage = pacmanImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 
 

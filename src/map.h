@@ -34,7 +34,15 @@
  */
 class Map : public QWidget {
 public:
-    explicit Map(QWidget *parent = nullptr, std::string map = "map01.txt");
+    /**
+     * @brief Constructor of Map object
+     * 
+     * @param parent parent
+     * @param map map file string
+     * @param srcPath src directory path
+     */
+    explicit Map(QWidget *parent = nullptr, std::string map = "map01.txt", QString srcPath = "");
+    
     ~Map();
 private:
     // attributes
@@ -68,8 +76,9 @@ private:
      * @brief Function which read map file and creates map based on map characters.
      * 
      * @param scene scene
+     * @param srcPath path to src directory
      */
-    void createMap(QGraphicsScene* scene);
+    void createMap(QGraphicsScene* scene, QString srcPath);
     
     /**
      * @brief Function for opening file based on map name.

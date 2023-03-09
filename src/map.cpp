@@ -10,7 +10,7 @@
 
 #include "map.h"
 
-Map::Map(QWidget *parent, std::string map) : QWidget(parent) {
+Map::Map(QWidget *parent, std::string map, QString srcPath) : QWidget(parent) {
     this->openFile(map);
 
     this->getSizeOfBlock();
@@ -19,7 +19,7 @@ Map::Map(QWidget *parent, std::string map) : QWidget(parent) {
 
     QGraphicsScene *scene = this->createScene();
 
-    this->createMap(scene);
+    this->createMap(scene, srcPath);
 
     CustomGraphicsView* view = this->createView(parent, scene);
 
@@ -87,12 +87,12 @@ void Map::getSizeOfBlock() {
     }
 }
 
-void Map::createMap(QGraphicsScene* scene) {
+void Map::createMap(QGraphicsScene* scene, QString srcPath) {
     std::vector<char> validChars = {'T', 'X', 'G', 'K', '.', 'S', '\n'}; // vector of valid character in a map
 
     // top border
     for (int i = 0; i < this->x + 2; i++) {
-        wall = new Wall(scene, this->sizeOfBlock*i, 0,  this->sizeOfBlock*(i+1), this->sizeOfBlock); //x,y (left top) + x,y (right bottom)
+        wall = new Wall(scene, this->sizeOfBlock*i, 0,  this->sizeOfBlock*(i+1), this->sizeOfBlock, srcPath); //x,y (left top) + x,y (right bottom)
     }
 
     char ch;
@@ -103,7 +103,7 @@ void Map::createMap(QGraphicsScene* scene) {
     int actualX = this->sizeOfBlock; // skip borders
     int actualY = this->sizeOfBlock;  // skip borders
 
-    wall = new Wall(scene, 0, actualY,  this->sizeOfBlock, actualY + this->sizeOfBlock); // first left border of a map
+    wall = new Wall(scene, 0, actualY,  this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath); // first left border of a map
 
     int actualRow = 1; // auxiliary variable to know actual row in a map
 
@@ -112,36 +112,36 @@ void Map::createMap(QGraphicsScene* scene) {
         if (found != validChars.end()) {
             switch (ch) {
                 case 'T':
-                    end = new End(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock);
+                    end = new End(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
                     break;
 
                 case 'X':
-                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock);
+                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
                     break;
 
                 case 'G':
-                    ghost = new Ghost(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock);
+                    ghost = new Ghost(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
                     break;
 
                 case 'K':
-                    key = new Key(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock);
+                    key = new Key(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
                     this->numberOfKeysLeft++;
                     break;
 
                 case '.':
-                    path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock);
+                    path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
                     break;
 
                 case 'S':
-                    pacman = new Pacman(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock);
+                    pacman = new Pacman(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
                     break;
 
                 case '\n':
-                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock);
+                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
 
                     actualX = 0;
                     actualY += this->sizeOfBlock;
-                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock);
+                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
                     actualX += this->sizeOfBlock;
 
                     actualRow++;
@@ -161,12 +161,12 @@ void Map::createMap(QGraphicsScene* scene) {
 
     // last right border if needed (not \n just EOF)
     if (actualRow != this->y) { 
-        wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock);
+        wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
     }
 
     // bottom border
     for (int i = 0; i < this->x + 2; i++) {
-        wall = new Wall(scene, this->sizeOfBlock*i, this->sizeOfBlock*(this->y+2), this->sizeOfBlock*(i+1), this->sizeOfBlock*(this->y+3)); //x,y (left top) + x,y (right bottom)
+        wall = new Wall(scene, this->sizeOfBlock*i, this->sizeOfBlock*(this->y+2), this->sizeOfBlock*(i+1), this->sizeOfBlock*(this->y+3), srcPath); //x,y (left top) + x,y (right bottom)
     }
 } // createMap
 

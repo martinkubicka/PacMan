@@ -16,6 +16,7 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QListView>
+#include <QDir>
 #include <iostream>
 #include <string>
 #include "ui_mainwindow.h"
@@ -32,11 +33,13 @@ class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
+    QString srcPath; // path of src folder set by findImageDirPath method.
+
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
 
 private:
-    std::string map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map01.txt"; // selected map by default
+    std::string map; // selected map
     Ui::MainWindow *ui;
 
     /**
@@ -53,6 +56,12 @@ private:
      * @brief Functions which creates a start button;
      */
     void createStartButton();
+
+    /**
+     * @brief Function for finding images parent directory absolute path.
+              Result saved to srcPath attribute.
+     */
+    void findImageDirPath();
 
 private slots:
     /**

@@ -10,6 +10,7 @@ greaterThan(QT_MAJOR_VERSION, 4): QT += widgets
 
 TARGET = PacMan
 TEMPLATE = app
+CONFIG -= app_bundle
 
 # The following define makes your compiler emit warnings if you use
 # any feature of Qt which has been marked as deprecated (the exact warnings
@@ -33,7 +34,8 @@ SOURCES += \
     path.cpp \
     ghost.cpp \
     pacman.cpp \
-    end.cpp
+    end.cpp \
+    field.cpp
 
 HEADERS += \
         mainwindow.h \
@@ -44,7 +46,8 @@ HEADERS += \
     ghost.h \
     pacman.h \
     end.h \
-    customgraphicsview.h
+    customgraphicsview.h \
+    field.h
 
 FORMS += \
         mainwindow.ui

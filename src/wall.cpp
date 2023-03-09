@@ -10,13 +10,8 @@
 
 #include "wall.h"
 
-Wall::Wall(QGraphicsScene* scene, int x1, int y1, int x2, int y2) {
-    this->x1 = x1;
-    this->y1 = y1;
-    this->x2 = x2;
-    this->y2 = y2;
-
-    QImage wallImage("/Users/martinkubicka/Documents/ICP/PacMan/images/wall.png");
+Wall::Wall(QGraphicsScene* scene, int x1, int y1, int x2, int y2, QString srcPath) : Field (x1, y1, x2, y2) {
+    QImage wallImage(srcPath + "/images/wall.png");
     wallImage = wallImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 
     QGraphicsPixmapItem* wallItem = new QGraphicsPixmapItem(QPixmap::fromImage(wallImage));

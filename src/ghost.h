@@ -14,11 +14,13 @@
 #include <QWidget>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+#include "field.h"
+
 
 /**
  * @brief Ghost object which represents ghost field in map UI.
  */
-class Ghost : public QWidget {
+class Ghost : public Field  {
 public:
     /**
      * @brief Constructructor of Ghost object.
@@ -28,11 +30,9 @@ public:
      * @param y1 top left y position (from) in px
      * @param x2 bottom right x position (to) in px
      * @param y2 bottom right position (to) in px
+     * @param srcPath src directory path
      */
-    explicit Ghost(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0);
-
-private:
-    int x1, y1, x2, y2; /** Ghost object position attributes */
+    explicit Ghost(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, QString srcPath = "");
 };
 
 #endif // GHOST_H

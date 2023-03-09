@@ -14,11 +14,12 @@
 #include <QWidget>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+#include "field.h"
 
 /**
  * @brief End object which represents end field in map UI.
  */
-class End : public QWidget {
+class End : public Field {
 public:
     /**
      * @brief Constructructor of End object.
@@ -28,11 +29,9 @@ public:
      * @param y1 top left y position (from) in px
      * @param x2 bottom right x position (to) in px
      * @param y2 bottom right position (to) in px
+     * @param srcPath src directory path
      */
-    explicit End(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0);
-
-private:
-    int x1, y1, x2, y2; /** End object position attributes */
+    explicit End(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, QString srcPath = "");
 };
 
 #endif // END_H

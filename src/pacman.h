@@ -14,11 +14,12 @@
 #include <QWidget>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+#include "field.h"
 
 /**
  * @brief Pacman object which represents pacman field in map UI.
  */
-class Pacman : public QWidget {
+class Pacman : public Field {
 public:
     /**
      * @brief Constructructor of Pacman object.
@@ -28,11 +29,9 @@ public:
      * @param y1 top left y position (from) in px
      * @param x2 bottom right x position (to) in px
      * @param y2 bottom right position (to) in px
+     * @param srcPath src directory path
      */
-    explicit Pacman(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0);
-
-private:
-    int x1, y1, x2, y2; /** Pacman object position attributes */
+    explicit Pacman(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, QString srcPath = "");
 };
 
 #endif // PACMAN_H

@@ -13,9 +13,13 @@
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     this->setFixedSize(HEIGHT, WIDTH); // set size + cannot resize
+    this->findImageDirPath();
+
+    this->map = this->srcPath.toStdString() + "/maps/map01.txt"; // selected map by default
 
     // set background image
-    this->setStyleSheet("background-image:url(/Users/martinkubicka/Documents/ICP/PacMan/images/background.jpg)");
+    QString backgroundPath = "background-image:url(%1%2)";
+    this->setStyleSheet(backgroundPath.arg(this->srcPath, "/images/background.jpg"));
 
     // create objects
     this->createChooseMapLabel();
@@ -26,6 +30,21 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 MainWindow::~MainWindow()
 {
     delete ui;
+}
+
+void MainWindow::findImageDirPath() {
+    QString searchDir = "/images/";
+    QString currentPath = QDir::currentPath();
+    QDir dir(currentPath);
+
+    while (!dir.isRoot()) {
+        QString absolutePath = dir.absolutePath() + searchDir;
+        if (QDir(absolutePath).exists()) {
+            this->srcPath = dir.absolutePath();
+            break;
+        }
+        dir.cdUp();
+    }
 }
 
 void MainWindow::createChooseMapLabel() {
@@ -92,15 +111,13 @@ void MainWindow::start() {
     }
 
     // create map UI
-    Map *map = new Map(this, this->map);
+    Map *map = new Map(this, this->map, this->srcPath);
     setCentralWidget(map);
 }
 
 
 // TODOS
-// TODO CHANGE PATHS - vsade cpp suboroch
 // todo ukladat ghosta a playera niekde do atributov aj walls atd??? - toto premysliet - ci neni nejaka fun podla xy
     // findXY -> ktory vrati objekt (enum, od do) - asi takto
-
 
 /*** End of mainwidow.cpp ***/
