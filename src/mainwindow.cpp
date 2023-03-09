@@ -1,19 +1,34 @@
+/**
+ * @file mainwindow.cpp
+ *
+ * @author  Martin Kubička (xkubic45@stud.fit.vutbr.cz)
+ * @author  Matěj Macek (xmacek27@stud.fit.vutbr.cz)
+ *
+ * @date 2023-05-08
+ * @brief Definitions of functions declared in MainWindow class.
+ */
+
 #include "mainwindow.h"
-#include "ui_mainwindow.h"
-#include "map.h"
 
-MainWindow::MainWindow(QWidget *parent) :
-    QMainWindow(parent),
-    ui(new Ui::MainWindow)
-{
-
+MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
-    this->setFixedSize(HEIGHT, WIDTH);
+    this->setFixedSize(HEIGHT, WIDTH); // set size + cannot resize
 
-    // background
+    // set background image
     this->setStyleSheet("background-image:url(/Users/martinkubicka/Documents/ICP/PacMan/images/background.jpg)");
 
-    // choose map label
+    // create objects
+    this->createChooseMapLabel();
+    this->createComboBox();
+    this->createStartButton();
+}
+
+MainWindow::~MainWindow()
+{
+    delete ui;
+}
+
+void MainWindow::createChooseMapLabel() {
     QLabel *label = new QLabel("Choose map", this);
     label->setGeometry(280, 250, 135, 20);
 
@@ -21,8 +36,9 @@ MainWindow::MainWindow(QWidget *parent) :
     label->setFont(labelFont);
 
     label->setStyleSheet("color:white;");
+}
 
-    // combobox
+void MainWindow::createComboBox() {
     QComboBox *comboBox = new QComboBox(this);
 
     comboBox->addItem("PacMan's Playground");
@@ -43,20 +59,17 @@ MainWindow::MainWindow(QWidget *parent) :
     dropdownMenu->setMinimumWidth(212);
 
     connect(comboBox, SIGNAL(activated(const QString &)), this, SLOT(setMap(const QString &)));
+}
 
-    // start button
+void MainWindow::createStartButton() {
     QPushButton *startButton = new QPushButton("Start", this);
     startButton->setGeometry(290, 340, 120, 30);
     startButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px;}  QPushButton:pressed{border: 1px solid gray;}");
+    
     QFont startButtonFont("Arial Black", 16);
     startButton->setFont(startButtonFont);
 
     connect(startButton, &QPushButton::clicked, this, &MainWindow::start);
-}
-
-MainWindow::~MainWindow()
-{
-    delete ui;
 }
 
 void MainWindow::setMap(const QString &mapName) {
@@ -70,11 +83,24 @@ void MainWindow::setMap(const QString &mapName) {
 }
 
 void MainWindow::start() {
-   Map *mapObj = new Map(this, this->map);
-   setCentralWidget(mapObj);
+    // remove all object from UI
+    foreach (QObject* child, this->children()) {
+        QWidget* childWidget = qobject_cast<QWidget*>(child);
+        if (childWidget) {
+            childWidget->deleteLater();
+        }
+    }
+
+    // create map UI
+    Map *map = new Map(this, this->map);
+    setCentralWidget(map);
 }
 
 
-// remove todos
-// TODO CHANGE PATHS
-//  todo comments
+// TODOS
+// TODO CHANGE PATHS - vsade cpp suboroch
+// todo ukladat ghosta a playera niekde do atributov aj walls atd??? - toto premysliet - ci neni nejaka fun podla xy
+    // findXY -> ktory vrati objekt (enum, od do) - asi takto
+
+
+/*** End of mainwidow.cpp ***/

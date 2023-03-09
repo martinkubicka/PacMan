@@ -30,14 +30,21 @@ SOURCES += \
     map.cpp \
     wall.cpp \
     key.cpp \
-    path.cpp
+    path.cpp \
+    ghost.cpp \
+    pacman.cpp \
+    end.cpp
 
 HEADERS += \
         mainwindow.h \
     map.h \
     wall.h \
     key.h \
-    path.h
+    path.h \
+    ghost.h \
+    pacman.h \
+    end.h \
+    customgraphicsview.h
 
 FORMS += \
         mainwindow.ui

@@ -1,3 +1,13 @@
+/**
+ * @file mainwidow.h
+ *
+ * @author  Martin Kubička (xkubic45@stud.fit.vutbr.cz)
+ * @author  Matěj Macek (xmacek27@stud.fit.vutbr.cz)
+ *
+ * @date 2023-05-08
+ * @brief Declaration of MainWidow class especially generated automatically with few own functions for creating main page UI.
+ */
+
 #ifndef MAINWINDOW_H
 #define MAINWINDOW_H
 
@@ -6,18 +16,19 @@
 #include <QComboBox>
 #include <QPushButton>
 #include <QListView>
-#include <string>
 #include <iostream>
+#include <string>
+#include "ui_mainwindow.h"
+#include "map.h"
 
-#define HEIGHT 700
-#define WIDTH 700
+#define HEIGHT 700 // height of window
+#define WIDTH 700 // width of window
 
 namespace Ui {
-class MainWindow;
+    class MainWindow;
 }
 
-class MainWindow : public QMainWindow
-{
+class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
@@ -25,13 +36,39 @@ public:
     ~MainWindow();
 
 private:
-    std::string map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map01.txt";
+    std::string map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map01.txt"; // selected map by default
     Ui::MainWindow *ui;
 
+    /**
+     * @brief Functions which creates a Choose Map Label;
+     */
+    void createChooseMapLabel();
+    
+    /**
+     * @brief Functions which creates a Combobox (dropdown);
+     */
+    void createComboBox();
+
+    /**
+     * @brief Functions which creates a start button;
+     */
+    void createStartButton();
+
 private slots:
+    /**
+     * @brief Function for setting map attribute when map is selected from dropdown menu.
+     * 
+     * @param mapName map name
+     */
     void setMap(const QString &mapName);
 
+    /**
+     * @brief Function which reacts when start button is clicked. 
+              Function creates selected map.
+     */
     void start();
 };
 
 #endif // MAINWINDOW_H
+
+/*** End of mainwidow.h ***/
