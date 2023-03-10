@@ -11,7 +11,7 @@
 
 #include "ghost.h"
 
-Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, QString srcPath) : Field (x1, y1, x2, y2) {
+Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, QString srcPath) : Field (x1, y1, x2, y2, GHOST) {
     QImage ghostImage(srcPath + "/images/ghost.png");
     ghostImage = ghostImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 

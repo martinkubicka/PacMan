@@ -115,9 +115,4 @@ void MainWindow::start() {
     setCentralWidget(map);
 }
 
-
-// TODOS
-// todo ukladat ghosta a playera niekde do atributov aj walls atd??? - toto premysliet - ci neni nejaka fun podla xy
-    // findXY -> ktory vrati objekt (enum, od do) - asi takto
-
 /*** End of mainwidow.cpp ***/

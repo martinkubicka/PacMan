@@ -26,7 +26,6 @@
 #include "end.h"
 #include "customgraphicsview.h"
 
-
 #define EDGE_OFFSET 20 // offset which prevents creating map at [0, 0] etc..
 
 /**
@@ -34,6 +33,12 @@
  */
 class Map : public QWidget {
 public:
+    // vectors of objects which map contains
+    std::vector<Wall *> walls;
+    std::vector<Path *> paths;
+    std::vector<Ghost *> ghosts;
+    std::vector<Key *> keys;
+
     /**
      * @brief Constructor of Map object
      * 
@@ -44,6 +49,17 @@ public:
     explicit Map(QWidget *parent = nullptr, std::string map = "map01.txt", QString srcPath = "");
     
     ~Map();
+
+    template<typename T>
+    /**
+     * @brief Function which return wall, path, ghost etc.. pointer object based on x, y cooridinates
+     * 
+     * @param x x
+     * @param y y
+     * 
+     * @return T Wall|Path|End|Ghost|Pacman|Key pointer object
+     */
+    T getField(int x, int y);
 private:
     // attributes
     std::ifstream file; /** file with map */
@@ -51,7 +67,7 @@ private:
     int numberOfKeysLeft = 0; /** auxiliary counter which helps us to know how many keys are left on map */
     int x, y; /** map resolution (number of blocks) */
 
-    Wall *wall; 
+    Wall *wall;
     Path *path;
     Ghost *ghost;
     Key *key;

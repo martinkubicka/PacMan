@@ -70,6 +70,43 @@ std::string Map::getWord() {
     return word;
 }
 
+template<typename T>
+T Map::getField(int x, int y) { 
+    for (auto wallI : walls) {
+        if (wallI->x1 <= x && x <= wallI->x2 && wallI->y1 <= y && y <= wallI->y2) {
+            return wallI;
+        }
+    }
+
+    for (auto keyI : keys) {
+        if (keyI->x1 <= x && x <= keyI->x2 && keyI->y1 <= y && y <= keyI->y2) {
+            return keyI;
+        }
+    }
+
+    for (auto pathI : paths) {
+        if (pathI->x1 <= x && x <= pathI->x2 && pathI->y1 <= y && y <= pathI->y2) {
+            return pathI;
+        }
+    }
+
+    for (auto ghostI : ghosts) {
+        if (ghostI->x1 <= x && x <= ghostI->x2 && ghostI->y1 <= y && y <= ghostI->y2) {
+            return ghostI;
+        }
+    }
+
+    if (pacman->x1 <= x && x <= pacman->x2 && pacman->y1 <= y && y <= pacman->y2) {
+        return pacman;
+    }
+
+    if (end->x1 <= x && x <= end->x2 && end->y1 <= y && y <= end->y2) {
+        return end;
+    }
+
+    return nullptr;
+}
+
 void Map::getSizeOfBlock() {
     try {
         this->x = std::stoi(this->getWord()); // get x size from map file
@@ -93,6 +130,7 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
     // top border
     for (int i = 0; i < this->x + 2; i++) {
         wall = new Wall(scene, this->sizeOfBlock*i, 0,  this->sizeOfBlock*(i+1), this->sizeOfBlock, srcPath); //x,y (left top) + x,y (right bottom)
+        walls.push_back(wall);
     }
 
     char ch;
@@ -104,6 +142,7 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
     int actualY = this->sizeOfBlock;  // skip borders
 
     wall = new Wall(scene, 0, actualY,  this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath); // first left border of a map
+    walls.push_back(wall);
 
     int actualRow = 1; // auxiliary variable to know actual row in a map
 
@@ -117,19 +156,23 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
                 case 'X':
                     wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    walls.push_back(wall);
                     break;
 
                 case 'G':
                     ghost = new Ghost(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    ghosts.push_back(ghost);
                     break;
 
                 case 'K':
                     key = new Key(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    keys.push_back(key);
                     this->numberOfKeysLeft++;
                     break;
 
                 case '.':
                     path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    paths.push_back(path);
                     break;
 
                 case 'S':
@@ -138,10 +181,12 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
                 case '\n':
                     wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    walls.push_back(wall);
 
                     actualX = 0;
                     actualY += this->sizeOfBlock;
                     wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    walls.push_back(wall);
                     actualX += this->sizeOfBlock;
 
                     actualRow++;
@@ -162,12 +207,15 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
     // last right border if needed (not \n just EOF)
     if (actualRow != this->y) { 
         wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+        walls.push_back(wall);
     }
 
     // bottom border
     for (int i = 0; i < this->x + 2; i++) {
         wall = new Wall(scene, this->sizeOfBlock*i, this->sizeOfBlock*(this->y+2), this->sizeOfBlock*(i+1), this->sizeOfBlock*(this->y+3), srcPath); //x,y (left top) + x,y (right bottom)
+        walls.push_back(wall);
     }
+
 } // createMap
 
 /*** End of map.cpp ***/
