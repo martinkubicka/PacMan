@@ -23,7 +23,7 @@ Map::Map(QWidget *parent, std::string map, QString srcPath) : QWidget(parent) {
 
     CustomGraphicsView* view = this->createView(parent, scene);
 
-    (void)view; // todo remove me
+    (void)view; // todo remove me - maybe not needed
 
     // TODO - ADD YOUR CODE HERE
 }

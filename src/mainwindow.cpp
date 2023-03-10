@@ -67,7 +67,7 @@ void MainWindow::createComboBox() {
     QFont comboBoxFont("Arial Black", 13);
     comboBox->setFont(comboBoxFont);
 
-    QIcon icon("/Users/martinkubicka/Documents/ICP/PacMan/images/drop_down_icon.png");
+    QIcon icon(this->srcPath + "/images/drop_down_icon.png");
 
     comboBox->setStyleSheet("QComboBox{background-color: rgb(27,27,27); border: 1px solid white; border-radius: 3px; color: white;} QComboBox::drop-down {border:none; image: url(/Users/martinkubicka/Documents/ICP/PacMan/images/drop_down_icon.png); padding-top: 3px; padding-right: 5px;}");
     comboBox->setGeometry(250, 290, 200, 30);
@@ -93,11 +93,11 @@ void MainWindow::createStartButton() {
 
 void MainWindow::setMap(const QString &mapName) {
     if (mapName == "PacMan's Playground") {
-        this->map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map01.txt";
+        this->map = this->srcPath.toStdString() + "/maps/map01.txt";
     } else if (mapName == "Ghostly Maze") {
-        this->map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map02.txt";
+        this->map = this->srcPath.toStdString() + "/maps/map02.txt";
     } else if (mapName == "Endless Journey") {
-        this->map = "/Users/martinkubicka/Documents/ICP/PacMan/maps/map03.txt";
+        this->map = this->srcPath.toStdString() + "/maps/map03.txt";
     }
 }
 
