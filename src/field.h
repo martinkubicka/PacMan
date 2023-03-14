@@ -3,7 +3,6 @@
 
 #include <QWidget>
 #include <QGraphicsScene>
-
 // field type
 enum FieldType {
     PATH,
@@ -20,6 +19,9 @@ enum FieldType {
  */
 class Field : public QWidget {
 public:
+    QGraphicsPixmapItem* pathItem;
+    int x1, y1, x2, y2; /** Field object position attributes */
+    FieldType type; /** Type of field */
     /**
      * @brief Constructructor of Field object.
      *
@@ -31,8 +33,6 @@ public:
      */
     explicit Field(int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, FieldType type = DEFAULT);
 
-public:
-    int x1, y1, x2, y2; /** Field object position attributes */
-    FieldType type; /** Type of field */
+
  };
 #endif // FIELD_H

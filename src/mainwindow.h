@@ -21,9 +21,9 @@
 #include <string>
 #include "ui_mainwindow.h"
 #include "map.h"
-
-#define HEIGHT 700 // height of window
-#define WIDTH 700 // width of window
+#include "pacman.h"
+//#define HEIGHT 700 // height of window
+//#define WIDTH 700 // width of window
 
 namespace Ui {
     class MainWindow;
@@ -41,6 +41,7 @@ public:
 private:
     std::string map; // selected map
     Ui::MainWindow *ui;
+    Map *mapObject;
 
     /**
      * @brief Functions which creates a Choose Map Label;
@@ -62,8 +63,10 @@ private:
               Result saved to srcPath attribute.
      */
     void findImageDirPath();
-
+protected:
+    void keyPressEvent(QKeyEvent* event) override;
 private slots:
+
     /**
      * @brief Function for setting map attribute when map is selected from dropdown menu.
      * 

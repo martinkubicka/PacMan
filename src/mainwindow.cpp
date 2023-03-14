@@ -111,8 +111,30 @@ void MainWindow::start() {
     }
 
     // create map UI
-    Map *map = new Map(this, this->map, this->srcPath);
-    setCentralWidget(map);
+    this->mapObject = new Map(this, this->map, this->srcPath);
+    setCentralWidget(this->mapObject);
+}
+
+void MainWindow::keyPressEvent(QKeyEvent *event)
+{
+//    qDebug() << "Key pressed!";
+    // Handle the key press event
+    switch (event->key()) {
+    case Qt::Key_Up:
+        this->mapObject->pacmanMove(Direction::UP);
+        break;
+    case Qt::Key_Down:
+        this->mapObject->pacmanMove(Direction::DOWN);
+        break;
+    case Qt::Key_Left:
+        this->mapObject->pacmanMove(Direction::LEFT);
+        break;
+    case Qt::Key_Right:
+        this->mapObject->pacmanMove(Direction::RIGHT);
+        break;
+    default:
+        break;
+    }
 }
 
 /*** End of mainwidow.cpp ***/

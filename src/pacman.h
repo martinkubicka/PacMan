@@ -16,11 +16,19 @@
 #include <QGraphicsPixmapItem>
 #include "field.h"
 
+enum Direction {
+    UP,
+    LEFT,
+    DOWN,
+    RIGHT
+};
 /**
  * @brief Pacman object which represents pacman field in map UI.
  */
 class Pacman : public Field {
 public:
+
+
     /**
      * @brief Constructructor of Pacman object.
      * 
@@ -32,6 +40,11 @@ public:
      * @param srcPath src directory path
      */
     explicit Pacman(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, QString srcPath = "");
+
+    void move(Direction direction);
+
+    void IsValidDirection();
+
 };
 
 #endif // PACMAN_H

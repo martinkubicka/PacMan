@@ -17,7 +17,6 @@
 #include <QGraphicsScene>
 #include <QGraphicsView>
 #include <iostream>
-#include "mainwindow.h"
 #include "wall.h"
 #include "path.h"
 #include "ghost.h"
@@ -27,7 +26,8 @@
 #include "customgraphicsview.h"
 
 #define EDGE_OFFSET 20 // offset which prevents creating map at [0, 0] etc..
-
+#define HEIGHT 700 // height of window
+#define WIDTH 700 // width of window
 /**
  * @brief Class used to create map.
  */
@@ -38,7 +38,8 @@ public:
     std::vector<Path *> paths;
     std::vector<Ghost *> ghosts;
     std::vector<Key *> keys;
-
+    Pacman *pacman;
+    End *end;
     /**
      * @brief Constructor of Map object
      * 
@@ -60,6 +61,8 @@ public:
      * @return T Wall|Path|End|Ghost|Pacman|Key pointer object
      */
     T getField(int x, int y);
+
+    void pacmanMove(Direction direction);
 private:
     // attributes
     std::ifstream file; /** file with map */
@@ -71,8 +74,7 @@ private:
     Path *path;
     Ghost *ghost;
     Key *key;
-    Pacman *pacman;
-    End *end;
+
 
     // methods
 
