@@ -10,6 +10,7 @@
 
 #include "map.h"
 
+
 Map::Map(QWidget *parent, std::string map, QString srcPath) : QWidget(parent) {
     this->openFile(map);
 
@@ -24,8 +25,6 @@ Map::Map(QWidget *parent, std::string map, QString srcPath) : QWidget(parent) {
     CustomGraphicsView* view = this->createView(parent, scene);
 
     (void)view; // todo remove me - maybe not needed
-
-    // TODO - ADD YOUR CODE HERE
 }
 
 Map::~Map() {
@@ -73,34 +72,35 @@ std::string Map::getWord() {
 template<typename T>
 T Map::getField(int x, int y) { 
     for (auto wallI : walls) {
-        if (wallI->x1 <= x && x <= wallI->x2 && wallI->y1 <= y && y <= wallI->y2) {
+        if (wallI->x1 <= x && x < wallI->x2 && wallI->y1 <= y && y < wallI->y2) {
+            qDebug() << "tu\n";
             return wallI;
         }
     }
 
     for (auto keyI : keys) {
-        if (keyI->x1 <= x && x <= keyI->x2 && keyI->y1 <= y && y <= keyI->y2) {
+        if (keyI->x1 <= x && x < keyI->x2 && keyI->y1 <= y && y < keyI->y2) {
             return keyI;
         }
     }
 
     for (auto pathI : paths) {
-        if (pathI->x1 <= x && x <= pathI->x2 && pathI->y1 <= y && y <= pathI->y2) {
+        if (pathI->x1 <= x && x < pathI->x2 && pathI->y1 <= y && y < pathI->y2) {
             return pathI;
         }
     }
 
     for (auto ghostI : ghosts) {
-        if (ghostI->x1 <= x && x <= ghostI->x2 && ghostI->y1 <= y && y <= ghostI->y2) {
+        if (ghostI->x1 <= x && x < ghostI->x2 && ghostI->y1 <= y && y < ghostI->y2) {
             return ghostI;
         }
     }
 
-    if (pacman->x1 <= x && x <= pacman->x2 && pacman->y1 <= y && y <= pacman->y2) {
+    if (pacman->x1 <= x && x < pacman->x2 && pacman->y1 <= y && y < pacman->y2) {
         return pacman;
     }
 
-    if (end->x1 <= x && x <= end->x2 && end->y1 <= y && y <= end->y2) {
+    if (end->x1 <= x && x < end->x2 && end->y1 <= y && y < end->y2) {
         return end;
     }
 
@@ -176,7 +176,11 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
                     break;
 
                 case 'S':
+                    path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    paths.push_back(path);
+
                     pacman = new Pacman(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+
                     break;
 
                 case '\n':
@@ -228,24 +232,31 @@ void Map::pacmanMove(Direction direction){
     int y;
     switch (direction){
         case Direction::UP:
-        x= this->pacman->x1;
-        y= this->pacman->y1-this->sizeOfBlock;
-        w = this->getField<Field *>(x+ 1,y);
+            x= this->pacman->x1;
+            y= this->pacman->y1-this->sizeOfBlock;
+            w = this->getField<Field *>(x,y);
             break;
+
         case Direction::DOWN:
-        x=this->pacman->x1;
-        y=this->pacman->y1+this->sizeOfBlock;
-        w = this->getField<Field *>(x+1,y);
+            x=this->pacman->x1;
+            y=this->pacman->y1+this->sizeOfBlock;
+            w = this->getField<Field *>(x,y);
             break;
+
         case Direction::LEFT:
-        x=this->pacman->x1-this->sizeOfBlock;
-        y=this->pacman->y1;
-        w = this->getField<Field *>(x,y+1);
+            x=this->pacman->x1-this->sizeOfBlock;
+            y=this->pacman->y1;
+
+
+            w = this->getField<Field *>(x,y);
+
             break;
+
         case Direction::RIGHT:
-        x=this->pacman->x1+this->sizeOfBlock;
-        y=this->pacman->y1;
-        w = this->getField<Field *>(x,y+1);
+            x=this->pacman->x1+this->sizeOfBlock;
+            y=this->pacman->y1;
+            w = this->getField<Field *>(x,y);
+
             break;
     }
 
