@@ -28,7 +28,6 @@ enum Direction {
 class Pacman : public Field {
 public:
 
-
     /**
      * @brief Constructructor of Pacman object.
      * 
@@ -41,7 +40,9 @@ public:
      */
     explicit Pacman(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, QString srcPath = "");
 
-    void move(Direction direction);
+    void move(int x,int y);
+
+
 
     void IsValidDirection();
 

@@ -218,4 +218,55 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
 } // createMap
 
+void Map::pacmanMove(Direction direction){
+
+    //postup:   1. Kontrola zda muzu do daneho smeru
+    //          2. cyklus kde budu posouvat pacmana dokud nenarazi na zed
+    //          3.
+    Field *w;
+    int x;
+    int y;
+    switch (direction){
+        case Direction::UP:
+        x= this->pacman->x1;
+        y= this->pacman->y1-this->sizeOfBlock;
+        w = this->getField<Field *>(x+ 1,y);
+            break;
+        case Direction::DOWN:
+        x=this->pacman->x1;
+        y=this->pacman->y1+this->sizeOfBlock;
+        w = this->getField<Field *>(x+1,y);
+            break;
+        case Direction::LEFT:
+        x=this->pacman->x1-this->sizeOfBlock;
+        y=this->pacman->y1;
+        w = this->getField<Field *>(x,y+1);
+            break;
+        case Direction::RIGHT:
+        x=this->pacman->x1+this->sizeOfBlock;
+        y=this->pacman->y1;
+        w = this->getField<Field *>(x,y+1);
+            break;
+    }
+
+    if (w != nullptr) {
+       if (w->type == WALL) {
+           // viem ze tam je stena
+       } else if (w->type == PATH) {
+//           w->pathItem->setPos(x,y);
+           this->pacman->x1 = x;
+           this->pacman->y1 = y;
+           this->pacman->move(x,y);
+//           this->pacman->pathItem->setPos(x,y);
+           // chodnik
+       } else if(w->type == KEY){
+
+       } else if(w->type == GHOST){
+
+       } else if(w->type == END){
+
+       }
+    }
+}
+
 /*** End of map.cpp ***/
