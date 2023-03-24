@@ -24,14 +24,19 @@
 #include "pacman.h"
 #include "end.h"
 #include "customgraphicsview.h"
+#include <QTimer>
+#include <QDebug>
 
 #define EDGE_OFFSET 20 // offset which prevents creating map at [0, 0] etc..
 #define HEIGHT 700 // height of window
 #define WIDTH 700 // width of window
+#define DELAY 10 // move DELAY pacman
+
 /**
  * @brief Class used to create map.
  */
 class Map : public QWidget {
+    Q_OBJECT
 public:
     // vectors of objects which map contains
     std::vector<Wall *> walls;
@@ -40,6 +45,7 @@ public:
     std::vector<Key *> keys;
     Pacman *pacman;
     End *end;
+    
     /**
      * @brief Constructor of Map object
      * 
@@ -61,8 +67,12 @@ public:
      * @return T Wall|Path|End|Ghost|Pacman|Key pointer object
      */
     T getField(int x, int y);
+    void Start();
+    void gameStart();
 
-    void pacmanMove(Direction direction);
+private slots:
+    void pacmanHandler();
+
 private:
     // attributes
     std::ifstream file; /** file with map */
@@ -74,6 +84,13 @@ private:
     Path *path;
     Ghost *ghost;
     Key *key;
+    bool canMove = false;
+    Field *w;
+
+    QTimer *pacman_timer;
+
+    void gameEnd();
+    void pacmanMove(Direction direction);
 
 
     // methods

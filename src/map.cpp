@@ -73,7 +73,6 @@ template<typename T>
 T Map::getField(int x, int y) { 
     for (auto wallI : walls) {
         if (wallI->x1 <= x && x < wallI->x2 && wallI->y1 <= y && y < wallI->y2) {
-            qDebug() << "tu\n";
             return wallI;
         }
     }
@@ -222,41 +221,72 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
 } // createMap
 
+
+void Map::Start(){
+    this->gameStart();
+}
+
+void Map::gameStart()
+{
+    qDebug() << "timer initialized!";
+    pacman_timer = new QTimer(this);
+    connect(pacman_timer, SIGNAL(timeout()), this , SLOT(pacmanHandler()));
+    pacman_timer->start(DELAY);
+}
+
+void Map::pacmanHandler()
+{
+    if(this->pacman->direction != Direction::STOP){
+        pacmanMove(this->pacman->direction);
+        qDebug() << "game start!";
+    }
+
+    //todo add win state
+}
+
 void Map::pacmanMove(Direction direction){
 
     //postup:   1. Kontrola zda muzu do daneho smeru
     //          2. cyklus kde budu posouvat pacmana dokud nenarazi na zed
     //          3.
-    Field *w;
+    qDebug() << "pacman move!";
+
+
     int x;
     int y;
+
     switch (direction){
         case Direction::UP:
             x= this->pacman->x1;
-            y= this->pacman->y1-this->sizeOfBlock;
-            w = this->getField<Field *>(x,y);
+            // y= this->pacman->y1-this->sizeOfBlock;
+            y= this->pacman->y1-1;
+            w = this->getField<Field *>(x,this->pacman->y1-this->sizeOfBlock);
             break;
 
         case Direction::DOWN:
             x=this->pacman->x1;
-            y=this->pacman->y1+this->sizeOfBlock;
-            w = this->getField<Field *>(x,y);
+            // y=this->pacman->y1+this->sizeOfBlock;
+            y=this->pacman->y1+1;
+            w = this->getField<Field *>(x,this->pacman->y1+this->sizeOfBlock);
             break;
 
         case Direction::LEFT:
-            x=this->pacman->x1-this->sizeOfBlock;
+            // x=this->pacman->x1-this->sizeOfBlock;
+            x=this->pacman->x1-1;
             y=this->pacman->y1;
 
-
-            w = this->getField<Field *>(x,y);
+            w = this->getField<Field *>(this->pacman->x1-this->sizeOfBlock,y);
 
             break;
 
         case Direction::RIGHT:
-            x=this->pacman->x1+this->sizeOfBlock;
+            // x=this->pacman->x1+this->sizeOfBlock;
+            x=this->pacman->x1+1;
             y=this->pacman->y1;
-            w = this->getField<Field *>(x,y);
+            w = this->getField<Field *>(this->pacman->x1+this->sizeOfBlock,y);
 
+            break;
+        case Direction::STOP:
             break;
     }
 
@@ -279,5 +309,4 @@ void Map::pacmanMove(Direction direction){
        }
     }
 }
-
 /*** End of map.cpp ***/

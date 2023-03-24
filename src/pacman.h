@@ -20,14 +20,15 @@ enum Direction {
     UP,
     LEFT,
     DOWN,
-    RIGHT
+    RIGHT,
+    STOP
 };
 /**
  * @brief Pacman object which represents pacman field in map UI.
  */
 class Pacman : public Field {
 public:
-
+    Direction direction = Direction::STOP;
     /**
      * @brief Constructructor of Pacman object.
      * 
@@ -41,9 +42,6 @@ public:
     explicit Pacman(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, QString srcPath = "");
 
     void move(int x,int y);
-
-
-
     void IsValidDirection();
 
 };

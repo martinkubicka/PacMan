@@ -22,6 +22,7 @@
 #include "ui_mainwindow.h"
 #include "map.h"
 #include "pacman.h"
+#include <QDebug>
 //#define HEIGHT 700 // height of window
 //#define WIDTH 700 // width of window
 
