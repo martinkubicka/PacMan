@@ -163,6 +163,10 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
                     break;
 
                 case 'K':
+                    // creating path below key
+                    path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
+                    paths.push_back(path);
+                    // creating key
                     key = new Key(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     keys.push_back(key);
                     this->numberOfKeysLeft++;
