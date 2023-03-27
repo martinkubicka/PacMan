@@ -29,9 +29,10 @@ public:
      * @param y1 top left y position (from) in px
      * @param x2 bottom right x position (to) in px
      * @param y2 bottom right position (to) in px
+     * @param map pointer to map object
      * @param srcPath src directory path
      */
-    explicit End(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, QString srcPath = "");
+    explicit End(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, Map *map = nullptr, QString srcPath = "");
 };
 
 #endif // END_H

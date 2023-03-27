@@ -10,7 +10,7 @@
 
 #include "key.h"
 
-Key::Key(QGraphicsScene* scene, int x1, int y1, int x2, int y2, QString srcPath) : Field (x1, y1, x2, y2, KEY) {
+Key::Key(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QString srcPath) : Field (x1, y1, x2, y2, map,KEY) {
     QImage keyImage(srcPath + "/images/key.png");
     keyImage = keyImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 

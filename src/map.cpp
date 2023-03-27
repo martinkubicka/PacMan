@@ -10,7 +10,6 @@
 
 #include "map.h"
 
-
 Map::Map(QWidget *parent, std::string map, QString srcPath) : QWidget(parent) {
     this->openFile(map);
 
@@ -128,7 +127,7 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
     // top border
     for (int i = 0; i < this->x + 2; i++) {
-        wall = new Wall(scene, this->sizeOfBlock*i, 0,  this->sizeOfBlock*(i+1), this->sizeOfBlock, srcPath); //x,y (left top) + x,y (right bottom)
+        wall = new Wall(scene, this->sizeOfBlock*i, 0,  this->sizeOfBlock*(i+1), this->sizeOfBlock, this, srcPath); //x,y (left top) + x,y (right bottom)
         walls.push_back(wall);
     }
 
@@ -140,7 +139,7 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
     int actualX = this->sizeOfBlock; // skip borders
     int actualY = this->sizeOfBlock;  // skip borders
 
-    wall = new Wall(scene, 0, actualY,  this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath); // first left border of a map
+    wall = new Wall(scene, 0, actualY,  this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath); // first left border of a map
     walls.push_back(wall);
 
     int actualRow = 1; // auxiliary variable to know actual row in a map
@@ -150,45 +149,45 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
         if (found != validChars.end()) {
             switch (ch) {
                 case 'T':
-                    end = new End(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    end = new End(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     break;
 
                 case 'X':
-                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     walls.push_back(wall);
                     break;
 
                 case 'G':
-                    ghost = new Ghost(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    ghost = new Ghost(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     ghosts.push_back(ghost);
                     break;
 
                 case 'K':
-                    key = new Key(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    key = new Key(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     keys.push_back(key);
                     this->numberOfKeysLeft++;
                     break;
 
                 case '.':
-                    path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     paths.push_back(path);
                     break;
 
                 case 'S':
-                    path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     paths.push_back(path);
 
-                    pacman = new Pacman(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    pacman = new Pacman(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
 
                     break;
 
                 case '\n':
-                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     walls.push_back(wall);
 
                     actualX = 0;
                     actualY += this->sizeOfBlock;
-                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+                    wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     walls.push_back(wall);
                     actualX += this->sizeOfBlock;
 
@@ -209,13 +208,13 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
     // last right border if needed (not \n just EOF)
     if (actualRow != this->y) { 
-        wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, srcPath);
+        wall = new Wall(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
         walls.push_back(wall);
     }
 
     // bottom border
     for (int i = 0; i < this->x + 2; i++) {
-        wall = new Wall(scene, this->sizeOfBlock*i, this->sizeOfBlock*(this->y+2), this->sizeOfBlock*(i+1), this->sizeOfBlock*(this->y+3), srcPath); //x,y (left top) + x,y (right bottom)
+        wall = new Wall(scene, this->sizeOfBlock*i, this->sizeOfBlock*(this->y+2), this->sizeOfBlock*(i+1), this->sizeOfBlock*(this->y+3), this, srcPath); //x,y (left top) + x,y (right bottom)
         walls.push_back(wall);
     }
 
@@ -238,7 +237,7 @@ void Map::pacmanHandler()
 {
     if(this->pacman->direction != Direction::STOP){
         pacmanMove(this->pacman->direction);
-        qDebug() << "game start!";
+        //qDebug() << "game start!";
     }
 
     //todo add win state
@@ -249,7 +248,7 @@ void Map::pacmanMove(Direction direction){
     //postup:   1. Kontrola zda muzu do daneho smeru
     //          2. cyklus kde budu posouvat pacmana dokud nenarazi na zed
     //          3.
-    qDebug() << "pacman move!";
+    //qDebug() << "pacman move!";
 
 
     int x;

@@ -9,8 +9,10 @@
  */
 
 #include "pacman.h"
+#include "map.h"
+#include "QDebug" // TODO REMOVE ME
 
-Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, QString srcPath) : Field (x1, y1, x2, y2, PACMAN) {
+Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QString srcPath) : Field (x1, y1, x2, y2, map, PACMAN) {
     QImage pacmanImage(srcPath + "/images/pacman.png");
     pacmanImage = pacmanImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
     // this->scene = scene; // to mi dava err tak som zakomentoval
@@ -24,6 +26,8 @@ Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, QString sr
 
 void Pacman::move(int x, int y){
     pathItem->setPos(x, y);
+
+    Field *f = this->map->getField<Field *>(0, 0);
 //    this->scene->addItem(pathItem);
 }
 
