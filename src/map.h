@@ -57,7 +57,6 @@ public:
     
     ~Map();
 
-    template<typename T>
     /**
      * @brief Function which return wall, path, ghost etc.. pointer object based on x, y cooridinates
      * 
@@ -66,7 +65,7 @@ public:
      * 
      * @return T Wall|Path|End|Ghost|Pacman|Key pointer object
      */
-    T getField(int x, int y);
+    Field* getField(int x, int y);
     void Start();
     void gameStart();
 

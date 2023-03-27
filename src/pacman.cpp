@@ -27,7 +27,7 @@ Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, 
 void Pacman::move(int x, int y){
     pathItem->setPos(x, y);
 
-    Field *f = this->map->getField<Field *>(0, 0);
+    Field *f = this->map->getField(0, 0);
 //    this->scene->addItem(pathItem);
 }
 

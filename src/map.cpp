@@ -68,8 +68,7 @@ std::string Map::getWord() {
     return word;
 }
 
-template<typename T>
-T Map::getField(int x, int y) { 
+Field* Map::getField(int x, int y) {
     for (auto wallI : walls) {
         if (wallI->x1 <= x && x < wallI->x2 && wallI->y1 <= y && y < wallI->y2) {
             return wallI;
@@ -263,14 +262,14 @@ void Map::pacmanMove(Direction direction){
             x= this->pacman->x1;
             // y= this->pacman->y1-this->sizeOfBlock;
             y= this->pacman->y1-1;
-            w = this->getField<Field *>(x,this->pacman->y1-this->sizeOfBlock);
+            w = this->getField(x,this->pacman->y1-this->sizeOfBlock);
             break;
 
         case Direction::DOWN:
             x=this->pacman->x1;
             // y=this->pacman->y1+this->sizeOfBlock;
             y=this->pacman->y1+1;
-            w = this->getField<Field *>(x,this->pacman->y1+this->sizeOfBlock);
+            w = this->getField(x,this->pacman->y1+this->sizeOfBlock);
             break;
 
         case Direction::LEFT:
@@ -278,7 +277,7 @@ void Map::pacmanMove(Direction direction){
             x=this->pacman->x1-1;
             y=this->pacman->y1;
 
-            w = this->getField<Field *>(this->pacman->x1-this->sizeOfBlock,y);
+            w = this->getField(this->pacman->x1-this->sizeOfBlock,y);
 
             break;
 
@@ -286,7 +285,7 @@ void Map::pacmanMove(Direction direction){
             // x=this->pacman->x1+this->sizeOfBlock;
             x=this->pacman->x1+1;
             y=this->pacman->y1;
-            w = this->getField<Field *>(this->pacman->x1+this->sizeOfBlock,y);
+            w = this->getField(this->pacman->x1+this->sizeOfBlock,y);
 
             break;
         case Direction::STOP:
