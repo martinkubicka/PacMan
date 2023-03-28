@@ -256,58 +256,58 @@ void Map::pacmanMove(Direction direction){
         int x2 = this->pacman->x2;
         int y1 = this->pacman->y1;
         int y2 = this->pacman->y2;
-        Field *fieldOne;
-        Field *fieldTwo;
+        Field *FirstCorner;
+        Field *SecondCorner;
 
         switch (direction){
         case Direction::UP:
             y1 -= 1;
             y2 -= 1;
-            fieldOne = this->getField(x1,y1);
-            fieldTwo = this->getField(x2,y1);
+            FirstCorner = this->getField(x1,y1);
+            SecondCorner = this->getField(x2,y1);
             break;
         case Direction::DOWN:
             y1 += 1;
             y2 += 1;
-            fieldOne = this->getField(x1,y2);
-            fieldTwo = this->getField(x2,y2);
+            FirstCorner = this->getField(x1,y2);
+            SecondCorner = this->getField(x2,y2);
             break;
         case Direction::LEFT:
             x1 -= 1;
             x2 -= 1;
-            fieldOne = this->getField(x1,y1);
-            fieldTwo = this->getField(x1,y2);
+            FirstCorner = this->getField(x1,y1);
+            SecondCorner = this->getField(x1,y2);
 
             break;
         case Direction::RIGHT:
             x1 += 1;
             x2 += 1;
-            fieldOne = this->getField(x2,y1);
-            fieldTwo = this->getField(x2,y2);
+            FirstCorner = this->getField(x2,y1);
+            SecondCorner = this->getField(x2,y2);
             break;
         case Direction::STOP:
             break;
     }
   
-    if (fieldOne == nullptr && fieldTwo == nullptr) {
+    if (FirstCorner == nullptr && SecondCorner == nullptr) {
         return;
     }
 
-    // qDebug() << fieldOne->type<< " " << fieldTwo->type ;
-    if (fieldOne->type == WALL && fieldTwo->type == WALL) {
+    // qDebug() << FirstCorner->type<< " " << SecondCorner->type ;
+    if (FirstCorner->type == WALL && SecondCorner->type == WALL) {
         // viem ze tam je stena
-    } else if (fieldOne->type == PATH && fieldTwo->type == PATH) {
+    } else if (FirstCorner->type == PATH && SecondCorner->type == PATH) {
         this->pacman->x1 = x1;
         this->pacman->x2 = x2;
         this->pacman->y1 = y1;
         this->pacman->y2 = y2;
         this->pacman->move(x1,y1);
         // chodnik
-    } else if(fieldOne->type == KEY && fieldTwo->type == KEY){
+    } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
 
-    } else if(fieldOne->type == GHOST && fieldTwo->type == GHOST){
+    } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
 
-    } else if(fieldOne->type == END && fieldTwo->type == END){
+    } else if(FirstCorner->type == END && SecondCorner->type == END){
 
     }else{
 
