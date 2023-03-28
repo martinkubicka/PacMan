@@ -233,6 +233,15 @@ void Map::gameStart()
     pacman_timer = new QTimer(this);
     connect(pacman_timer, SIGNAL(timeout()), this , SLOT(pacmanHandler()));
     pacman_timer->start(DELAY);
+
+    // for (int i = 0; i < int(ghosts.size()); i++) {
+    //     ghost_timer[i] = new QTimer(this);
+    //     // Managed to pass ghost id to ghost_handler.
+    //     connect(ghost_timer[i], SIGNAL(timeout()), this , SLOT(ghostHandler(i)));
+    //     // connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
+    //     ghost_timer[i].start(DELAY);
+    // }
+
 }
 
 void Map::pacmanHandler()
@@ -247,6 +256,66 @@ void Map::pacmanHandler()
     pacmanMove(this->pacman->direction);
 
     //todo add win state
+}
+
+void Map::ghostHandler(int ghostNum){
+    bool hasMoved= false;
+    while(!hasMoved){
+        hasMoved = ghostMove(this->ghosts[ghostNum]->nextDirection, this->ghosts[ghostNum]);
+    }
+}
+
+bool Map::ghostMove(Direction direction, Ghost *ghost){
+    int x1 = ghost->x1;
+    int x2 = ghost->x2;
+    int y1 = ghost->y1;
+    int y2 = ghost->y2;
+    Field *FirstCorner;
+    Field *SecondCorner;
+
+    switch (direction){
+    case Direction::UP:
+        y1 -= 1;
+        y2 -= 1;
+        FirstCorner = this->getField(x1,y1);
+        SecondCorner = this->getField(x2,y1);
+        break;
+    case Direction::DOWN:
+        y1 += 1;
+        y2 += 1;
+        FirstCorner = this->getField(x1,y2);
+        SecondCorner = this->getField(x2,y2);
+        break;
+    case Direction::LEFT:
+        x1 -= 1;
+        x2 -= 1;
+        FirstCorner = this->getField(x1,y1);
+        SecondCorner = this->getField(x1,y2);
+        break;
+    case Direction::RIGHT:
+        x1 += 1;
+        x2 += 1;
+        FirstCorner = this->getField(x2,y1);
+        SecondCorner = this->getField(x2,y2);
+        break;
+    }
+
+    if(FirstCorner->type == WALL || SecondCorner->type == WALL){
+        std::srand(std::time(nullptr));
+
+        // Generate a random number between 0 and 3
+        int ghostDirection = std::rand() % 4;
+        ghost->nextDirection = static_cast<Direction>(ghostDirection);
+        return false;
+    }
+    else{
+        this->ghost->x1 = x1;
+        this->ghost->x2 = x2;
+        this->ghost->y1 = y1;
+        this->ghost->y2 = y2;
+        this->ghost->move(x1,y1);
+        return true;
+    }
 }
 
 bool Map::pacmanMove(Direction direction){
@@ -321,4 +390,6 @@ bool Map::pacmanMove(Direction direction){
     return false;
     
 }
+
+
 /*** End of map.cpp ***/

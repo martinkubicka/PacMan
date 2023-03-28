@@ -16,13 +16,7 @@
 #include <QGraphicsPixmapItem>
 #include "field.h"
 
-enum Direction {
-    UP,
-    LEFT,
-    DOWN,
-    RIGHT,
-    STOP
-};
+
 /**
  * @brief Pacman object which represents pacman field in map UI.
  */

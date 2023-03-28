@@ -71,6 +71,7 @@ public:
 
 private slots:
     void pacmanHandler();
+    void ghostHandler(int ghostNum);
 
 private:
     // attributes
@@ -84,9 +85,11 @@ private:
     Ghost *ghost;
     Key *key;
     QTimer *pacman_timer;
+    QTimer *ghost_timer;
 
     void gameEnd();
     bool pacmanMove(Direction direction);
+    bool ghostMove(Direction direction, Ghost *ghost);
 
 
     // methods
