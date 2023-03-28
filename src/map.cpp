@@ -70,38 +70,36 @@ std::string Map::getWord() {
 
 Field* Map::getField(int x, int y) {
     for (auto wallI : walls) {
-        if (wallI->x1 <= x && x < wallI->x2 && wallI->y1 <= y && y < wallI->y2) {
+        if (wallI->x1 <= x && x <= wallI->x2 && wallI->y1 <= y && y <= wallI->y2) {
             return wallI;
         }
     }
 
     for (auto keyI : keys) { // have to check keys before paths (keys above paths)
-        if (keyI->x1 <= x && x < keyI->x2 && keyI->y1 <= y && y < keyI->y2) {
+        if (keyI->x1 <= x && x <= keyI->x2 && keyI->y1 <= y && y <= keyI->y2) {
             return keyI;
         }
     }
 
     for (auto pathI : paths) {
-        if (pathI->x1 <= x && x < pathI->x2 && pathI->y1 <= y && y < pathI->y2) {
+        if (pathI->x1 <= x && x <= pathI->x2 && pathI->y1 <= y && y <= pathI->y2) {
             return pathI;
         }
     }
 
     for (auto ghostI : ghosts) {
-        if (ghostI->x1 <= x && x < ghostI->x2 && ghostI->y1 <= y && y < ghostI->y2) {
+        if (ghostI->x1 <= x && x <= ghostI->x2 && ghostI->y1 <= y && y <= ghostI->y2) {
             return ghostI;
         }
     }
 
-    if (pacman->x1 <= x && x < pacman->x2 && pacman->y1 <= y && y < pacman->y2) {
-        return pacman;
-    }
-
-    if (end->x1 <= x && x < end->x2 && end->y1 <= y && y < end->y2) {
+    if (end->x1 <= x && x <= end->x2 && end->y1 <= y && y <= end->y2) {
         return end;
     }
 
-    return nullptr;
+    if (pacman->x1 <= x && x <= pacman->x2 && pacman->y1 <= y && y <= pacman->y2) {
+        return pacman;
+    }
 }
 
 void Map::getSizeOfBlock() {
