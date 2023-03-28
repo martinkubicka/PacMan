@@ -237,20 +237,25 @@ void Map::gameStart()
 
 void Map::pacmanHandler()
 {
-    if(this->pacman->direction != Direction::STOP){
-        pacmanMove(this->pacman->direction);
-        //qDebug() << "game start!";
+    bool hasMoved = pacmanMove(this->pacman->nextDirection);
+    if(hasMoved)
+    {
+        this->pacman->direction = this->pacman->nextDirection;
+        return;
     }
+
+    pacmanMove(this->pacman->direction);
 
     //todo add win state
 }
 
-void Map::pacmanMove(Direction direction){
+bool Map::pacmanMove(Direction direction){
 
     //postup:   1. Kontrola zda muzu do daneho smeru
     //          2. cyklus kde budu posouvat pacmana dokud nenarazi na zed
     //          3.
     //qDebug() << "pacman move!";
+
         int x1 = this->pacman->x1;
         int x2 = this->pacman->x2;
         int y1 = this->pacman->y1;
@@ -289,18 +294,20 @@ void Map::pacmanMove(Direction direction){
     }
   
     if (FirstCorner == nullptr && SecondCorner == nullptr) {
-        return;
+        return false;
     }
 
     // qDebug() << FirstCorner->type<< " " << SecondCorner->type ;
     if (FirstCorner->type == WALL && SecondCorner->type == WALL) {
         // viem ze tam je stena
     } else if (FirstCorner->type == PATH && SecondCorner->type == PATH) {
+
         this->pacman->x1 = x1;
         this->pacman->x2 = x2;
         this->pacman->y1 = y1;
         this->pacman->y2 = y2;
         this->pacman->move(x1,y1);
+        return true;
         // chodnik
     } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
 
@@ -311,6 +318,7 @@ void Map::pacmanMove(Direction direction){
     }else{
 
     }
+    return false;
     
 }
 /*** End of map.cpp ***/

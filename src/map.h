@@ -83,12 +83,10 @@ private:
     Path *path;
     Ghost *ghost;
     Key *key;
-    bool canMove = false;
-
     QTimer *pacman_timer;
 
     void gameEnd();
-    void pacmanMove(Direction direction);
+    bool pacmanMove(Direction direction);
 
 
     // methods
