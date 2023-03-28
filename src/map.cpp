@@ -252,63 +252,66 @@ void Map::pacmanMove(Direction direction){
     //          2. cyklus kde budu posouvat pacmana dokud nenarazi na zed
     //          3.
     //qDebug() << "pacman move!";
+        int x1 = this->pacman->x1;
+        int x2 = this->pacman->x2;
+        int y1 = this->pacman->y1;
+        int y2 = this->pacman->y2;
+        Field *fieldOne;
+        Field *fieldTwo;
 
-
-    int x;
-    int y;
-
-    switch (direction){
+        switch (direction){
         case Direction::UP:
-            x= this->pacman->x1;
-            // y= this->pacman->y1-this->sizeOfBlock;
-            y= this->pacman->y1-1;
-            w = this->getField(x,this->pacman->y1-this->sizeOfBlock);
+            y1 -= 1;
+            y2 -= 1;
+            fieldOne = this->getField(x1,y1);
+            fieldTwo = this->getField(x2,y1);
             break;
-
         case Direction::DOWN:
-            x=this->pacman->x1;
-            // y=this->pacman->y1+this->sizeOfBlock;
-            y=this->pacman->y1+1;
-            w = this->getField(x,this->pacman->y1+this->sizeOfBlock);
+            y1 += 1;
+            y2 += 1;
+            fieldOne = this->getField(x1,y2);
+            fieldTwo = this->getField(x2,y2);
             break;
-
         case Direction::LEFT:
-            // x=this->pacman->x1-this->sizeOfBlock;
-            x=this->pacman->x1-1;
-            y=this->pacman->y1;
-
-            w = this->getField(this->pacman->x1-this->sizeOfBlock,y);
+            x1 -= 1;
+            x2 -= 1;
+            fieldOne = this->getField(x1,y1);
+            fieldTwo = this->getField(x1,y2);
 
             break;
-
         case Direction::RIGHT:
-            // x=this->pacman->x1+this->sizeOfBlock;
-            x=this->pacman->x1+1;
-            y=this->pacman->y1;
-            w = this->getField(this->pacman->x1+this->sizeOfBlock,y);
-
+            x1 += 1;
+            x2 += 1;
+            fieldOne = this->getField(x2,y1);
+            fieldTwo = this->getField(x2,y2);
             break;
         case Direction::STOP:
             break;
     }
-
-    if (w != nullptr) {
-       if (w->type == WALL) {
-           // viem ze tam je stena
-       } else if (w->type == PATH) {
-//           w->pathItem->setPos(x,y);
-           this->pacman->x1 = x;
-           this->pacman->y1 = y;
-           this->pacman->move(x,y);
-//           this->pacman->pathItem->setPos(x,y);
-           // chodnik
-       } else if(w->type == KEY){
-
-       } else if(w->type == GHOST){
-
-       } else if(w->type == END){
-
-       }
+  
+    if (fieldOne == nullptr && fieldTwo == nullptr) {
+        return;
     }
+
+    // qDebug() << fieldOne->type<< " " << fieldTwo->type ;
+    if (fieldOne->type == WALL && fieldTwo->type == WALL) {
+        // viem ze tam je stena
+    } else if (fieldOne->type == PATH && fieldTwo->type == PATH) {
+        this->pacman->x1 = x1;
+        this->pacman->x2 = x2;
+        this->pacman->y1 = y1;
+        this->pacman->y2 = y2;
+        this->pacman->move(x1,y1);
+        // chodnik
+    } else if(fieldOne->type == KEY && fieldTwo->type == KEY){
+
+    } else if(fieldOne->type == GHOST && fieldTwo->type == GHOST){
+
+    } else if(fieldOne->type == END && fieldTwo->type == END){
+
+    }else{
+
+    }
+    
 }
 /*** End of map.cpp ***/

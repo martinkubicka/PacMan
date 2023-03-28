@@ -41,7 +41,7 @@ public:
      * @param srcPath src directory path
      */
     explicit Pacman(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, Map *map = nullptr, QString srcPath = "");
-
+    bool nextToWall = false;
     void move(int x,int y);
     void IsValidDirection();
 

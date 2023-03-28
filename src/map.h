@@ -84,7 +84,6 @@ private:
     Ghost *ghost;
     Key *key;
     bool canMove = false;
-    Field *w;
 
     QTimer *pacman_timer;
 
