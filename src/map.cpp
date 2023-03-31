@@ -69,6 +69,12 @@ std::string Map::getWord() {
 }
 
 Field* Map::getField(int x, int y) {
+    for (auto ghostI : ghosts) {
+        if (ghostI->x1 <= x && x <= ghostI->x2 && ghostI->y1 <= y && y <= ghostI->y2) {
+            return ghostI;
+        }
+    }
+
     for (auto wallI : walls) {
         if (wallI->x1 <= x && x <= wallI->x2 && wallI->y1 <= y && y <= wallI->y2) {
             return wallI;
@@ -87,12 +93,6 @@ Field* Map::getField(int x, int y) {
         }
     }
 
-    for (auto ghostI : ghosts) {
-        if (ghostI->x1 <= x && x <= ghostI->x2 && ghostI->y1 <= y && y <= ghostI->y2) {
-            return ghostI;
-        }
-    }
-
     if (end->x1 <= x && x <= end->x2 && end->y1 <= y && y <= end->y2) {
         return end;
     }
@@ -100,6 +100,7 @@ Field* Map::getField(int x, int y) {
     if (pacman->x1 <= x && x <= pacman->x2 && pacman->y1 <= y && y <= pacman->y2) {
         return pacman;
     }
+
     return nullptr;
 }
 
@@ -156,6 +157,11 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
                     break;
 
                 case 'G':
+                    // creating path below ghost
+                    path = new Path(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
+                    paths.push_back(path);
+
+                    // creating ghost
                     ghost = new Ghost(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     ghosts.push_back(ghost);
                     break;
