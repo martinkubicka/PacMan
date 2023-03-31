@@ -10,7 +10,7 @@
 - movement
 ### bugs
 - po vykliknuti z okna se neda zasilat klavesy a nejde hybat s pacmanem
-
+- problem kdyz ghost nebo pacman vjede na inicializacni pozici ghosta
 ### maps
 - add 2 more maps
 
