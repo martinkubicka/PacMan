@@ -24,6 +24,10 @@ Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, 
 
 }
 
+void Pacman::setNextDirection(Direction dir){
+    this->nextDirection = dir;
+}
+
 void Pacman::move(int x, int y){
     pathItem->setPos(x, y);
 

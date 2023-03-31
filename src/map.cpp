@@ -234,13 +234,12 @@ void Map::gameStart()
     connect(pacman_timer, SIGNAL(timeout()), this , SLOT(pacmanHandler()));
     pacman_timer->start(DELAY);
 
-    // for (int i = 0; i < int(ghosts.size()); i++) {
-    //     ghost_timer[i] = new QTimer(this);
-    //     // Managed to pass ghost id to ghost_handler.
-    //     connect(ghost_timer[i], SIGNAL(timeout()), this , SLOT(ghostHandler(i)));
-    //     // connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
-    //     ghost_timer[i].start(DELAY);
-    // }
+    for (int i = 0; i < int(ghosts.size()); i++) {
+        qDebug() << "Ghost initialized!";
+        ghost_timer[i] = new QTimer(this);
+         connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
+        ghost_timer[i]->start(DELAYGHOST);
+    }
 
 }
 
@@ -259,10 +258,13 @@ void Map::pacmanHandler()
 }
 
 void Map::ghostHandler(int ghostNum){
-    bool hasMoved= false;
-    while(!hasMoved){
-        hasMoved = ghostMove(this->ghosts[ghostNum]->nextDirection, this->ghosts[ghostNum]);
-    }
+    // qDebug() << "Ghost Moved!";
+    bool hasMoved = ghostMove(this->ghosts[ghostNum]->nextDirection, this->ghosts[ghostNum]);
+
+//    bool hasMoved= false;
+//    while(!hasMoved){
+//        hasMoved = ghostMove(this->ghosts[ghostNum]->nextDirection, this->ghosts[ghostNum]);
+//    }
 }
 
 bool Map::ghostMove(Direction direction, Ghost *ghost){
@@ -270,8 +272,8 @@ bool Map::ghostMove(Direction direction, Ghost *ghost){
     int x2 = ghost->x2;
     int y1 = ghost->y1;
     int y2 = ghost->y2;
-    Field *FirstCorner;
-    Field *SecondCorner;
+    Field *FirstCorner = nullptr;
+    Field *SecondCorner = nullptr;
 
     switch (direction){
     case Direction::UP:
@@ -291,6 +293,7 @@ bool Map::ghostMove(Direction direction, Ghost *ghost){
         x2 -= 1;
         FirstCorner = this->getField(x1,y1);
         SecondCorner = this->getField(x1,y2);
+
         break;
     case Direction::RIGHT:
         x1 += 1;
@@ -298,13 +301,19 @@ bool Map::ghostMove(Direction direction, Ghost *ghost){
         FirstCorner = this->getField(x2,y1);
         SecondCorner = this->getField(x2,y2);
         break;
+    case Direction::STOP:
+        break;
+    }
+
+    if (FirstCorner == nullptr && SecondCorner == nullptr) {
+        return false;
     }
 
     if(FirstCorner->type == WALL || SecondCorner->type == WALL){
-        std::srand(std::time(nullptr));
 
         // Generate a random number between 0 and 3
         int ghostDirection = std::rand() % 4;
+
         ghost->nextDirection = static_cast<Direction>(ghostDirection);
         return false;
     }
@@ -329,8 +338,8 @@ bool Map::pacmanMove(Direction direction){
         int x2 = this->pacman->x2;
         int y1 = this->pacman->y1;
         int y2 = this->pacman->y2;
-        Field *FirstCorner;
-        Field *SecondCorner;
+        Field *FirstCorner = nullptr;
+        Field *SecondCorner = nullptr;
 
         switch (direction){
         case Direction::UP:
@@ -359,7 +368,7 @@ bool Map::pacmanMove(Direction direction){
             SecondCorner = this->getField(x2,y2);
             break;
         case Direction::STOP:
-            break;
+            return false;
     }
   
     if (FirstCorner == nullptr && SecondCorner == nullptr) {
@@ -367,7 +376,7 @@ bool Map::pacmanMove(Direction direction){
     }
 
     // qDebug() << FirstCorner->type<< " " << SecondCorner->type ;
-    if (FirstCorner->type == WALL && SecondCorner->type == WALL) {
+    if (FirstCorner->type == WALL or SecondCorner->type == WALL) {
         // viem ze tam je stena
     } else if (FirstCorner->type == PATH && SecondCorner->type == PATH) {
 

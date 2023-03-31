@@ -119,25 +119,24 @@ void MainWindow::start() {
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-
     // Handle the key press event
     switch (event->key()) {
     case Qt::Key_Up:
-        this->mapObject->pacman->nextDirection = Direction::UP;
+        this->mapObject->pacman->setNextDirection(Direction::UP);
         break;
     case Qt::Key_Down:
-        this->mapObject->pacman->nextDirection = Direction::DOWN;
+        this->mapObject->pacman->setNextDirection(Direction::DOWN);
         break;
     case Qt::Key_Left:
-        this->mapObject->pacman->nextDirection = Direction::LEFT;
+        this->mapObject->pacman->setNextDirection(Direction::LEFT);
         break;
     case Qt::Key_Right:
-        this->mapObject->pacman->nextDirection = Direction::RIGHT;
+        this->mapObject->pacman->setNextDirection (Direction::RIGHT);
         break;
     default:
         break;
     }
-       qDebug() << "Key pressed!";
+    qDebug() << "Key pressed!";
 }
 
 /*** End of mainwidow.cpp ***/

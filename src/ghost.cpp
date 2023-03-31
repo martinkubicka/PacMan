@@ -19,7 +19,7 @@ Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QS
 
     ghostItem = new QGraphicsPixmapItem(QPixmap::fromImage(ghostImage));
     ghostItem->setPos(x1, y1);
-
+    this->ghostItem->setZValue(1);
     scene->addItem(ghostItem);
 }
 

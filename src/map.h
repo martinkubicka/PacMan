@@ -31,7 +31,7 @@
 #define HEIGHT 700 // height of window
 #define WIDTH 700 // width of window
 #define DELAY 10 // move DELAY pacman
-
+#define DELAYGHOST 15 // move DELAY ghost
 /**
  * @brief Class used to create map.
  */
@@ -85,7 +85,7 @@ private:
     Ghost *ghost;
     Key *key;
     QTimer *pacman_timer;
-    QTimer *ghost_timer;
+    QTimer *ghost_timer[];
 
     void gameEnd();
     bool pacmanMove(Direction direction);
