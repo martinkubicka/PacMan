@@ -35,6 +35,8 @@ public:
     explicit Ghost(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, Map *map = nullptr, QString srcPath = "");
     void move(int x, int y);
     Direction nextDirection = Direction::UP;
+private:
+    QGraphicsPixmapItem *ghostItem;
 };
 
 #endif // GHOST_H

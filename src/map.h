@@ -89,7 +89,7 @@ private:
 
     void gameEnd();
     bool pacmanMove(Direction direction);
-    bool ghostMove(Direction direction, Ghost *ghost);
+    bool ghostMove(Ghost *ghost);
 
 
     // methods

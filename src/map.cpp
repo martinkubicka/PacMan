@@ -100,6 +100,7 @@ Field* Map::getField(int x, int y) {
     if (pacman->x1 <= x && x <= pacman->x2 && pacman->y1 <= y && y <= pacman->y2) {
         return pacman;
     }
+    return nullptr;
 }
 
 void Map::getSizeOfBlock() {
@@ -258,24 +259,22 @@ void Map::pacmanHandler()
 }
 
 void Map::ghostHandler(int ghostNum){
-    // qDebug() << "Ghost Moved!";
-    bool hasMoved = ghostMove(this->ghosts[ghostNum]->nextDirection, this->ghosts[ghostNum]);
+    // Ghost& ghost = ghosts.at(ghostNum);
+    // convert int to uint 
 
-//    bool hasMoved= false;
-//    while(!hasMoved){
-//        hasMoved = ghostMove(this->ghosts[ghostNum]->nextDirection, this->ghosts[ghostNum]);
-//    }
+    bool hasMoved = ghostMove( ghosts.at(static_cast<uint>(ghostNum)) );
 }
 
-bool Map::ghostMove(Direction direction, Ghost *ghost){
+bool Map::ghostMove( Ghost *ghost){
+
     int x1 = ghost->x1;
     int x2 = ghost->x2;
     int y1 = ghost->y1;
     int y2 = ghost->y2;
-    Field *FirstCorner = nullptr;
-    Field *SecondCorner = nullptr;
+    Field *FirstCorner = this->getField(x1,y1);;
+    Field *SecondCorner = this->getField(x1,y1);;
 
-    switch (direction){
+    switch (ghost->nextDirection){
     case Direction::UP:
         y1 -= 1;
         y2 -= 1;
@@ -305,25 +304,31 @@ bool Map::ghostMove(Direction direction, Ghost *ghost){
         break;
     }
 
-    if (FirstCorner == nullptr && SecondCorner == nullptr) {
+    if (FirstCorner == nullptr or SecondCorner == nullptr) {
         return false;
     }
 
-    if(FirstCorner->type == WALL || SecondCorner->type == WALL){
+    //todo there is a problem with the pacman position at start how to edit every step position of pacman on map or maybe dont
+    if(FirstCorner->type == PATH && SecondCorner->type == PATH){
+
+        ghost->x1 = x1;
+        ghost->x2 = x2;
+        ghost->y1 = y1;
+        ghost->y2 = y2;
+        ghost->move(x1,y1);
+        // qDebug() << "ghost turn!";
+        // qDebug() << "x1: " << x1 << " y1: " << y1;
+
+        return true;
+    }
+    else{
+        qDebug() << "WALL";
 
         // Generate a random number between 0 and 3
         int ghostDirection = std::rand() % 4;
 
         ghost->nextDirection = static_cast<Direction>(ghostDirection);
         return false;
-    }
-    else{
-        this->ghost->x1 = x1;
-        this->ghost->x2 = x2;
-        this->ghost->y1 = y1;
-        this->ghost->y2 = y2;
-        this->ghost->move(x1,y1);
-        return true;
     }
 }
 
