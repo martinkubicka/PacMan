@@ -107,14 +107,13 @@ Field* Map::getField(int x, int y) {
 // todo find the key in the vector and delete it
 // todo set this field to path
 void Map::deleteKey(int x, int y){
-    // for (auto keyI : keys) { // have to check keys before paths (keys above paths)
-    //     if (keyI->x1 <= x && x <= keyI->x2 && keyI->y1 <= y && y <= keyI->y2) {
-    //         this->keys.erase(keyI);
-    //     }
-    // }
-
-    //set this field to path
-    // paths.push_back(new Path(scene, x, y, this->sizeOfBlock, this, srcPath));
+    auto it = std::find_if(keys.begin(), keys.end(), [x, y](Key* keyI) {
+        return keyI->x1 <= x && x <= keyI->x2 && keyI->y1 <= y && y <= keyI->y2;
+    });
+    if (it != keys.end()) {
+        delete *it; // delete the object
+        keys.erase(it); // remove the element from the vector
+    }
 }
 
 void Map::getSizeOfBlock() {
