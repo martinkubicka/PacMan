@@ -277,8 +277,8 @@ bool Map::ghostMove( Ghost *ghost){
     int x2 = ghost->x2;
     int y1 = ghost->y1;
     int y2 = ghost->y2;
-    Field *FirstCorner = this->getField(x1,y1);;
-    Field *SecondCorner = this->getField(x1,y1);;
+    Field *FirstCorner = this->getField(x1,y1);
+    Field *SecondCorner = this->getField(x1,y1);
 
     switch (ghost->nextDirection){
     case Direction::UP:
