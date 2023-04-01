@@ -68,7 +68,7 @@ public:
     Field* getField(int x, int y);
     void Start();
     void gameStart();
-
+    void deleteKey(int x, int y);
 private slots:
     void pacmanHandler();
     void ghostHandler(int ghostNum);

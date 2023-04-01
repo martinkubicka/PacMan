@@ -74,7 +74,7 @@ bool Ghost::ghostMove( Ghost *ghost){
     }
 
     //todo there is a problem with the pacman position at start how to edit every step position of pacman on map or maybe dont
-    if(FirstCorner->type == PATH && SecondCorner->type == PATH){
+    if(FirstCorner->type == PATH && SecondCorner->type == PATH or FirstCorner->type == KEY && SecondCorner->type == KEY){
 
         ghost->x1 = x1;
         ghost->x2 = x2;
@@ -87,7 +87,7 @@ bool Ghost::ghostMove( Ghost *ghost){
         return true;
     }
     else{
-        qDebug() << "WALL";
+        // qDebug() << "WALL";
 
         // Generate a random number between 0 and 3
         int ghostDirection = std::rand() % 4;

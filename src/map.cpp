@@ -104,6 +104,19 @@ Field* Map::getField(int x, int y) {
     return nullptr;
 }
 
+// todo find the key in the vector and delete it
+// todo set this field to path
+void Map::deleteKey(int x, int y){
+    // for (auto keyI : keys) { // have to check keys before paths (keys above paths)
+    //     if (keyI->x1 <= x && x <= keyI->x2 && keyI->y1 <= y && y <= keyI->y2) {
+    //         this->keys.erase(keyI);
+    //     }
+    // }
+
+    //set this field to path
+    // paths.push_back(new Path(scene, x, y, this->sizeOfBlock, this, srcPath));
+}
+
 void Map::getSizeOfBlock() {
     try {
         this->x = std::stoi(this->getWord()); // get x size from map file

@@ -85,9 +85,12 @@ bool Pacman::pacmanMove(Direction direction){
         return true;
         // chodnik
     } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
-
+        qDebug() << "key";
+        this->keysEaten += 1;
+        //delete key from map
+        this->map->deleteKey(x1,y1);
     } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
-
+        qDebug() << "pacman died";
     } else if(FirstCorner->type == END && SecondCorner->type == END){
 
     }else{

@@ -24,7 +24,8 @@ class Pacman : public Field {
 public:
     Direction direction = Direction::STOP;
     Direction nextDirection = Direction::STOP;
-
+    
+    int keysEaten = 0;
     /**
      * @brief Constructructor of Pacman object.
      * 
