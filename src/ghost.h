@@ -33,8 +33,11 @@ public:
      * @param srcPath src directory path
      */
     explicit Ghost(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, Map *map = nullptr, QString srcPath = "");
-    void move(int x, int y);
     Direction nextDirection = Direction::UP;
+    
+    void move(int x, int y);
+    bool ghostMove(Ghost *ghost);
+
 private:
     QGraphicsPixmapItem *ghostItem;
 };

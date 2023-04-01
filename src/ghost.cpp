@@ -30,4 +30,71 @@ void Ghost::move(int x, int y){
 //    this->scene->addItem(pathItem);
 }
 
+bool Ghost::ghostMove( Ghost *ghost){
+
+    int x1 = ghost->x1;
+    int x2 = ghost->x2;
+    int y1 = ghost->y1;
+    int y2 = ghost->y2;
+    Field *FirstCorner = this->map->getField(x1,y1);
+    Field *SecondCorner = this->map->getField(x1,y1);
+
+    switch (ghost->nextDirection){
+    case Direction::UP:
+        y1 -= 1;
+        y2 -= 1;
+        FirstCorner = this->map->getField(x1,y1);
+        SecondCorner = this->map->getField(x2,y1);
+        break;
+    case Direction::DOWN:
+        y1 += 1;
+        y2 += 1;
+        FirstCorner = this->map->getField(x1,y2);
+        SecondCorner = this->map->getField(x2,y2);
+        break;
+    case Direction::LEFT:
+        x1 -= 1;
+        x2 -= 1;
+        FirstCorner = this->map->getField(x1,y1);
+        SecondCorner = this->map->getField(x1,y2);
+
+        break;
+    case Direction::RIGHT:
+        x1 += 1;
+        x2 += 1;
+        FirstCorner = this->map->getField(x2,y1);
+        SecondCorner = this->map->getField(x2,y2);
+        break;
+    case Direction::STOP:
+        break;
+    }
+
+    if (FirstCorner == nullptr or SecondCorner == nullptr) {
+        return false;
+    }
+
+    //todo there is a problem with the pacman position at start how to edit every step position of pacman on map or maybe dont
+    if(FirstCorner->type == PATH && SecondCorner->type == PATH){
+
+        ghost->x1 = x1;
+        ghost->x2 = x2;
+        ghost->y1 = y1;
+        ghost->y2 = y2;
+        ghost->move(x1,y1);
+        // qDebug() << "ghost turn!";
+        // qDebug() << "x1: " << x1 << " y1: " << y1;
+
+        return true;
+    }
+    else{
+        qDebug() << "WALL";
+
+        // Generate a random number between 0 and 3
+        int ghostDirection = std::rand() % 4;
+
+        ghost->nextDirection = static_cast<Direction>(ghostDirection);
+        return false;
+    }
+}
+
 /*** End of ghost.cpp ***/

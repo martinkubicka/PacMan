@@ -5,12 +5,10 @@
 - chceme aby pacman pri zmacknuti klavesy v protismeru zastavil pacmana? ( <-,->)
 
 ### ghost
-- vytvořit instance ghostu
-- na kazdeho zavolat movement metodu
-- movement
+
 ### bugs
 - po vykliknuti z okna se neda zasilat klavesy a nejde hybat s pacmanem
-- problem kdyz ghost nebo pacman vjede na inicializacni pozici ghosta
+
 ### maps
 - add 2 more maps
 

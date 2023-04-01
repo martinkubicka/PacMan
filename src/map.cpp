@@ -247,169 +247,25 @@ void Map::gameStart()
          connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
         ghost_timer[i]->start(DELAYGHOST);
     }
-
 }
 
 void Map::pacmanHandler()
 {
-    bool hasMoved = pacmanMove(this->pacman->nextDirection);
+    bool hasMoved = this->pacman->pacmanMove(this->pacman->nextDirection);
     if(hasMoved)
     {
         this->pacman->direction = this->pacman->nextDirection;
         return;
     }
 
-    pacmanMove(this->pacman->direction);
+    this->pacman->pacmanMove(this->pacman->direction);
 
     //todo add win state
 }
 
 void Map::ghostHandler(int ghostNum){
-    // Ghost& ghost = ghosts.at(ghostNum);
-    // convert int to uint 
-
-    bool hasMoved = ghostMove( ghosts.at(static_cast<uint>(ghostNum)) );
+    auto ghost = ghosts.at(static_cast<uint>(ghostNum));
+    bool hasMoved = this->ghost->ghostMove(ghost);
 }
-
-bool Map::ghostMove( Ghost *ghost){
-
-    int x1 = ghost->x1;
-    int x2 = ghost->x2;
-    int y1 = ghost->y1;
-    int y2 = ghost->y2;
-    Field *FirstCorner = this->getField(x1,y1);
-    Field *SecondCorner = this->getField(x1,y1);
-
-    switch (ghost->nextDirection){
-    case Direction::UP:
-        y1 -= 1;
-        y2 -= 1;
-        FirstCorner = this->getField(x1,y1);
-        SecondCorner = this->getField(x2,y1);
-        break;
-    case Direction::DOWN:
-        y1 += 1;
-        y2 += 1;
-        FirstCorner = this->getField(x1,y2);
-        SecondCorner = this->getField(x2,y2);
-        break;
-    case Direction::LEFT:
-        x1 -= 1;
-        x2 -= 1;
-        FirstCorner = this->getField(x1,y1);
-        SecondCorner = this->getField(x1,y2);
-
-        break;
-    case Direction::RIGHT:
-        x1 += 1;
-        x2 += 1;
-        FirstCorner = this->getField(x2,y1);
-        SecondCorner = this->getField(x2,y2);
-        break;
-    case Direction::STOP:
-        break;
-    }
-
-    if (FirstCorner == nullptr or SecondCorner == nullptr) {
-        return false;
-    }
-
-    //todo there is a problem with the pacman position at start how to edit every step position of pacman on map or maybe dont
-    if(FirstCorner->type == PATH && SecondCorner->type == PATH){
-
-        ghost->x1 = x1;
-        ghost->x2 = x2;
-        ghost->y1 = y1;
-        ghost->y2 = y2;
-        ghost->move(x1,y1);
-        // qDebug() << "ghost turn!";
-        // qDebug() << "x1: " << x1 << " y1: " << y1;
-
-        return true;
-    }
-    else{
-        qDebug() << "WALL";
-
-        // Generate a random number between 0 and 3
-        int ghostDirection = std::rand() % 4;
-
-        ghost->nextDirection = static_cast<Direction>(ghostDirection);
-        return false;
-    }
-}
-
-bool Map::pacmanMove(Direction direction){
-
-    //postup:   1. Kontrola zda muzu do daneho smeru
-    //          2. cyklus kde budu posouvat pacmana dokud nenarazi na zed
-    //          3.
-    //qDebug() << "pacman move!";
-
-        int x1 = this->pacman->x1;
-        int x2 = this->pacman->x2;
-        int y1 = this->pacman->y1;
-        int y2 = this->pacman->y2;
-        Field *FirstCorner = nullptr;
-        Field *SecondCorner = nullptr;
-
-        switch (direction){
-        case Direction::UP:
-            y1 -= 1;
-            y2 -= 1;
-            FirstCorner = this->getField(x1,y1);
-            SecondCorner = this->getField(x2,y1);
-            break;
-        case Direction::DOWN:
-            y1 += 1;
-            y2 += 1;
-            FirstCorner = this->getField(x1,y2);
-            SecondCorner = this->getField(x2,y2);
-            break;
-        case Direction::LEFT:
-            x1 -= 1;
-            x2 -= 1;
-            FirstCorner = this->getField(x1,y1);
-            SecondCorner = this->getField(x1,y2);
-
-            break;
-        case Direction::RIGHT:
-            x1 += 1;
-            x2 += 1;
-            FirstCorner = this->getField(x2,y1);
-            SecondCorner = this->getField(x2,y2);
-            break;
-        case Direction::STOP:
-            return false;
-    }
-  
-    if (FirstCorner == nullptr && SecondCorner == nullptr) {
-        return false;
-    }
-
-    // qDebug() << FirstCorner->type<< " " << SecondCorner->type ;
-    if (FirstCorner->type == WALL or SecondCorner->type == WALL) {
-        // viem ze tam je stena
-    } else if (FirstCorner->type == PATH && SecondCorner->type == PATH) {
-
-        this->pacman->x1 = x1;
-        this->pacman->x2 = x2;
-        this->pacman->y1 = y1;
-        this->pacman->y2 = y2;
-        this->pacman->move(x1,y1);
-        return true;
-        // chodnik
-    } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
-
-    } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
-
-    } else if(FirstCorner->type == END && SecondCorner->type == END){
-
-    }else{
-
-    }
-    return false;
-    
-}
-
 
 /*** End of map.cpp ***/

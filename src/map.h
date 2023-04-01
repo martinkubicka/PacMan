@@ -88,9 +88,6 @@ private:
     QTimer *ghost_timer[];
 
     void gameEnd();
-    bool pacmanMove(Direction direction);
-    bool ghostMove(Ghost *ghost);
-
 
     // methods
 
