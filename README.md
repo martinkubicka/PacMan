@@ -1,10 +1,14 @@
 # TODO
 ### pacman
-- keys
-- game over -> narazeni do ghosta
-- chceme aby pacman pri zmacknuti klavesy v protismeru zastavil pacmana? ( <-,->)
+- naprogramovat aby kdyz se zmackla mys tak aby pacman dojel na pozici kde se kliklo
+    -A* / nejaky podobny algoritmus -> bude to v pacman handler pak volani pacman move 
+- update pozice pacmana aby pak ghost kdyz do nej narazi ukoncila se hra
+- game over je pripraven uz jen staci naimplementovat metodu ktera vyhodi ze je konec hry a okno
+- win je pripraven jen staci vytvorit okno(funguje to uz i na to aby pacman sesbiral vsechny keys)
 
 ### ghost
+- doresit pohyb pacmana -> slo by zvolit taky A* 
+- jeste nefunguje ze kdyz narazi ghost do pacmana tak konec hry, ale opacne to funguje -> duvod je ze pacman neupdatuje svoji pozici pri kazdym pohybu
 
 ### bugs
 - po vykliknuti z okna se neda zasilat klavesy a nejde hybat s pacmanem
@@ -12,6 +16,13 @@
 ### maps
 - add 2 more maps
 
+### interaktivni veci
+- zivoty
+- score
+
+### logovani
+
+---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # PacMan
 
 ## Všeobecné informácie
