@@ -74,15 +74,9 @@ bool Pacman::pacmanMove(Direction direction){
     }
 
     if (FirstCorner->type == WALL or SecondCorner->type == WALL) {
+        return false;
         // viem ze tam je stena
     } else if (FirstCorner->type == PATH && SecondCorner->type == PATH) {
-
-        this->x1 = x1;
-        this->x2 = x2;
-        this->y1 = y1;
-        this->y2 = y2;
-        move(x1,y1);
-        return true;
         // chodnik
     } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
         qDebug() << "key";
@@ -92,11 +86,20 @@ bool Pacman::pacmanMove(Direction direction){
     } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
         qDebug() << "pacman died";
     } else if(FirstCorner->type == END && SecondCorner->type == END){
-
+        if(this->map->numberOfKeysLeft == 0){
+            qDebug() << "pacman won";
+            return true;
+        }
     }else{
-
+        return false;
     }
-    return false;
+    
+    this->x1 = x1;
+    this->x2 = x2;
+    this->y1 = y1;
+    this->y2 = y2;
+    move(x1,y1);
+    return true;
 }
 
     /*** End of pacman.cpp ***/
