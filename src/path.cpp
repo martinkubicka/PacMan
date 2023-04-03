@@ -14,10 +14,10 @@ Path::Path(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QStr
     QImage pathImage(srcPath + "/images/path.png");
     pathImage = pathImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 
-    QGraphicsPixmapItem* pathItem = new QGraphicsPixmapItem(QPixmap::fromImage(pathImage));
-    pathItem->setPos(x1, y1);
+    this->item = new QGraphicsPixmapItem(QPixmap::fromImage(pathImage));
+    item->setPos(x1, y1);
 
-    scene->addItem(pathItem);
+    scene->addItem(item);
 }
 
 /*** End of path.cpp ***/

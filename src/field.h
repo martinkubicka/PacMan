@@ -29,7 +29,7 @@ class Map;
  */
 class Field : public QWidget {
 public:
-    QGraphicsPixmapItem* pcm;
+    QGraphicsPixmapItem* item;
     int x1, y1, x2, y2; /** Field object position attributes */
     Map *map; /** pointer to map */
     FieldType type; /** Type of field */

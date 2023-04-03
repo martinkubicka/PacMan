@@ -37,9 +37,6 @@ public:
     
     void move(int x, int y);
     bool ghostMove(Ghost *ghost);
-
-private:
-    QGraphicsPixmapItem *ghostItem;
 };
 
 #endif // GHOST_H

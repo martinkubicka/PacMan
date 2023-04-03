@@ -14,10 +14,10 @@ Key::Key(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QStrin
     QImage keyImage(srcPath + "/images/key.png");
     keyImage = keyImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 
-    QGraphicsPixmapItem* keyItem = new QGraphicsPixmapItem(QPixmap::fromImage(keyImage));
-    keyItem->setPos(x1, y1);
+    item = new QGraphicsPixmapItem(QPixmap::fromImage(keyImage));
+    item->setPos(x1, y1);
 
-    scene->addItem(keyItem);
+    scene->addItem(item);
 }
 
 /*** End of key.cpp ***/

@@ -17,10 +17,10 @@ Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, 
     pacmanImage = pacmanImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
     // this->scene = scene; // to mi dava err tak som zakomentoval
 
-    this->pcm = new QGraphicsPixmapItem(QPixmap::fromImage(pacmanImage));
-    this->pcm->setZValue(1);
-    pcm->setPos(x1, y1);
-    scene->addItem(pcm);
+    this->item = new QGraphicsPixmapItem(QPixmap::fromImage(pacmanImage));
+    this->item->setZValue(1);
+    item->setPos(x1, y1);
+    scene->addItem(item);
 }
 
 void Pacman::setNextDirection(Direction dir){
@@ -28,7 +28,7 @@ void Pacman::setNextDirection(Direction dir){
 }
 
 void Pacman::move(int x, int y){
-    pcm->setPos(x, y);
+    item->setPos(x, y);
 }
 
 bool Pacman::pacmanMove(Direction direction){
@@ -86,9 +86,9 @@ bool Pacman::pacmanMove(Direction direction){
         // chodnik
     } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
         qDebug() << "key";
-        this->keysEaten += 1;
+        this->map->numberOfKeysLeft--;
         //delete key from map
-        this->map->deleteKey(x1,y1);
+        this->map->deleteKey(FirstCorner);
     } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
         qDebug() << "pacman died";
     } else if(FirstCorner->type == END && SecondCorner->type == END){

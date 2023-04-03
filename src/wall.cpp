@@ -14,10 +14,10 @@ Wall::Wall(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map ,QStr
     QImage wallImage(srcPath + "/images/wall.png");
     wallImage = wallImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 
-    QGraphicsPixmapItem* wallItem = new QGraphicsPixmapItem(QPixmap::fromImage(wallImage));
-    wallItem->setPos(x1, y1);
+    this->item = new QGraphicsPixmapItem(QPixmap::fromImage(wallImage));
+    item->setPos(x1, y1);
 
-    scene->addItem(wallItem);
+    scene->addItem(item);
 }
 
 /*** End of wall.cpp ***/

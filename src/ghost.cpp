@@ -17,14 +17,14 @@ Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QS
     QImage ghostImage(srcPath + "/images/ghost.png");
     ghostImage = ghostImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 
-    ghostItem = new QGraphicsPixmapItem(QPixmap::fromImage(ghostImage));
-    ghostItem->setPos(x1, y1);
-    this->ghostItem->setZValue(1);
-    scene->addItem(ghostItem);
+    this->item = new QGraphicsPixmapItem(QPixmap::fromImage(ghostImage));
+    item->setPos(x1, y1);
+    this->item->setZValue(1);
+    scene->addItem(item);
 }
 
 void Ghost::move(int x, int y){
-    ghostItem->setPos(x, y);
+    item->setPos(x, y);
 
     // Field *f = this->map->getField(0, 0);
 //    this->scene->addItem(pathItem);

@@ -17,7 +17,7 @@ Map::Map(QWidget *parent, std::string map, QString srcPath) : QWidget(parent) {
 
     parent->setStyleSheet("background-color: black;");
 
-    QGraphicsScene *scene = this->createScene();
+    scene = this->createScene();
 
     this->createMap(scene, srcPath);
 
@@ -106,13 +106,14 @@ Field* Map::getField(int x, int y) {
 
 // todo find the key in the vector and delete it
 // todo set this field to path
-void Map::deleteKey(int x, int y){
-    auto it = std::find_if(keys.begin(), keys.end(), [x, y](Key* keyI) {
-        return keyI->x1 <= x && x <= keyI->x2 && keyI->y1 <= y && y <= keyI->y2;
-    });
-    if (it != keys.end()) {
-        delete *it; // delete the object
-        keys.erase(it); // remove the element from the vector
+void Map::deleteKey(Field *key){
+    // delete from ui
+    this->scene->removeItem(key->item);
+
+    // delete key from arr
+    auto index = std::find(this->keys.begin(), this->keys.end(), key);
+    if (index != this->keys.end()) {
+        this->keys.erase(index);
     }
 }
 

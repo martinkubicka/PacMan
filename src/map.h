@@ -45,6 +45,8 @@ public:
     std::vector<Key *> keys;
     Pacman *pacman;
     End *end;
+
+    int numberOfKeysLeft = 0; /** auxiliary counter which helps us to know how many keys are left on map */
     
     /**
      * @brief Constructor of Map object
@@ -68,7 +70,7 @@ public:
     Field* getField(int x, int y);
     void Start();
     void gameStart();
-    void deleteKey(int x, int y);
+    void deleteKey(Field *key);
 private slots:
     void pacmanHandler();
     void ghostHandler(int ghostNum);
@@ -77,8 +79,9 @@ private:
     // attributes
     std::ifstream file; /** file with map */
     int sizeOfBlock; /** size in px of one block (path, pacman, wall..) */
-    int numberOfKeysLeft = 0; /** auxiliary counter which helps us to know how many keys are left on map */
     int x, y; /** map resolution (number of blocks) */
+
+    QGraphicsScene *scene;
 
     Wall *wall;
     Path *path;

@@ -14,10 +14,10 @@ End::End(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QStrin
     QImage endImage(srcPath + "/images/end.png");
     endImage = endImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 
-    QGraphicsPixmapItem* endItem = new QGraphicsPixmapItem(QPixmap::fromImage(endImage));
-    endItem->setPos(x1, y1);
+    this->item = new QGraphicsPixmapItem(QPixmap::fromImage(endImage));
+    item->setPos(x1, y1);
 
-    scene->addItem(endItem);
+    scene->addItem(item);
 }
 
 /*** End of end.cpp ***/
