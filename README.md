@@ -21,6 +21,7 @@
 - score - MARTIN
 
 ### logovani + prehravanie 
+- logovanie + prehravanie - MARTIN
 
 ### Ostatne
 - spojite bloky - MARTIN 
