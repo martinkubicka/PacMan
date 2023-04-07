@@ -2,25 +2,37 @@
 ### pacman
 - naprogramovat aby kdyz se zmackla mys tak aby pacman dojel na pozici kde se kliklo
     -A* / nejaky podobny algoritmus -> bude to v pacman handler pak volani pacman move 
-- update pozice pacmana aby pak ghost kdyz do nej narazi ukoncila se hra
-- game over je pripraven uz jen staci naimplementovat metodu ktera vyhodi ze je konec hry a okno
-- win je pripraven jen staci vytvorit okno(funguje to uz i na to aby pacman sesbiral vsechny keys)
+- update pozice pacmana aby pak ghost kdyz do nej narazi ukoncila se hra - MARTIN
+- game over je pripraven uz jen staci naimplementovat metodu ktera vyhodi ze je konec hry a okno - MARTIN
+- win je pripraven jen staci vytvorit okno(funguje to uz i na to aby pacman sesbiral vsechny keys) - MARTIN
 
 ### ghost
 - doresit pohyb pacmana -> slo by zvolit taky A* 
-- jeste nefunguje ze kdyz narazi ghost do pacmana tak konec hry, ale opacne to funguje -> duvod je ze pacman neupdatuje svoji pozici pri kazdym pohybu
+- jeste nefunguje ze kdyz narazi ghost do pacmana tak konec hry, ale opacne to funguje -> duvod je ze pacman neupdatuje svoji pozici pri kazdym pohybu - MARTIN
 
 ### bugs
-- po vykliknuti z okna se neda zasilat klavesy a nejde hybat s pacmanem
+- po vykliknuti z okna se neda zasilat klavesy a nejde hybat s pacmanem - MARTIN
 
 ### maps
 - add 2 more maps
 
 ### interaktivni veci
-- zivoty
-- score
+- zivoty - MARTIN
+- score - MARTIN
 
-### logovani
+### logovani + prehravanie 
+
+### Ostatne
+- spojite bloky - MARTIN 
+- ked spustim zo /src tak sa nenajdu grafiky - MARTIN
+- velkost pisma na mainpage je zly na inych platformach - MARTIN
+
+- spustit ako ./pacman -> spravit spravny makefile (make, make clean, make run, make pack, make doxygen)
+- warningy fixnut??
+- komentare
+- dokumentacia -> doxygen (make doxygen)
+- skusit ci funguje na linuxe aj na windowse
+- README.txt
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # PacMan
