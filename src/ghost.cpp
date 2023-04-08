@@ -36,34 +36,34 @@ bool Ghost::ghostMove( Ghost *ghost){
     int x2 = ghost->x2;
     int y1 = ghost->y1;
     int y2 = ghost->y2;
-    Field *FirstCorner = this->map->getField(x1,y1);
-    Field *SecondCorner = this->map->getField(x1,y1);
+    Field *FirstCorner = this->map->getField(x1,y1, GHOST);
+    Field *SecondCorner = this->map->getField(x1,y1, GHOST);
 
     switch (ghost->nextDirection){
     case Direction::UP:
         y1 -= 1;
         y2 -= 1;
-        FirstCorner = this->map->getField(x1,y1);
-        SecondCorner = this->map->getField(x2,y1);
+        FirstCorner = this->map->getField(x1,y1, GHOST);
+        SecondCorner = this->map->getField(x2,y1, GHOST);
         break;
     case Direction::DOWN:
         y1 += 1;
         y2 += 1;
-        FirstCorner = this->map->getField(x1,y2);
-        SecondCorner = this->map->getField(x2,y2);
+        FirstCorner = this->map->getField(x1,y2, GHOST);
+        SecondCorner = this->map->getField(x2,y2, GHOST);
         break;
     case Direction::LEFT:
         x1 -= 1;
         x2 -= 1;
-        FirstCorner = this->map->getField(x1,y1);
-        SecondCorner = this->map->getField(x1,y2);
+        FirstCorner = this->map->getField(x1,y1, GHOST);
+        SecondCorner = this->map->getField(x1,y2, GHOST);
 
         break;
     case Direction::RIGHT:
         x1 += 1;
         x2 += 1;
-        FirstCorner = this->map->getField(x2,y1);
-        SecondCorner = this->map->getField(x2,y2);
+        FirstCorner = this->map->getField(x2,y1, GHOST);
+        SecondCorner = this->map->getField(x2,y2, GHOST);
         break;
     case Direction::STOP:
         break;

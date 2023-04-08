@@ -67,7 +67,7 @@ public:
      * 
      * @return T Wall|Path|End|Ghost|Pacman|Key pointer object
      */
-    Field* getField(int x, int y);
+    Field* getField(int x, int y, FieldType calledBy);
     void Start();
     void gameStart();
     void deleteKey(Field *key);

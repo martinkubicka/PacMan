@@ -68,10 +68,18 @@ std::string Map::getWord() {
     return word;
 }
 
-Field* Map::getField(int x, int y) {
-    for (auto ghostI : ghosts) {
-        if (ghostI->x1 <= x && x <= ghostI->x2 && ghostI->y1 <= y && y <= ghostI->y2) {
-            return ghostI;
+Field* Map::getField(int x, int y, FieldType calledBy) {
+    if (calledBy == GHOST) {
+        if (pacman->x1 <= x && x <= pacman->x2 && pacman->y1 <= y && y <= pacman->y2) {
+            return pacman;
+        }
+    }
+
+    if (calledBy == PACMAN) {
+        for (auto ghostI : ghosts) {
+            if (ghostI->x1 <= x && x <= ghostI->x2 && ghostI->y1 <= y && y <= ghostI->y2) {
+                return ghostI;
+            }
         }
     }
 
@@ -95,10 +103,6 @@ Field* Map::getField(int x, int y) {
 
     if (end->x1 <= x && x <= end->x2 && end->y1 <= y && y <= end->y2) {
         return end;
-    }
-
-    if (pacman->x1 <= x && x <= pacman->x2 && pacman->y1 <= y && y <= pacman->y2) {
-        return pacman;
     }
 
     return nullptr;
