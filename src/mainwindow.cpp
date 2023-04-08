@@ -19,7 +19,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     // set background image
     QString backgroundPath = "background-image:url(%1%2)";
-    this->setStyleSheet(backgroundPath.arg(this->srcPath, "/images/background.jpg"));
+    this->setStyleSheet(backgroundPath.arg(this->srcPath, "/images/background.jpg"));    
 
     // create objects
     this->createChooseMapLabel();
@@ -119,24 +119,24 @@ void MainWindow::start() {
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
+        qDebug() << "Key pressed!"; // TODO na vsetky ostatne keys to reaguje po vykliknuti
     // Handle the key press event
     switch (event->key()) {
-    case Qt::Key_Up:
+    case Qt::Key_W:
         this->mapObject->pacman->setNextDirection(Direction::UP);
         break;
-    case Qt::Key_Down:
+    case Qt::Key_S:
         this->mapObject->pacman->setNextDirection(Direction::DOWN);
         break;
-    case Qt::Key_Left:
+    case Qt::Key_A:
         this->mapObject->pacman->setNextDirection(Direction::LEFT);
         break;
-    case Qt::Key_Right:
+    case Qt::Key_D:
         this->mapObject->pacman->setNextDirection (Direction::RIGHT);
         break;
     default:
         break;
     }
-    qDebug() << "Key pressed!";
 }
 
 /*** End of mainwidow.cpp ***/

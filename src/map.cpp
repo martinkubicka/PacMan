@@ -104,8 +104,6 @@ Field* Map::getField(int x, int y) {
     return nullptr;
 }
 
-// todo find the key in the vector and delete it
-// todo set this field to path
 void Map::deleteKey(Field *key){
     // delete from ui
     this->scene->removeItem(key->item);
