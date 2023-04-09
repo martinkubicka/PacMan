@@ -26,12 +26,16 @@
 #include "customgraphicsview.h"
 #include <QTimer>
 #include <QDebug>
+#include "endgamewindow.h"
 
 #define EDGE_OFFSET 20 // offset which prevents creating map at [0, 0] etc..
 #define HEIGHT 700 // height of window
 #define WIDTH 700 // width of window
 #define DELAY 10 // move DELAY pacman
 #define DELAYGHOST 15 // move DELAY ghost
+
+class MainWindow;
+
 /**
  * @brief Class used to create map.
  */
@@ -46,6 +50,12 @@ public:
     Pacman *pacman;
     End *end;
 
+    MainWindow *mainwindow;
+    QGraphicsScene *scene;
+
+    int score = 0;
+    int numberOfLives = 3;
+
     int numberOfKeysLeft = 0; /** auxiliary counter which helps us to know how many keys are left on map */
     
     /**
@@ -55,7 +65,7 @@ public:
      * @param map map file string
      * @param srcPath src directory path
      */
-    explicit Map(QWidget *parent = nullptr, std::string map = "map01.txt", QString srcPath = "");
+    explicit Map(MainWindow *parent = nullptr, std::string map = "map01.txt", QString srcPath = "");
     
     ~Map();
 
@@ -71,6 +81,9 @@ public:
     void Start();
     void gameStart();
     void deleteKey(Field *key);
+    void handleWin();
+    void deleteAll();
+    void handleGameOver();
 private slots:
     void pacmanHandler();
     void ghostHandler(int ghostNum);
@@ -80,8 +93,6 @@ private:
     std::ifstream file; /** file with map */
     int sizeOfBlock; /** size in px of one block (path, pacman, wall..) */
     int x, y; /** map resolution (number of blocks) */
-
-    QGraphicsScene *scene;
 
     Wall *wall;
     Path *path;

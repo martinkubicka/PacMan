@@ -38,6 +38,7 @@ public:
 
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
+    void createUi();
 
 private:
     std::string map; // selected map
@@ -74,9 +75,9 @@ private slots:
      * @param mapName map name
      */
     void setMap(const QString &mapName);
-
+public slots:
     /**
-     * @brief Function which reacts when start button is clicked. 
+     * @brief Function which reacts when start button is clicked.
               Function creates selected map.
      */
     void start();

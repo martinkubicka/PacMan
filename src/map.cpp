@@ -10,11 +10,14 @@
 
 #include "map.h"
 
-Map::Map(QWidget *parent, std::string map, QString srcPath) : QWidget(parent) {
+#include "mainwindow.h"
+
+Map::Map(MainWindow *parent, std::string map, QString srcPath) : QWidget(parent) {
     this->openFile(map);
 
     this->getSizeOfBlock();
 
+    this->mainwindow = parent;
     parent->setStyleSheet("background-color: black;");
 
     scene = this->createScene();
@@ -259,7 +262,7 @@ void Map::gameStart()
     for (int i = 0; i < int(ghosts.size()); i++) {
         qDebug() << "Ghost initialized!";
         ghost_timer[i] = new QTimer(this);
-         connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
+        connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
         ghost_timer[i]->start(DELAYGHOST);
     }
 }
@@ -281,6 +284,53 @@ void Map::pacmanHandler()
 void Map::ghostHandler(int ghostNum){
     auto ghost = ghosts.at(static_cast<uint>(ghostNum));
     bool hasMoved = this->ghost->ghostMove(ghost);
+}
+
+void Map::deleteAll() {
+    // Stop all running timers
+    foreach (QTimer* timer, findChildren<QTimer*>()) {
+        timer->stop();
+    }
+
+    this->scene->removeItem(this->pacman->item);
+    delete this->pacman;
+
+    this->scene->removeItem(this->end->item);
+    delete this->end;
+
+    for (auto ghostI : ghosts) {
+        this->scene->removeItem(ghostI->item);
+        delete ghostI;
+    }
+
+    for (auto wallI : walls) {
+        this->scene->removeItem(wallI->item);
+        delete wallI;
+    }
+
+    for (auto keyI : keys) { // have to check keys before paths (keys above paths)
+        this->scene->removeItem(keyI->item);
+        delete keyI;
+    }
+
+    for (auto pathI : paths) {
+        this->scene->removeItem(pathI->item);
+        delete pathI;
+    }
+}
+
+void Map::handleWin() {
+    this->deleteAll();
+    EndGameWindow(this->mainwindow, WIN);
+}
+
+void Map::handleGameOver() {
+    --this->numberOfLives;
+    if (!this->numberOfLives) {
+        this->deleteAll();
+        EndGameWindow(this->mainwindow, GAMEOVER);
+    }
+
 }
 
 /*** End of map.cpp ***/

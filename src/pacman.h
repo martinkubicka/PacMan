@@ -41,7 +41,6 @@ public:
     void setNextDirection(Direction dir);
     void move(int x,int y);
     bool pacmanMove(Direction direction);
-
 };
 
 #endif // PACMAN_H

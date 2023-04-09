@@ -80,15 +80,16 @@ bool Pacman::pacmanMove(Direction direction){
         // chodnik
     } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
         qDebug() << "key";
+        this->map->score++;
         this->map->numberOfKeysLeft--;
         //delete key from map
         this->map->deleteKey(FirstCorner);
     } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
         qDebug() << "pacman died";
+        this->map->handleGameOver();
     } else if(FirstCorner->type == END && SecondCorner->type == END){
         if(this->map->numberOfKeysLeft == 0){
-            qDebug() << "pacman won";
-            return true;
+            this->map->handleWin(); // TODO UNCOMMENT
         }
     }else{
         return false;

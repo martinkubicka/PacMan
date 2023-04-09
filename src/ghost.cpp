@@ -90,6 +90,7 @@ bool Ghost::ghostMove( Ghost *ghost){
         return true;
     }else if(FirstCorner->type == PACMAN && SecondCorner->type == PACMAN){
         qDebug() << "Ghost Hit Pacman";
+        this->map->handleGameOver();
         return false;
     }
     else{

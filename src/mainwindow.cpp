@@ -10,6 +10,17 @@
 
 #include "mainwindow.h"
 
+void MainWindow::createUi() {
+    // set background image
+    QString backgroundPath = "background-image:url(%1%2)";
+    this->setStyleSheet(backgroundPath.arg(this->srcPath, "/images/background.jpg"));
+
+    // create objects
+    this->createChooseMapLabel();
+    this->createComboBox();
+    this->createStartButton();
+}
+
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
     ui->setupUi(this);
     this->setFixedSize(HEIGHT, WIDTH); // set size + cannot resize
@@ -17,14 +28,7 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
 
     this->map = this->srcPath.toStdString() + "/maps/map01.txt"; // selected map by default
 
-    // set background image
-    QString backgroundPath = "background-image:url(%1%2)";
-    this->setStyleSheet(backgroundPath.arg(this->srcPath, "/images/background.jpg"));    
-
-    // create objects
-    this->createChooseMapLabel();
-    this->createComboBox();
-    this->createStartButton();
+    this->createUi();
 }
 
 MainWindow::~MainWindow()
@@ -55,6 +59,8 @@ void MainWindow::createChooseMapLabel() {
     label->setFont(labelFont);
 
     label->setStyleSheet("color:white;");
+
+    label->show();
 }
 
 void MainWindow::createComboBox() {
@@ -72,6 +78,8 @@ void MainWindow::createComboBox() {
     comboBox->setStyleSheet("QComboBox{background-color: rgb(27,27,27); border: 1px solid white; border-radius: 3px; color: white;} QComboBox::drop-down {border:none; image: url(/Users/martinkubicka/Documents/ICP/PacMan/images/drop_down_icon.png); padding-top: 3px; padding-right: 5px;}");
     comboBox->setGeometry(250, 290, 200, 30);
 
+    comboBox->show();
+
     // combobox dropdown menu
     QListView* dropdownMenu = qobject_cast<QListView*>(comboBox->view());
     dropdownMenu->setStyleSheet("QListView { background-color: black; padding-left: 5px;}");
@@ -87,6 +95,8 @@ void MainWindow::createStartButton() {
     
     QFont startButtonFont("Arial Black", 16);
     startButton->setFont(startButtonFont);
+
+    startButton->show();
 
     connect(startButton, &QPushButton::clicked, this, &MainWindow::start);
 }
