@@ -12,6 +12,9 @@
 
 #include "mainwindow.h"
 
+#include <QGraphicsProxyWidget> // TODO
+#include <thread>
+
 Map::Map(MainWindow *parent, std::string map, QString srcPath) : QWidget(parent) {
     this->openFile(map);
 
@@ -35,7 +38,7 @@ Map::~Map() {
 
 QGraphicsScene* Map::createScene() {
     QGraphicsScene* scene = new QGraphicsScene;
-    scene->setSceneRect(0, 0, this->sizeOfBlock*(this->x+2) + this->x + 1, this->sizeOfBlock*(this->y+2) + this->y + 1);
+    scene->setSceneRect(0, 0, this->sizeOfBlock*(this->x+2) + this->x + 1, this->sizeOfBlock*(this->y+2) + this->y + 1 + 40);
 
     return scene;
 }
@@ -46,9 +49,8 @@ CustomGraphicsView* Map::createView(QWidget *parent, QGraphicsScene *scene) {
     view->setDragMode(QGraphicsView::NoDrag); // disable mouse drag mode
     view->setHorizontalScrollBarPolicy(Qt::ScrollBarAlwaysOff); // disable horizontal scroll bar
     view->setVerticalScrollBarPolicy(Qt::ScrollBarAlwaysOff); // disable vertical scroll bar
-    view->setFixedSize(HEIGHT, WIDTH); // set the fixed size of the view to match the scene size
+    view->setFixedSize(HEIGHT, WIDTH + 100); // set the fixed size of the view to match the scene size
     view->show();
-
     return view;
 }
 
@@ -139,12 +141,70 @@ void Map::getSizeOfBlock() {
     }
 }
 
+void Map::createScore() {
+    scoreLabel = new QLabel(QString("Score: %1").arg(this->score));
+    QFont labelFont("Arial Black", 15);
+    scoreLabel->setFont(labelFont);
+    scoreLabel->setStyleSheet("color:white; background-color: black;");
+
+    QGraphicsProxyWidget *proxy = scene->addWidget(scoreLabel);
+    proxy->setPos(300, 0);
+    proxy->setZValue(1);
+}
+
+void Map::createLives() {
+    QImage hearthImage(this->mainwindow->srcPath + "/images/hearth.png");
+    hearthImage = hearthImage.scaled(QSize(30, 30), Qt::KeepAspectRatio);
+
+    for (int i = 0; i < this->numberOfLives; i++) {
+        QGraphicsPixmapItem* hearth = new QGraphicsPixmapItem(QPixmap::fromImage(hearthImage));
+        this->liveItems.push_back(hearth);
+        hearth->setZValue(1);
+        hearth->setPos(i*30 + 10, 0);
+        scene->addItem(hearth);
+    }
+}
+
+void Map::deleteLive() {
+    if (this->liveItems.size() != 0) { // TODO MAYBE REMOVE THIS CONDITION
+        this->scene->removeItem(this->liveItems.back());
+        //delete this->liveItems.back();
+        this->liveItems.pop_back();
+    }
+    this->restartPositions();
+}
+
+void Map::restartPositions() {
+    foreach (QTimer* timer, findChildren<QTimer*>()) {
+        timer->stop();
+    }
+
+    this->gameStarted = 0;
+
+    pacman->x1 = pacman->startX;
+    pacman->y1 = pacman->startY;
+    pacman->x2 = pacman->startX + this->sizeOfBlock;
+    pacman->y2 = pacman->startY + this->sizeOfBlock;
+    pacman->move(pacman->startX, pacman->startY);
+
+    for (auto ghostI : ghosts) {
+        ghostI->x1 = ghostI->startX;
+        ghostI->y1 = ghostI->startY;
+        ghostI->x2 = ghostI->startX + this->sizeOfBlock;
+        ghostI->y2 = ghostI->startY + this->sizeOfBlock;
+        ghostI->move(ghostI->startX, ghostI->startY);
+    }
+}
+
 void Map::createMap(QGraphicsScene* scene, QString srcPath) {
+    this->createScore();
+    this->createLives();
+
     std::vector<char> validChars = {'T', 'X', 'G', 'K', '.', 'S', '\n'}; // vector of valid character in a map
 
     // top border
     for (int i = 0; i < this->x + 2; i++) {
-        wall = new Wall(scene, this->sizeOfBlock*i + i, 0,  this->sizeOfBlock*(i+1) + i, this->sizeOfBlock, this, srcPath); //x,y (left top) + x,y (right bottom)
+        wall = new Wall(scene, this->sizeOfBlock*i + i, 0 + 40,  this->sizeOfBlock*(i+1) + i, this->sizeOfBlock + 40, this, srcPath); //x,y (left top) + x,y (right bottom)
         walls.push_back(wall);
     }
 
@@ -154,7 +214,7 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
     // auxiliary variables to know actual position
     int actualX = this->sizeOfBlock + 1; // skip borders
-    int actualY = this->sizeOfBlock + 1;  // skip borders
+    int actualY = this->sizeOfBlock + 1 + 40;  // skip borders
 
     wall = new Wall(scene, 0, actualY,  this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath); // first left border of a map
     walls.push_back(wall);
@@ -241,7 +301,7 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
     // bottom border
     for (int i = 0; i < this->x + 2; i++) {
-        wall = new Wall(scene, this->sizeOfBlock*i + i, this->sizeOfBlock*(this->y+2) + this->y + 2, this->sizeOfBlock*(i+1) + i, this->sizeOfBlock*(this->y+3) + this->y + 2, this, srcPath); //x,y (left top) + x,y (right bottom)
+        wall = new Wall(scene, this->sizeOfBlock*i + i, this->sizeOfBlock*(this->y+2)+40 + this->y + 2, this->sizeOfBlock*(i+1) + i, this->sizeOfBlock*(this->y+3) + this->y + 2 + 40, this, srcPath); //x,y (left top) + x,y (right bottom)
         walls.push_back(wall);
     }
 
@@ -287,10 +347,13 @@ void Map::ghostHandler(int ghostNum){
 }
 
 void Map::deleteAll() {
-    // Stop all running timers
-    foreach (QTimer* timer, findChildren<QTimer*>()) {
-        timer->stop();
+    if (this->liveItems.size() != 0) {
+        for (auto item : this->liveItems) {
+            this->scene->removeItem(item);
+        }
     }
+
+    this->scoreLabel->deleteLater();
 
     this->scene->removeItem(this->pacman->item);
     delete this->pacman;
@@ -320,17 +383,22 @@ void Map::deleteAll() {
 }
 
 void Map::handleWin() {
+    // Stop all running timers - needs to be here - crash
+    foreach (QTimer* timer, findChildren<QTimer*>()) {
+        timer->stop();
+    }
+
     this->deleteAll();
     EndGameWindow(this->mainwindow, WIN);
 }
 
 void Map::handleGameOver() {
     --this->numberOfLives;
+    this->deleteLive();
     if (!this->numberOfLives) {
         this->deleteAll();
         EndGameWindow(this->mainwindow, GAMEOVER);
     }
-
 }
 
 /*** End of map.cpp ***/

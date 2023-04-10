@@ -43,7 +43,7 @@ public:
 private:
     std::string map; // selected map
     Ui::MainWindow *ui;
-    Map *mapObject;
+    Map *mapObject = nullptr;
 
     /**
      * @brief Functions which creates a Choose Map Label;

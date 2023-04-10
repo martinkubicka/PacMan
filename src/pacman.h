@@ -25,6 +25,8 @@ public:
     Direction direction = Direction::STOP;
     Direction nextDirection = Direction::STOP;
     
+    int startX, startY;
+
     int keysEaten = 0;
     /**
      * @brief Constructructor of Pacman object.

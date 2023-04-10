@@ -123,29 +123,35 @@ void MainWindow::start() {
     // create map UI
     this->mapObject = new Map(this, this->map, this->srcPath);
     setCentralWidget(this->mapObject);
-
-    this->mapObject->Start();
 }
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
         qDebug() << "Key pressed!"; // TODO na vsetky ostatne keys to reaguje po vykliknuti
+
     // Handle the key press event
-    switch (event->key()) {
-    case Qt::Key_W:
-        this->mapObject->pacman->setNextDirection(Direction::UP);
-        break;
-    case Qt::Key_S:
-        this->mapObject->pacman->setNextDirection(Direction::DOWN);
-        break;
-    case Qt::Key_A:
-        this->mapObject->pacman->setNextDirection(Direction::LEFT);
-        break;
-    case Qt::Key_D:
-        this->mapObject->pacman->setNextDirection (Direction::RIGHT);
-        break;
-    default:
-        break;
+    if (this->mapObject != nullptr) {
+        if (!this->mapObject->gameStarted) {
+            this->mapObject->gameStarted = 1;
+            this->mapObject->Start();
+        }
+
+        switch (event->key()) {
+        case Qt::Key_W:
+            this->mapObject->pacman->setNextDirection(Direction::UP);
+            break;
+        case Qt::Key_S:
+            this->mapObject->pacman->setNextDirection(Direction::DOWN);
+            break;
+        case Qt::Key_A:
+            this->mapObject->pacman->setNextDirection(Direction::LEFT);
+            break;
+        case Qt::Key_D:
+            this->mapObject->pacman->setNextDirection (Direction::RIGHT);
+            break;
+        default:
+            break;
+        }
     }
 }
 

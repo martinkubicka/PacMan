@@ -27,6 +27,8 @@
 #include <QTimer>
 #include <QDebug>
 #include "endgamewindow.h"
+#include <vector>
+#include <QPixmap>
 
 #define EDGE_OFFSET 20 // offset which prevents creating map at [0, 0] etc..
 #define HEIGHT 700 // height of window
@@ -53,8 +55,13 @@ public:
     MainWindow *mainwindow;
     QGraphicsScene *scene;
 
+    QLabel *scoreLabel;
     int score = 0;
+
     int numberOfLives = 3;
+    std::vector<QGraphicsPixmapItem*> liveItems;
+
+    int gameStarted = 0;
 
     int numberOfKeysLeft = 0; /** auxiliary counter which helps us to know how many keys are left on map */
     
@@ -84,6 +91,8 @@ public:
     void handleWin();
     void deleteAll();
     void handleGameOver();
+
+    void deleteLive();
 private slots:
     void pacmanHandler();
     void ghostHandler(int ghostNum);
@@ -102,6 +111,9 @@ private:
     QTimer *ghost_timer[];
 
     void gameEnd();
+    void createScore();
+    void createLives();
+    void restartPositions();
 
     // methods
 

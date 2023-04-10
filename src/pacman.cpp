@@ -13,6 +13,9 @@
 #include "QDebug" // TODO REMOVE ME
 
 Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QString srcPath) : Field (x1, y1, x2, y2, map, PACMAN) {
+    this->startX = x1;
+    this->startY = y1;
+
     QImage pacmanImage(srcPath + "/images/pacman.png");
     pacmanImage = pacmanImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
     // this->scene = scene; // to mi dava err tak som zakomentoval
@@ -82,14 +85,16 @@ bool Pacman::pacmanMove(Direction direction){
         qDebug() << "key";
         this->map->score++;
         this->map->numberOfKeysLeft--;
+        this->map->scoreLabel->setText(QString("Score: %1").arg(this->map->score));
         //delete key from map
         this->map->deleteKey(FirstCorner);
     } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
         qDebug() << "pacman died";
         this->map->handleGameOver();
+        return true;
     } else if(FirstCorner->type == END && SecondCorner->type == END){
         if(this->map->numberOfKeysLeft == 0){
-            this->map->handleWin(); // TODO UNCOMMENT
+            this->map->handleWin();
         }
     }else{
         return false;

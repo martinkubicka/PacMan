@@ -14,6 +14,9 @@
 
 
 Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QString srcPath) : Field (x1, y1, x2, y2, map, GHOST) {
+    this->startX = x1;
+    this->startY = y1;
+
     QImage ghostImage(srcPath + "/images/ghost.png");
     ghostImage = ghostImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
 
