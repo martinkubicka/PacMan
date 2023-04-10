@@ -2,29 +2,21 @@
 ### pacman
 - naprogramovat aby kdyz se zmackla mys tak aby pacman dojel na pozici kde se kliklo
     -A* / nejaky podobny algoritmus -> bude to v pacman handler pak volani pacman move 
-- update pozice pacmana aby pak ghost kdyz do nej narazi ukoncila se hra - MARTIN
-- game over je pripraven uz jen staci naimplementovat metodu ktera vyhodi ze je konec hry a okno - MARTIN
-- win je pripraven jen staci vytvorit okno(funguje to uz i na to aby pacman sesbiral vsechny keys) - MARTIN
 
 ### ghost
 - doresit pohyb pacmana -> slo by zvolit taky A* 
-- jeste nefunguje ze kdyz narazi ghost do pacmana tak konec hry, ale opacne to funguje -> duvod je ze pacman neupdatuje svoji pozici pri kazdym pohybu - MARTIN
 
 ### bugs
-- po vykliknuti z okna se neda zasilat klavesy a nejde hybat s pacmanem - MARTIN
+- celkovo UI pomenit - MARTIN
+- niekedy to crashuje - mozno iba vzdy qmake a make spravit .. - MARTIN
 
 ### maps
 - add 2 more maps
-
-### interaktivni veci
-- zivoty - MARTIN
-- score - MARTIN
 
 ### logovani + prehravanie 
 - logovanie + prehravanie - MARTIN
 
 ### Ostatne
-- spojite bloky - MARTIN 
 - ked spustim zo /src tak sa nenajdu grafiky - MARTIN
 - velkost pisma na mainpage je zly na inych platformach - MARTIN
 
