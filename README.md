@@ -8,13 +8,6 @@
 
 ### bugs
 - celkovo UI pomenit - MARTIN
-- niekedy to crashuje - mozno iba vzdy qmake a make spravit .. - MARTIN
-
-### maps
-- add 2 more maps
-
-### logovani + prehravanie 
-- logovanie + prehravanie - MARTIN
 
 ### Ostatne
 - ked spustim zo /src tak sa nenajdu grafiky - MARTIN

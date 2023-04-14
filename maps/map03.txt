@@ -1,0 +1,23 @@
+22 30
+S.............................
+.................X....K.....X.
+.XXXXX.XXX.XXXX.X.X.XX.X.X.XX.
+...K..X........X.X.X..G...X.X.
+XXXXX..XXXXXX.X.X.X.X.XX.XX.X.
+...........X.X.X.X.X..K...X.X.
+.XXXXX.XXX.X.X.X.X.X.XXX.X.X..
+.X........X.X.X.X.X.X....X..X.
+.XXXX...X.X.X.X.X.X.X.X...X.X.
+...K....X.X.X.X.X.X.X.X...X.X.
+XXX.XXX.X.X.X.X.X.X.X.X...X.X.
+......X...................X...
+.XXXXX.X.X.X.X.X.X.X.X.XXXX.X.
+.X....X.X.X.X.X.X.X.X.X.....X.
+.X.XXXX.X.X.X.X.X.X.X.X.XXXXX.
+.X.X....X.X.X.X.X.X.X.X.....X.
+.X.X.XXXXX.X.X.X.X.X.XXXXX.XX.
+.X.X........X.X.X.X..K....X.X.
+.X.X.X.XXXXXXX.X.X.XX.XXX.X.X.
+.X.X....X.X.X..X.X..X..X...X..
+.X.X....X.X.X..X.X..X..X...X..
+.........K...........G.......T
