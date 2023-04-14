@@ -9,14 +9,33 @@
  */
 
 #include "map.h"
-
 #include "mainwindow.h"
+#include "key.h"
 
-#include <QGraphicsProxyWidget> // TODO
-#include <thread>
+void Map::copyMap(string map, ofstream& outputFile) {
+    std::ifstream inputFile(map);
 
-Map::Map(MainWindow *parent, std::string map, QString srcPath) : QWidget(parent) {
+    if (!inputFile.is_open()) {
+        cerr << "ERROR: Opening file." << endl;
+        exit(EXIT_FAILURE);
+    }
+
+    char c;
+    while (inputFile.get(c)) {
+        outputFile.put(c);
+    }
+
+    outputFile.put('\n');
+
+    inputFile.close();
+}
+
+Map::Map(MainWindow *parent, std::string map, QString srcPath, bool replay) : QWidget(parent), replay(replay) {
     this->openFile(map);
+
+    if (!this->replay) {
+        openLogWrite(srcPath.toStdString(), this->log);
+    }
 
     this->getSizeOfBlock();
 
@@ -26,6 +45,10 @@ Map::Map(MainWindow *parent, std::string map, QString srcPath) : QWidget(parent)
     scene = this->createScene();
 
     this->createMap(scene, srcPath);
+    this->copyMap(map, this->log);
+    if (!this->replay) {
+        writeToLog("MAP " + map, this->log);
+    }
 
     CustomGraphicsView* view = this->createView(parent, scene);
 
@@ -34,6 +57,7 @@ Map::Map(MainWindow *parent, std::string map, QString srcPath) : QWidget(parent)
 
 Map::~Map() {
     this->file.close();
+    closeLog(this->log);
 }
 
 QGraphicsScene* Map::createScene() {
@@ -114,14 +138,25 @@ Field* Map::getField(int x, int y, FieldType calledBy) {
 }
 
 void Map::deleteKey(Field *key){
+    this->score++;
+    this->numberOfKeysLeft--;
+
+    this->scoreLabel->setText(QString("Score: %1").arg(this->score));
+
+    if (!this->replay) {
+        writeToLog("KEYL " + to_string(key->id) + " : Key obtained", this->log);
+    }
+
     // delete from ui
     this->scene->removeItem(key->item);
 
-    // delete key from arr
-    auto index = std::find(this->keys.begin(), this->keys.end(), key);
-    if (index != this->keys.end()) {
-        this->keys.erase(index);
-    }
+    key->x1 = key->x2 = key->y1 = key->y2 = -1; // replay previous step -> cant delete
+
+//    // delete key from arr
+//    auto index = std::find(this->keys.begin(), this->keys.end(), key);
+//    if (index != this->keys.end()) {
+//        this->keys.erase(index);
+//    }
 }
 
 void Map::getSizeOfBlock() {
@@ -167,9 +202,9 @@ void Map::createLives() {
 
 void Map::deleteLive() {
     if (this->liveItems.size() != 0) { // TODO MAYBE REMOVE THIS CONDITION
-        this->scene->removeItem(this->liveItems.back());
+        this->scene->removeItem(this->liveItems[static_cast<unsigned long>(this->numberOfLives)]);
         //delete this->liveItems.back();
-        this->liveItems.pop_back();
+        //this->liveItems.pop_back();
     }
     this->restartPositions();
 }
@@ -307,8 +342,11 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
 } // createMap
 
-
 void Map::Start(){
+    if (!this->replay) {
+        writeToLog("GS : Game started", this->log);
+    }
+
     this->gameStart();
 }
 
@@ -337,8 +375,6 @@ void Map::pacmanHandler()
     }
 
     this->pacman->pacmanMove(this->pacman->direction);
-
-    //todo add win state
 }
 
 void Map::ghostHandler(int ghostNum){
@@ -371,7 +407,7 @@ void Map::deleteAll() {
         delete wallI;
     }
 
-    for (auto keyI : keys) { // have to check keys before paths (keys above paths)
+    for (auto keyI : keys) {
         this->scene->removeItem(keyI->item);
         delete keyI;
     }
@@ -390,14 +426,21 @@ void Map::handleWin() {
 
     this->deleteAll();
     EndGameWindow(this->mainwindow, WIN);
+    if (!this->replay) {
+        writeToLog("GE : Game ended", this->log);
+    }
 }
 
 void Map::handleGameOver() {
     --this->numberOfLives;
+    if (!this->replay) {
+        writeToLog("KILL : PacMan died", this->log);
+    }
     this->deleteLive();
-    if (!this->numberOfLives) {
+    if (!this->numberOfLives && !this->replay) {
         this->deleteAll();
         EndGameWindow(this->mainwindow, GAMEOVER);
+        writeToLog("GE : Game ended", this->log);
     }
 }
 

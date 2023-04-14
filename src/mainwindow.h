@@ -23,8 +23,7 @@
 #include "map.h"
 #include "pacman.h"
 #include <QDebug>
-//#define HEIGHT 700 // height of window
-//#define WIDTH 700 // width of window
+#include "replay.h"
 
 namespace Ui {
     class MainWindow;
@@ -35,16 +34,20 @@ class MainWindow : public QMainWindow {
 
 public:
     QString srcPath; // path of src folder set by findImageDirPath method.
+    Map *mapObject = nullptr;
+    Replay* replayObj = nullptr;
+
+    void closeEvent(QCloseEvent *event) override;
 
     explicit MainWindow(QWidget *parent = nullptr);
     ~MainWindow();
     void createUi();
 
+    void replay();
+
 private:
     std::string map; // selected map
     Ui::MainWindow *ui;
-    Map *mapObject = nullptr;
-
     /**
      * @brief Functions which creates a Choose Map Label;
      */
@@ -65,6 +68,8 @@ private:
               Result saved to srcPath attribute.
      */
     void findImageDirPath();
+
+    void createReplayButton();
 protected:
     void keyPressEvent(QKeyEvent* event) override;
 private slots:

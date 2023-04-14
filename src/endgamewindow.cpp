@@ -68,4 +68,16 @@ EndGameWindow::EndGameWindow(MainWindow *mainwindow, endGameType type)
         this->backToMenu(mainwindow);
     });
 
+    // replay game button
+    QPushButton *replayButton = new QPushButton("Replay game", mainwindow);
+    replayButton->setGeometry(280, 620, 140, 30);
+    replayButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px;}  QPushButton:pressed{border: 1px solid gray;}");
+
+    replayButton->setFont(playAgainFont);
+
+    replayButton->show();
+
+    QObject::connect(replayButton, &QPushButton::clicked, [=]() {
+        mainwindow->replay();
+    });
 }

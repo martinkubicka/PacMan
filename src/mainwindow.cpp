@@ -19,6 +19,11 @@ void MainWindow::createUi() {
     this->createChooseMapLabel();
     this->createComboBox();
     this->createStartButton();
+    this->createReplayButton();
+}
+
+void MainWindow::closeEvent(QCloseEvent *event) {
+        event->accept();
 }
 
 MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWindow) {
@@ -101,6 +106,20 @@ void MainWindow::createStartButton() {
     connect(startButton, &QPushButton::clicked, this, &MainWindow::start);
 }
 
+void MainWindow::createReplayButton() {
+    QPushButton *replayButton = new QPushButton("Replay last game", this);
+    replayButton->setGeometry(260, 380, 180, 30);
+    replayButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px;}  QPushButton:pressed{border: 1px solid gray;}");
+
+    QFont startButtonFont("Arial Black", 16);
+    replayButton->setFont(startButtonFont);
+
+    replayButton->show();
+
+    connect(replayButton, &QPushButton::clicked, this, &MainWindow::replay);
+}
+
+
 void MainWindow::setMap(const QString &mapName) {
     if (mapName == "PacMan's Playground") {
         this->map = this->srcPath.toStdString() + "/maps/map01.txt";
@@ -109,6 +128,10 @@ void MainWindow::setMap(const QString &mapName) {
     } else if (mapName == "Endless Journey") {
         this->map = this->srcPath.toStdString() + "/maps/map03.txt";
     }
+}
+
+void MainWindow::replay() {
+    this->replayObj = new Replay(this->srcPath, this);
 }
 
 void MainWindow::start() {
@@ -121,7 +144,7 @@ void MainWindow::start() {
     }
 
     // create map UI
-    this->mapObject = new Map(this, this->map, this->srcPath);
+    this->mapObject = new Map(this, this->map, this->srcPath, false);
     setCentralWidget(this->mapObject);
 }
 
@@ -130,7 +153,10 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
         qDebug() << "Key pressed!"; // TODO na vsetky ostatne keys to reaguje po vykliknuti
 
     // Handle the key press event
-    if (this->mapObject != nullptr) {
+
+    if (this->replayObj != nullptr) {
+        this->replayObj->handleKey(event);
+    } else if (this->mapObject != nullptr) {
         if (!this->mapObject->gameStarted) {
             this->mapObject->gameStarted = 1;
             this->mapObject->Start();
@@ -153,6 +179,7 @@ void MainWindow::keyPressEvent(QKeyEvent *event)
             break;
         }
     }
+
 }
 
 /*** End of mainwidow.cpp ***/

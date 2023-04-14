@@ -21,6 +21,8 @@
  */
 class Key : public Field {
 public:
+    int startX1, startX2, startY1, startY2;
+
     /**
      * @brief Constructructor of Key object.
      * 

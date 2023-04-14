@@ -14,6 +14,7 @@
 #include <QWidget>
 #include <QGraphicsScene>
 #include <QGraphicsPixmapItem>
+#include <string>
 #include "field.h"
 
 /**
@@ -21,6 +22,7 @@
  */
 class Ghost : public Field  {
 public:
+
     /**
      * @brief Constructructor of Ghost object.
      * 

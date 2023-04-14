@@ -1,0 +1,2496 @@
+28 17
+S...........................
+.XXXXXX.XXXXXXXXXXXX.XXXXXX.
+......X..............X......
+.XXXX.X.XXXXX..XXXXX.X.XXXX.
+....X.X..............X.X....
+.XX.X.X.XXXXX..XXXXX.X.X.XX.
+....X..................X....
+.XX.X.X.X.XXX..XXX.X.X.X.XX.
+......X.X.X..GG..X.X.X......
+.XX.X.X.X.X......X.X.X.X.XX.
+.XX.X.X.XXXXXXXXXXXX.X.X.XX.
+K...X..................X....
+.XX.X.X.XXXXX..XXXXX.X.X.XX.
+....X.X..............X.X....
+.XXXX.X.XXXXX..XXXXX.X.XXXX.
+......X..............X......
+.XXXXXX.XXXXXXXXXXXX.XXXXXX.
+...........................T
+
+MAP /Users/martinkubicka/Documents/ICP/PacMan/maps/map01.txt
+GS : Game started
+GM 0 308 237 : Ghost moved
+GM 1 330 237 : Ghost moved
+GM 0 308 236 : Ghost moved
+GM 1 330 236 : Ghost moved
+GM 0 308 235 : Ghost moved
+GM 1 330 235 : Ghost moved
+GM 0 308 234 : Ghost moved
+GM 1 330 234 : Ghost moved
+GM 0 308 233 : Ghost moved
+GM 1 330 233 : Ghost moved
+GM 0 308 232 : Ghost moved
+GM 1 330 232 : Ghost moved
+GM 0 308 231 : Ghost moved
+GM 1 330 231 : Ghost moved
+GM 0 308 230 : Ghost moved
+GM 1 330 230 : Ghost moved
+GM 0 308 229 : Ghost moved
+GM 1 330 229 : Ghost moved
+GM 0 308 228 : Ghost moved
+GM 1 330 228 : Ghost moved
+GM 0 308 227 : Ghost moved
+GM 1 330 227 : Ghost moved
+GM 0 308 226 : Ghost moved
+GM 1 330 226 : Ghost moved
+GM 0 308 225 : Ghost moved
+GM 1 330 225 : Ghost moved
+GM 0 308 224 : Ghost moved
+GM 1 330 224 : Ghost moved
+GM 0 308 223 : Ghost moved
+GM 1 330 223 : Ghost moved
+GM 0 308 222 : Ghost moved
+GM 1 330 222 : Ghost moved
+GM 0 308 221 : Ghost moved
+GM 1 330 221 : Ghost moved
+GM 0 308 220 : Ghost moved
+GM 1 330 220 : Ghost moved
+GM 0 308 219 : Ghost moved
+GM 1 330 219 : Ghost moved
+GM 0 308 218 : Ghost moved
+GM 1 330 218 : Ghost moved
+GM 0 308 217 : Ghost moved
+GM 1 330 217 : Ghost moved
+GM 0 308 216 : Ghost moved
+GM 1 330 216 : Ghost moved
+GM 0 308 215 : Ghost moved
+GM 1 330 215 : Ghost moved
+GM 0 308 214 : Ghost moved
+GM 1 330 214 : Ghost moved
+GM 0 308 213 : Ghost moved
+GM 1 330 213 : Ghost moved
+GM 0 308 212 : Ghost moved
+GM 1 330 212 : Ghost moved
+GM 0 308 211 : Ghost moved
+GM 1 330 211 : Ghost moved
+GM 0 308 210 : Ghost moved
+GM 1 330 210 : Ghost moved
+GM 0 308 209 : Ghost moved
+GM 1 330 209 : Ghost moved
+GM 0 308 208 : Ghost moved
+GM 1 330 208 : Ghost moved
+GM 0 308 207 : Ghost moved
+GM 1 330 207 : Ghost moved
+GM 0 308 206 : Ghost moved
+GM 1 330 206 : Ghost moved
+GM 0 308 205 : Ghost moved
+GM 1 330 205 : Ghost moved
+GM 0 308 204 : Ghost moved
+GM 1 330 204 : Ghost moved
+GM 0 308 203 : Ghost moved
+GM 1 330 203 : Ghost moved
+GM 0 308 202 : Ghost moved
+GM 1 330 202 : Ghost moved
+GM 0 308 201 : Ghost moved
+GM 1 330 201 : Ghost moved
+GM 0 308 200 : Ghost moved
+GM 1 330 200 : Ghost moved
+GM 0 308 199 : Ghost moved
+GM 1 330 199 : Ghost moved
+GM 0 308 198 : Ghost moved
+GM 1 330 198 : Ghost moved
+GM 0 308 197 : Ghost moved
+GM 1 330 197 : Ghost moved
+GM 0 308 196 : Ghost moved
+GM 1 330 196 : Ghost moved
+GM 0 308 195 : Ghost moved
+GM 1 330 195 : Ghost moved
+GM 0 308 194 : Ghost moved
+GM 1 330 194 : Ghost moved
+GM 0 308 193 : Ghost moved
+GM 1 330 193 : Ghost moved
+GM 0 308 192 : Ghost moved
+GM 1 330 192 : Ghost moved
+GM 0 308 191 : Ghost moved
+GM 1 330 191 : Ghost moved
+GM 0 308 190 : Ghost moved
+GM 1 330 190 : Ghost moved
+GM 0 308 189 : Ghost moved
+GM 1 330 189 : Ghost moved
+GM 0 308 188 : Ghost moved
+GM 1 330 188 : Ghost moved
+GM 0 308 187 : Ghost moved
+GM 1 330 187 : Ghost moved
+GM 0 308 186 : Ghost moved
+GM 1 330 186 : Ghost moved
+GM 0 308 185 : Ghost moved
+GM 1 330 185 : Ghost moved
+GM 0 308 184 : Ghost moved
+GM 1 330 184 : Ghost moved
+GM 0 308 183 : Ghost moved
+GM 1 330 183 : Ghost moved
+GM 0 308 182 : Ghost moved
+GM 1 330 182 : Ghost moved
+GM 0 308 181 : Ghost moved
+GM 1 330 181 : Ghost moved
+GM 0 308 180 : Ghost moved
+GM 1 330 180 : Ghost moved
+GM 0 308 179 : Ghost moved
+GM 1 330 179 : Ghost moved
+GM 0 308 178 : Ghost moved
+GM 1 330 178 : Ghost moved
+GM 0 308 177 : Ghost moved
+GM 1 330 177 : Ghost moved
+GM 0 308 176 : Ghost moved
+GM 1 330 176 : Ghost moved
+GM 0 308 175 : Ghost moved
+GM 1 330 175 : Ghost moved
+GM 0 308 174 : Ghost moved
+GM 1 330 174 : Ghost moved
+GM 0 308 173 : Ghost moved
+GM 1 330 173 : Ghost moved
+GM 0 308 172 : Ghost moved
+GM 1 330 172 : Ghost moved
+GM 0 308 171 : Ghost moved
+GM 1 330 171 : Ghost moved
+GM 0 308 170 : Ghost moved
+GM 1 330 170 : Ghost moved
+GM 0 308 169 : Ghost moved
+GM 1 330 169 : Ghost moved
+GM 0 308 168 : Ghost moved
+GM 1 330 168 : Ghost moved
+GM 0 308 167 : Ghost moved
+GM 1 330 167 : Ghost moved
+GM 0 308 166 : Ghost moved
+GM 1 330 166 : Ghost moved
+GM 0 308 165 : Ghost moved
+GM 1 330 165 : Ghost moved
+GM 0 308 164 : Ghost moved
+GM 1 330 164 : Ghost moved
+GM 0 308 163 : Ghost moved
+GM 1 330 163 : Ghost moved
+GM 0 308 162 : Ghost moved
+GM 1 330 162 : Ghost moved
+GM 0 308 161 : Ghost moved
+GM 1 330 161 : Ghost moved
+GM 0 308 160 : Ghost moved
+GM 1 330 160 : Ghost moved
+GM 0 308 159 : Ghost moved
+GM 1 330 159 : Ghost moved
+GM 0 308 158 : Ghost moved
+GM 1 330 158 : Ghost moved
+GM 0 308 157 : Ghost moved
+GM 1 330 157 : Ghost moved
+GM 0 308 156 : Ghost moved
+GM 1 330 156 : Ghost moved
+GM 0 308 155 : Ghost moved
+GM 1 330 155 : Ghost moved
+GM 0 308 154 : Ghost moved
+GM 1 330 154 : Ghost moved
+GM 0 308 153 : Ghost moved
+GM 1 330 153 : Ghost moved
+GM 0 308 152 : Ghost moved
+GM 1 330 152 : Ghost moved
+GM 0 308 151 : Ghost moved
+GM 1 330 151 : Ghost moved
+GM 0 308 150 : Ghost moved
+GM 1 330 150 : Ghost moved
+GM 0 308 149 : Ghost moved
+GM 1 330 149 : Ghost moved
+GM 0 308 148 : Ghost moved
+GM 1 330 148 : Ghost moved
+GM 0 308 147 : Ghost moved
+GM 1 330 147 : Ghost moved
+GM 0 308 146 : Ghost moved
+GM 1 330 146 : Ghost moved
+GM 0 308 145 : Ghost moved
+GM 1 330 145 : Ghost moved
+GM 0 308 144 : Ghost moved
+GM 1 330 144 : Ghost moved
+GM 0 308 143 : Ghost moved
+GM 1 330 143 : Ghost moved
+GM 0 308 142 : Ghost moved
+GM 1 330 142 : Ghost moved
+GM 0 308 141 : Ghost moved
+GM 1 330 141 : Ghost moved
+GM 0 308 140 : Ghost moved
+GM 1 330 140 : Ghost moved
+GM 0 308 139 : Ghost moved
+GM 1 330 139 : Ghost moved
+GM 0 308 138 : Ghost moved
+GM 1 330 138 : Ghost moved
+GM 0 308 137 : Ghost moved
+GM 1 330 137 : Ghost moved
+GM 0 308 136 : Ghost moved
+GM 1 330 136 : Ghost moved
+GM 0 308 135 : Ghost moved
+GM 1 330 135 : Ghost moved
+GM 0 308 134 : Ghost moved
+GM 1 330 134 : Ghost moved
+GM 0 308 133 : Ghost moved
+GM 1 330 133 : Ghost moved
+GM 0 308 132 : Ghost moved
+GM 1 330 132 : Ghost moved
+GM 0 308 131 : Ghost moved
+GM 1 330 131 : Ghost moved
+GM 0 308 130 : Ghost moved
+GM 1 330 130 : Ghost moved
+GM 0 308 129 : Ghost moved
+GM 1 330 129 : Ghost moved
+GM 0 308 128 : Ghost moved
+GM 1 330 128 : Ghost moved
+GM 0 308 127 : Ghost moved
+GM 1 330 127 : Ghost moved
+GM 0 308 126 : Ghost moved
+GM 1 330 126 : Ghost moved
+GM 0 308 125 : Ghost moved
+GM 1 330 125 : Ghost moved
+GM 0 308 124 : Ghost moved
+GM 1 330 124 : Ghost moved
+GM 0 308 123 : Ghost moved
+GM 1 330 123 : Ghost moved
+GM 0 308 122 : Ghost moved
+GM 1 330 122 : Ghost moved
+GM 0 308 121 : Ghost moved
+GM 1 330 121 : Ghost moved
+GM 0 308 120 : Ghost moved
+GM 1 330 120 : Ghost moved
+PCM 22 63 : PacMan moved
+GM 0 308 119 : Ghost moved
+GM 1 330 119 : Ghost moved
+PCM 22 64 : PacMan moved
+PCM 22 65 : PacMan moved
+GM 0 308 118 : Ghost moved
+GM 1 330 118 : Ghost moved
+PCM 22 66 : PacMan moved
+GM 0 308 117 : Ghost moved
+GM 1 330 117 : Ghost moved
+PCM 22 67 : PacMan moved
+PCM 22 68 : PacMan moved
+GM 0 308 116 : Ghost moved
+GM 1 330 116 : Ghost moved
+PCM 22 69 : PacMan moved
+GM 0 308 115 : Ghost moved
+GM 1 330 115 : Ghost moved
+PCM 22 70 : PacMan moved
+PCM 22 71 : PacMan moved
+GM 0 308 114 : Ghost moved
+GM 1 330 114 : Ghost moved
+PCM 22 72 : PacMan moved
+GM 0 308 113 : Ghost moved
+GM 1 330 113 : Ghost moved
+PCM 22 73 : PacMan moved
+PCM 22 74 : PacMan moved
+GM 0 308 112 : Ghost moved
+GM 1 330 112 : Ghost moved
+PCM 22 75 : PacMan moved
+GM 0 308 111 : Ghost moved
+GM 1 330 111 : Ghost moved
+PCM 22 76 : PacMan moved
+PCM 22 77 : PacMan moved
+GM 0 308 110 : Ghost moved
+GM 1 330 110 : Ghost moved
+PCM 22 78 : PacMan moved
+GM 0 308 109 : Ghost moved
+GM 1 330 109 : Ghost moved
+PCM 22 79 : PacMan moved
+PCM 22 80 : PacMan moved
+GM 0 308 108 : Ghost moved
+GM 1 330 108 : Ghost moved
+PCM 22 81 : PacMan moved
+GM 0 308 107 : Ghost moved
+GM 1 330 107 : Ghost moved
+PCM 22 82 : PacMan moved
+PCM 22 83 : PacMan moved
+GM 0 308 106 : Ghost moved
+GM 1 330 106 : Ghost moved
+PCM 22 84 : PacMan moved
+PCM 22 85 : PacMan moved
+PCM 22 86 : PacMan moved
+GM 0 307 106 : Ghost moved
+GM 1 330 107 : Ghost moved
+PCM 22 87 : PacMan moved
+GM 0 306 106 : Ghost moved
+GM 1 330 108 : Ghost moved
+PCM 22 88 : PacMan moved
+PCM 22 89 : PacMan moved
+GM 0 305 106 : Ghost moved
+GM 1 330 109 : Ghost moved
+PCM 22 90 : PacMan moved
+GM 0 304 106 : Ghost moved
+GM 1 330 110 : Ghost moved
+PCM 22 91 : PacMan moved
+PCM 22 92 : PacMan moved
+GM 0 303 106 : Ghost moved
+GM 1 330 111 : Ghost moved
+PCM 22 93 : PacMan moved
+GM 0 302 106 : Ghost moved
+GM 1 330 112 : Ghost moved
+PCM 22 94 : PacMan moved
+PCM 22 95 : PacMan moved
+GM 0 301 106 : Ghost moved
+GM 1 330 113 : Ghost moved
+PCM 22 96 : PacMan moved
+GM 0 300 106 : Ghost moved
+GM 1 330 114 : Ghost moved
+PCM 22 97 : PacMan moved
+PCM 22 98 : PacMan moved
+GM 0 299 106 : Ghost moved
+GM 1 330 115 : Ghost moved
+PCM 22 99 : PacMan moved
+GM 0 298 106 : Ghost moved
+GM 1 330 116 : Ghost moved
+PCM 22 100 : PacMan moved
+PCM 22 101 : PacMan moved
+GM 0 297 106 : Ghost moved
+GM 1 330 117 : Ghost moved
+PCM 22 102 : PacMan moved
+GM 0 296 106 : Ghost moved
+GM 1 330 118 : Ghost moved
+PCM 22 103 : PacMan moved
+PCM 22 104 : PacMan moved
+GM 0 295 106 : Ghost moved
+GM 1 330 119 : Ghost moved
+PCM 22 105 : PacMan moved
+GM 0 294 106 : Ghost moved
+GM 1 330 120 : Ghost moved
+PCM 22 106 : PacMan moved
+PCM 22 107 : PacMan moved
+GM 0 293 106 : Ghost moved
+GM 1 330 121 : Ghost moved
+PCM 22 108 : PacMan moved
+GM 0 292 106 : Ghost moved
+GM 1 330 122 : Ghost moved
+PCM 22 109 : PacMan moved
+PCM 22 110 : PacMan moved
+GM 0 291 106 : Ghost moved
+GM 1 330 123 : Ghost moved
+PCM 22 111 : PacMan moved
+GM 0 290 106 : Ghost moved
+GM 1 330 124 : Ghost moved
+PCM 22 112 : PacMan moved
+PCM 22 113 : PacMan moved
+GM 0 289 106 : Ghost moved
+GM 1 330 125 : Ghost moved
+PCM 22 114 : PacMan moved
+GM 0 288 106 : Ghost moved
+GM 1 330 126 : Ghost moved
+PCM 22 115 : PacMan moved
+PCM 22 116 : PacMan moved
+GM 0 287 106 : Ghost moved
+GM 1 330 127 : Ghost moved
+PCM 22 117 : PacMan moved
+GM 0 286 106 : Ghost moved
+GM 1 330 128 : Ghost moved
+PCM 22 118 : PacMan moved
+PCM 22 119 : PacMan moved
+GM 0 285 106 : Ghost moved
+GM 1 330 129 : Ghost moved
+PCM 22 120 : PacMan moved
+GM 0 284 106 : Ghost moved
+GM 1 330 130 : Ghost moved
+PCM 22 121 : PacMan moved
+PCM 22 122 : PacMan moved
+GM 0 283 106 : Ghost moved
+GM 1 330 131 : Ghost moved
+PCM 22 123 : PacMan moved
+GM 0 282 106 : Ghost moved
+GM 1 330 132 : Ghost moved
+PCM 22 124 : PacMan moved
+PCM 22 125 : PacMan moved
+GM 0 281 106 : Ghost moved
+GM 1 330 133 : Ghost moved
+PCM 22 126 : PacMan moved
+GM 0 280 106 : Ghost moved
+GM 1 330 134 : Ghost moved
+PCM 22 127 : PacMan moved
+PCM 22 128 : PacMan moved
+GM 0 279 106 : Ghost moved
+GM 1 330 135 : Ghost moved
+PCM 22 129 : PacMan moved
+GM 0 278 106 : Ghost moved
+GM 1 330 136 : Ghost moved
+PCM 22 130 : PacMan moved
+PCM 22 131 : PacMan moved
+GM 0 277 106 : Ghost moved
+GM 1 330 137 : Ghost moved
+PCM 22 132 : PacMan moved
+GM 0 276 106 : Ghost moved
+GM 1 330 138 : Ghost moved
+PCM 22 133 : PacMan moved
+PCM 22 134 : PacMan moved
+GM 0 275 106 : Ghost moved
+GM 1 330 139 : Ghost moved
+PCM 22 135 : PacMan moved
+GM 0 274 106 : Ghost moved
+GM 1 330 140 : Ghost moved
+PCM 22 136 : PacMan moved
+PCM 22 137 : PacMan moved
+GM 0 273 106 : Ghost moved
+GM 1 330 141 : Ghost moved
+PCM 22 138 : PacMan moved
+GM 0 272 106 : Ghost moved
+GM 1 330 142 : Ghost moved
+PCM 22 139 : PacMan moved
+PCM 22 140 : PacMan moved
+GM 0 271 106 : Ghost moved
+GM 1 330 143 : Ghost moved
+PCM 22 141 : PacMan moved
+GM 0 270 106 : Ghost moved
+GM 1 330 144 : Ghost moved
+PCM 22 142 : PacMan moved
+PCM 22 143 : PacMan moved
+GM 0 269 106 : Ghost moved
+GM 1 330 145 : Ghost moved
+PCM 22 144 : PacMan moved
+GM 0 268 106 : Ghost moved
+GM 1 330 146 : Ghost moved
+PCM 22 145 : PacMan moved
+PCM 22 146 : PacMan moved
+GM 0 267 106 : Ghost moved
+GM 1 330 147 : Ghost moved
+PCM 22 147 : PacMan moved
+GM 0 266 106 : Ghost moved
+GM 1 330 148 : Ghost moved
+PCM 22 148 : PacMan moved
+PCM 22 149 : PacMan moved
+GM 0 265 106 : Ghost moved
+GM 1 330 149 : Ghost moved
+PCM 22 150 : PacMan moved
+GM 0 264 106 : Ghost moved
+GM 1 330 150 : Ghost moved
+PCM 22 151 : PacMan moved
+PCM 22 152 : PacMan moved
+GM 0 263 106 : Ghost moved
+GM 1 330 151 : Ghost moved
+PCM 22 153 : PacMan moved
+GM 0 262 106 : Ghost moved
+GM 1 330 152 : Ghost moved
+PCM 22 154 : PacMan moved
+PCM 22 155 : PacMan moved
+GM 0 261 106 : Ghost moved
+GM 1 330 153 : Ghost moved
+PCM 22 156 : PacMan moved
+GM 0 260 106 : Ghost moved
+GM 1 330 154 : Ghost moved
+PCM 22 157 : PacMan moved
+PCM 22 158 : PacMan moved
+GM 0 259 106 : Ghost moved
+GM 1 330 155 : Ghost moved
+PCM 22 159 : PacMan moved
+GM 0 258 106 : Ghost moved
+GM 1 330 156 : Ghost moved
+PCM 22 160 : PacMan moved
+PCM 22 161 : PacMan moved
+GM 0 257 106 : Ghost moved
+GM 1 330 157 : Ghost moved
+PCM 22 162 : PacMan moved
+GM 0 256 106 : Ghost moved
+GM 1 330 158 : Ghost moved
+PCM 22 163 : PacMan moved
+PCM 22 164 : PacMan moved
+GM 0 255 106 : Ghost moved
+GM 1 330 159 : Ghost moved
+PCM 22 165 : PacMan moved
+GM 0 254 106 : Ghost moved
+GM 1 330 160 : Ghost moved
+PCM 22 166 : PacMan moved
+PCM 22 167 : PacMan moved
+GM 0 253 106 : Ghost moved
+GM 1 330 161 : Ghost moved
+PCM 22 168 : PacMan moved
+GM 0 252 106 : Ghost moved
+GM 1 330 162 : Ghost moved
+PCM 22 169 : PacMan moved
+PCM 22 170 : PacMan moved
+GM 0 251 106 : Ghost moved
+GM 1 330 163 : Ghost moved
+PCM 22 171 : PacMan moved
+GM 0 250 106 : Ghost moved
+GM 1 330 164 : Ghost moved
+PCM 22 172 : PacMan moved
+PCM 22 173 : PacMan moved
+GM 0 249 106 : Ghost moved
+GM 1 330 165 : Ghost moved
+PCM 22 174 : PacMan moved
+GM 0 248 106 : Ghost moved
+GM 1 330 166 : Ghost moved
+PCM 22 175 : PacMan moved
+PCM 22 176 : PacMan moved
+GM 0 247 106 : Ghost moved
+GM 1 330 167 : Ghost moved
+PCM 22 177 : PacMan moved
+GM 0 246 106 : Ghost moved
+GM 1 330 168 : Ghost moved
+PCM 22 178 : PacMan moved
+PCM 22 179 : PacMan moved
+GM 0 245 106 : Ghost moved
+GM 1 330 169 : Ghost moved
+PCM 22 180 : PacMan moved
+GM 0 244 106 : Ghost moved
+GM 1 330 170 : Ghost moved
+PCM 22 181 : PacMan moved
+PCM 22 182 : PacMan moved
+GM 0 243 106 : Ghost moved
+GM 1 330 171 : Ghost moved
+PCM 22 183 : PacMan moved
+GM 0 242 106 : Ghost moved
+GM 1 330 172 : Ghost moved
+PCM 22 184 : PacMan moved
+PCM 22 185 : PacMan moved
+GM 0 241 106 : Ghost moved
+GM 1 330 173 : Ghost moved
+PCM 22 186 : PacMan moved
+GM 0 240 106 : Ghost moved
+GM 1 330 174 : Ghost moved
+PCM 22 187 : PacMan moved
+PCM 22 188 : PacMan moved
+GM 0 239 106 : Ghost moved
+GM 1 330 175 : Ghost moved
+PCM 22 189 : PacMan moved
+GM 0 238 106 : Ghost moved
+GM 1 330 176 : Ghost moved
+PCM 22 190 : PacMan moved
+PCM 22 191 : PacMan moved
+GM 0 237 106 : Ghost moved
+GM 1 330 177 : Ghost moved
+PCM 22 192 : PacMan moved
+GM 0 236 106 : Ghost moved
+GM 1 330 178 : Ghost moved
+PCM 22 193 : PacMan moved
+PCM 22 194 : PacMan moved
+GM 0 235 106 : Ghost moved
+GM 1 330 179 : Ghost moved
+PCM 22 195 : PacMan moved
+GM 0 234 106 : Ghost moved
+GM 1 330 180 : Ghost moved
+PCM 22 196 : PacMan moved
+PCM 22 197 : PacMan moved
+GM 0 233 106 : Ghost moved
+GM 1 330 181 : Ghost moved
+PCM 22 198 : PacMan moved
+GM 0 232 106 : Ghost moved
+GM 1 330 182 : Ghost moved
+PCM 22 199 : PacMan moved
+PCM 22 200 : PacMan moved
+GM 0 231 106 : Ghost moved
+GM 1 330 183 : Ghost moved
+PCM 22 201 : PacMan moved
+GM 0 230 106 : Ghost moved
+GM 1 330 184 : Ghost moved
+PCM 22 202 : PacMan moved
+PCM 22 203 : PacMan moved
+GM 0 229 106 : Ghost moved
+GM 1 330 185 : Ghost moved
+PCM 22 204 : PacMan moved
+GM 0 228 106 : Ghost moved
+GM 1 330 186 : Ghost moved
+PCM 22 205 : PacMan moved
+PCM 22 206 : PacMan moved
+GM 0 227 106 : Ghost moved
+GM 1 330 187 : Ghost moved
+PCM 22 207 : PacMan moved
+GM 0 226 106 : Ghost moved
+GM 1 330 188 : Ghost moved
+PCM 22 208 : PacMan moved
+PCM 22 209 : PacMan moved
+GM 0 225 106 : Ghost moved
+GM 1 330 189 : Ghost moved
+PCM 22 210 : PacMan moved
+GM 0 224 106 : Ghost moved
+GM 1 330 190 : Ghost moved
+PCM 22 211 : PacMan moved
+PCM 22 212 : PacMan moved
+GM 0 223 106 : Ghost moved
+GM 1 330 191 : Ghost moved
+PCM 22 213 : PacMan moved
+GM 0 222 106 : Ghost moved
+GM 1 330 192 : Ghost moved
+PCM 22 214 : PacMan moved
+PCM 22 215 : PacMan moved
+GM 0 221 106 : Ghost moved
+GM 1 330 193 : Ghost moved
+PCM 22 216 : PacMan moved
+GM 0 220 106 : Ghost moved
+GM 1 330 194 : Ghost moved
+PCM 22 217 : PacMan moved
+PCM 22 218 : PacMan moved
+GM 0 219 106 : Ghost moved
+GM 1 330 195 : Ghost moved
+PCM 22 219 : PacMan moved
+GM 0 218 106 : Ghost moved
+GM 1 330 196 : Ghost moved
+PCM 22 220 : PacMan moved
+PCM 22 221 : PacMan moved
+GM 0 217 106 : Ghost moved
+GM 1 330 197 : Ghost moved
+PCM 22 222 : PacMan moved
+GM 0 216 106 : Ghost moved
+GM 1 330 198 : Ghost moved
+PCM 22 223 : PacMan moved
+PCM 22 224 : PacMan moved
+GM 0 215 106 : Ghost moved
+GM 1 330 199 : Ghost moved
+PCM 22 225 : PacMan moved
+GM 0 214 106 : Ghost moved
+GM 1 330 200 : Ghost moved
+PCM 22 226 : PacMan moved
+PCM 22 227 : PacMan moved
+GM 0 213 106 : Ghost moved
+GM 1 330 201 : Ghost moved
+PCM 22 228 : PacMan moved
+GM 0 212 106 : Ghost moved
+GM 1 330 202 : Ghost moved
+PCM 22 229 : PacMan moved
+PCM 22 230 : PacMan moved
+GM 0 211 106 : Ghost moved
+GM 1 330 203 : Ghost moved
+PCM 22 231 : PacMan moved
+GM 0 210 106 : Ghost moved
+GM 1 330 204 : Ghost moved
+PCM 22 232 : PacMan moved
+PCM 22 233 : PacMan moved
+GM 0 209 106 : Ghost moved
+GM 1 330 205 : Ghost moved
+PCM 22 234 : PacMan moved
+GM 0 208 106 : Ghost moved
+GM 1 330 206 : Ghost moved
+PCM 22 235 : PacMan moved
+PCM 22 236 : PacMan moved
+GM 0 207 106 : Ghost moved
+GM 1 330 207 : Ghost moved
+PCM 22 237 : PacMan moved
+GM 0 206 106 : Ghost moved
+GM 1 330 208 : Ghost moved
+PCM 22 238 : PacMan moved
+PCM 22 239 : PacMan moved
+GM 0 205 106 : Ghost moved
+GM 1 330 209 : Ghost moved
+PCM 22 240 : PacMan moved
+GM 0 204 106 : Ghost moved
+GM 1 330 210 : Ghost moved
+PCM 22 241 : PacMan moved
+PCM 22 242 : PacMan moved
+GM 0 203 106 : Ghost moved
+GM 1 330 211 : Ghost moved
+PCM 22 243 : PacMan moved
+GM 0 202 106 : Ghost moved
+GM 1 330 212 : Ghost moved
+PCM 22 244 : PacMan moved
+PCM 22 245 : PacMan moved
+GM 0 201 106 : Ghost moved
+GM 1 330 213 : Ghost moved
+PCM 22 246 : PacMan moved
+GM 0 200 106 : Ghost moved
+GM 1 330 214 : Ghost moved
+PCM 22 247 : PacMan moved
+PCM 22 248 : PacMan moved
+GM 0 199 106 : Ghost moved
+GM 1 330 215 : Ghost moved
+PCM 22 249 : PacMan moved
+GM 0 198 106 : Ghost moved
+GM 1 330 216 : Ghost moved
+PCM 22 250 : PacMan moved
+PCM 22 251 : PacMan moved
+GM 0 197 106 : Ghost moved
+GM 1 330 217 : Ghost moved
+PCM 22 252 : PacMan moved
+GM 0 196 106 : Ghost moved
+GM 1 330 218 : Ghost moved
+PCM 22 253 : PacMan moved
+PCM 22 254 : PacMan moved
+GM 0 195 106 : Ghost moved
+GM 1 330 219 : Ghost moved
+PCM 22 255 : PacMan moved
+GM 0 194 106 : Ghost moved
+GM 1 330 220 : Ghost moved
+PCM 22 256 : PacMan moved
+PCM 22 257 : PacMan moved
+GM 0 193 106 : Ghost moved
+GM 1 330 221 : Ghost moved
+PCM 22 258 : PacMan moved
+GM 0 192 106 : Ghost moved
+GM 1 330 222 : Ghost moved
+PCM 22 259 : PacMan moved
+PCM 22 260 : PacMan moved
+GM 0 191 106 : Ghost moved
+GM 1 330 223 : Ghost moved
+PCM 22 261 : PacMan moved
+GM 0 190 106 : Ghost moved
+GM 1 330 224 : Ghost moved
+PCM 22 262 : PacMan moved
+PCM 22 263 : PacMan moved
+GM 0 189 106 : Ghost moved
+GM 1 330 225 : Ghost moved
+PCM 22 264 : PacMan moved
+GM 0 188 106 : Ghost moved
+GM 1 330 226 : Ghost moved
+PCM 22 265 : PacMan moved
+PCM 22 266 : PacMan moved
+GM 0 187 106 : Ghost moved
+GM 1 330 227 : Ghost moved
+PCM 22 267 : PacMan moved
+GM 0 186 106 : Ghost moved
+GM 1 330 228 : Ghost moved
+PCM 22 268 : PacMan moved
+PCM 22 269 : PacMan moved
+GM 0 185 106 : Ghost moved
+GM 1 330 229 : Ghost moved
+PCM 22 270 : PacMan moved
+GM 0 184 106 : Ghost moved
+GM 1 330 230 : Ghost moved
+PCM 22 271 : PacMan moved
+PCM 22 272 : PacMan moved
+GM 0 183 106 : Ghost moved
+GM 1 330 231 : Ghost moved
+PCM 22 273 : PacMan moved
+GM 0 182 106 : Ghost moved
+GM 1 330 232 : Ghost moved
+PCM 22 274 : PacMan moved
+PCM 22 275 : PacMan moved
+GM 0 181 106 : Ghost moved
+GM 1 330 233 : Ghost moved
+PCM 22 276 : PacMan moved
+GM 0 180 106 : Ghost moved
+GM 1 330 234 : Ghost moved
+PCM 22 277 : PacMan moved
+PCM 22 278 : PacMan moved
+GM 0 179 106 : Ghost moved
+GM 1 330 235 : Ghost moved
+PCM 22 279 : PacMan moved
+GM 0 178 106 : Ghost moved
+GM 1 330 236 : Ghost moved
+PCM 22 280 : PacMan moved
+PCM 22 281 : PacMan moved
+GM 0 177 106 : Ghost moved
+GM 1 330 237 : Ghost moved
+PCM 22 282 : PacMan moved
+GM 0 176 106 : Ghost moved
+GM 1 330 238 : Ghost moved
+KEYL 0 : Key obtained
+PCM 22 283 : PacMan moved
+PCM 22 284 : PacMan moved
+GM 1 330 239 : Ghost moved
+PCM 22 285 : PacMan moved
+GM 0 176 107 : Ghost moved
+GM 1 330 240 : Ghost moved
+PCM 22 286 : PacMan moved
+PCM 22 287 : PacMan moved
+GM 0 176 108 : Ghost moved
+GM 1 330 241 : Ghost moved
+PCM 22 288 : PacMan moved
+GM 0 176 109 : Ghost moved
+GM 1 330 242 : Ghost moved
+PCM 22 289 : PacMan moved
+PCM 22 290 : PacMan moved
+GM 0 176 110 : Ghost moved
+GM 1 330 243 : Ghost moved
+PCM 22 291 : PacMan moved
+GM 0 176 111 : Ghost moved
+GM 1 330 244 : Ghost moved
+PCM 22 292 : PacMan moved
+PCM 22 293 : PacMan moved
+GM 0 176 112 : Ghost moved
+GM 1 330 245 : Ghost moved
+PCM 22 294 : PacMan moved
+GM 0 176 113 : Ghost moved
+GM 1 330 246 : Ghost moved
+PCM 22 295 : PacMan moved
+PCM 22 296 : PacMan moved
+GM 0 176 114 : Ghost moved
+GM 1 330 247 : Ghost moved
+PCM 22 297 : PacMan moved
+GM 0 176 115 : Ghost moved
+GM 1 330 248 : Ghost moved
+PCM 22 298 : PacMan moved
+PCM 22 299 : PacMan moved
+GM 0 176 116 : Ghost moved
+GM 1 330 249 : Ghost moved
+PCM 22 300 : PacMan moved
+GM 0 176 117 : Ghost moved
+GM 1 330 250 : Ghost moved
+PCM 22 301 : PacMan moved
+PCM 22 302 : PacMan moved
+GM 0 176 118 : Ghost moved
+GM 1 330 251 : Ghost moved
+PCM 22 303 : PacMan moved
+GM 0 176 119 : Ghost moved
+GM 1 330 252 : Ghost moved
+PCM 22 304 : PacMan moved
+PCM 22 305 : PacMan moved
+GM 0 176 120 : Ghost moved
+GM 1 330 253 : Ghost moved
+PCM 22 306 : PacMan moved
+GM 0 176 121 : Ghost moved
+GM 1 330 254 : Ghost moved
+PCM 22 307 : PacMan moved
+PCM 22 308 : PacMan moved
+GM 0 176 122 : Ghost moved
+GM 1 330 255 : Ghost moved
+PCM 22 309 : PacMan moved
+GM 0 176 123 : Ghost moved
+GM 1 330 256 : Ghost moved
+PCM 22 310 : PacMan moved
+PCM 22 311 : PacMan moved
+GM 0 176 124 : Ghost moved
+GM 1 330 257 : Ghost moved
+PCM 22 312 : PacMan moved
+GM 0 176 125 : Ghost moved
+GM 1 330 258 : Ghost moved
+PCM 22 313 : PacMan moved
+PCM 22 314 : PacMan moved
+GM 0 176 126 : Ghost moved
+GM 1 330 259 : Ghost moved
+PCM 22 315 : PacMan moved
+GM 0 176 127 : Ghost moved
+GM 1 330 260 : Ghost moved
+PCM 22 316 : PacMan moved
+PCM 22 317 : PacMan moved
+GM 0 176 128 : Ghost moved
+PCM 22 318 : PacMan moved
+GM 0 176 129 : Ghost moved
+GM 1 330 259 : Ghost moved
+PCM 22 319 : PacMan moved
+PCM 22 320 : PacMan moved
+GM 0 176 130 : Ghost moved
+GM 1 330 258 : Ghost moved
+PCM 22 321 : PacMan moved
+GM 0 176 131 : Ghost moved
+GM 1 330 257 : Ghost moved
+PCM 22 322 : PacMan moved
+PCM 22 323 : PacMan moved
+GM 0 176 132 : Ghost moved
+GM 1 330 256 : Ghost moved
+PCM 22 324 : PacMan moved
+GM 0 176 133 : Ghost moved
+GM 1 330 255 : Ghost moved
+PCM 22 325 : PacMan moved
+PCM 22 326 : PacMan moved
+GM 0 176 134 : Ghost moved
+GM 1 330 254 : Ghost moved
+PCM 22 327 : PacMan moved
+GM 0 176 135 : Ghost moved
+GM 1 330 253 : Ghost moved
+PCM 22 328 : PacMan moved
+PCM 22 329 : PacMan moved
+GM 0 176 136 : Ghost moved
+GM 1 330 252 : Ghost moved
+PCM 22 330 : PacMan moved
+GM 0 176 137 : Ghost moved
+GM 1 330 251 : Ghost moved
+PCM 22 331 : PacMan moved
+PCM 22 332 : PacMan moved
+GM 0 176 138 : Ghost moved
+GM 1 330 250 : Ghost moved
+PCM 22 333 : PacMan moved
+GM 0 176 139 : Ghost moved
+GM 1 330 249 : Ghost moved
+PCM 22 334 : PacMan moved
+PCM 22 335 : PacMan moved
+GM 0 176 140 : Ghost moved
+GM 1 330 248 : Ghost moved
+PCM 22 336 : PacMan moved
+GM 0 176 141 : Ghost moved
+GM 1 330 247 : Ghost moved
+PCM 22 337 : PacMan moved
+PCM 22 338 : PacMan moved
+GM 0 176 142 : Ghost moved
+GM 1 330 246 : Ghost moved
+PCM 22 339 : PacMan moved
+GM 0 176 143 : Ghost moved
+GM 1 330 245 : Ghost moved
+PCM 22 340 : PacMan moved
+PCM 22 341 : PacMan moved
+GM 0 176 144 : Ghost moved
+GM 1 330 244 : Ghost moved
+PCM 22 342 : PacMan moved
+GM 0 176 145 : Ghost moved
+GM 1 330 243 : Ghost moved
+PCM 22 343 : PacMan moved
+PCM 22 344 : PacMan moved
+GM 0 176 146 : Ghost moved
+GM 1 330 242 : Ghost moved
+PCM 22 345 : PacMan moved
+GM 0 176 147 : Ghost moved
+GM 1 330 241 : Ghost moved
+PCM 22 346 : PacMan moved
+PCM 22 347 : PacMan moved
+GM 0 176 148 : Ghost moved
+GM 1 330 240 : Ghost moved
+PCM 22 348 : PacMan moved
+GM 0 176 149 : Ghost moved
+GM 1 330 239 : Ghost moved
+PCM 22 349 : PacMan moved
+PCM 22 350 : PacMan moved
+GM 0 176 150 : Ghost moved
+GM 1 330 238 : Ghost moved
+PCM 22 351 : PacMan moved
+GM 0 176 151 : Ghost moved
+GM 1 330 237 : Ghost moved
+PCM 22 352 : PacMan moved
+PCM 22 353 : PacMan moved
+GM 0 176 152 : Ghost moved
+GM 1 330 236 : Ghost moved
+PCM 22 354 : PacMan moved
+GM 0 176 153 : Ghost moved
+GM 1 330 235 : Ghost moved
+PCM 22 355 : PacMan moved
+PCM 22 356 : PacMan moved
+GM 0 176 154 : Ghost moved
+GM 1 330 234 : Ghost moved
+PCM 22 357 : PacMan moved
+GM 0 176 155 : Ghost moved
+GM 1 330 233 : Ghost moved
+PCM 22 358 : PacMan moved
+PCM 22 359 : PacMan moved
+GM 0 176 156 : Ghost moved
+GM 1 330 232 : Ghost moved
+PCM 22 360 : PacMan moved
+GM 0 176 157 : Ghost moved
+GM 1 330 231 : Ghost moved
+PCM 22 361 : PacMan moved
+PCM 22 362 : PacMan moved
+GM 0 176 158 : Ghost moved
+GM 1 330 230 : Ghost moved
+PCM 22 363 : PacMan moved
+GM 0 176 159 : Ghost moved
+GM 1 330 229 : Ghost moved
+PCM 22 364 : PacMan moved
+PCM 22 365 : PacMan moved
+GM 0 176 160 : Ghost moved
+GM 1 330 228 : Ghost moved
+PCM 22 366 : PacMan moved
+GM 0 176 161 : Ghost moved
+GM 1 330 227 : Ghost moved
+PCM 22 367 : PacMan moved
+PCM 22 368 : PacMan moved
+GM 0 176 162 : Ghost moved
+GM 1 330 226 : Ghost moved
+PCM 22 369 : PacMan moved
+GM 0 176 163 : Ghost moved
+GM 1 330 225 : Ghost moved
+PCM 22 370 : PacMan moved
+PCM 22 371 : PacMan moved
+GM 0 176 164 : Ghost moved
+GM 1 330 224 : Ghost moved
+PCM 22 372 : PacMan moved
+GM 0 176 165 : Ghost moved
+GM 1 330 223 : Ghost moved
+PCM 22 373 : PacMan moved
+PCM 22 374 : PacMan moved
+GM 0 176 166 : Ghost moved
+GM 1 330 222 : Ghost moved
+PCM 22 375 : PacMan moved
+GM 0 176 167 : Ghost moved
+GM 1 330 221 : Ghost moved
+PCM 22 376 : PacMan moved
+PCM 22 377 : PacMan moved
+GM 0 176 168 : Ghost moved
+GM 1 330 220 : Ghost moved
+PCM 22 378 : PacMan moved
+GM 0 176 169 : Ghost moved
+GM 1 330 219 : Ghost moved
+PCM 22 379 : PacMan moved
+PCM 22 380 : PacMan moved
+GM 0 176 170 : Ghost moved
+GM 1 330 218 : Ghost moved
+PCM 22 381 : PacMan moved
+GM 0 176 171 : Ghost moved
+GM 1 330 217 : Ghost moved
+PCM 22 382 : PacMan moved
+PCM 22 383 : PacMan moved
+GM 0 176 172 : Ghost moved
+GM 1 330 216 : Ghost moved
+PCM 22 384 : PacMan moved
+GM 0 176 173 : Ghost moved
+GM 1 330 215 : Ghost moved
+PCM 22 385 : PacMan moved
+PCM 22 386 : PacMan moved
+GM 0 176 174 : Ghost moved
+GM 1 330 214 : Ghost moved
+PCM 22 387 : PacMan moved
+GM 0 176 175 : Ghost moved
+GM 1 330 213 : Ghost moved
+PCM 22 388 : PacMan moved
+PCM 22 389 : PacMan moved
+GM 0 176 176 : Ghost moved
+GM 1 330 212 : Ghost moved
+PCM 22 390 : PacMan moved
+GM 0 176 177 : Ghost moved
+GM 1 330 211 : Ghost moved
+PCM 22 391 : PacMan moved
+PCM 22 392 : PacMan moved
+GM 0 176 178 : Ghost moved
+GM 1 330 210 : Ghost moved
+PCM 22 393 : PacMan moved
+GM 0 176 179 : Ghost moved
+GM 1 330 209 : Ghost moved
+PCM 22 394 : PacMan moved
+PCM 22 395 : PacMan moved
+GM 0 176 180 : Ghost moved
+GM 1 330 208 : Ghost moved
+PCM 22 396 : PacMan moved
+GM 0 176 181 : Ghost moved
+GM 1 330 207 : Ghost moved
+PCM 22 397 : PacMan moved
+PCM 22 398 : PacMan moved
+GM 0 176 182 : Ghost moved
+GM 1 330 206 : Ghost moved
+PCM 22 399 : PacMan moved
+GM 0 176 183 : Ghost moved
+GM 1 330 205 : Ghost moved
+PCM 22 400 : PacMan moved
+PCM 22 401 : PacMan moved
+GM 0 176 184 : Ghost moved
+GM 1 330 204 : Ghost moved
+PCM 22 402 : PacMan moved
+GM 0 176 185 : Ghost moved
+GM 1 330 203 : Ghost moved
+PCM 22 403 : PacMan moved
+PCM 22 404 : PacMan moved
+GM 0 176 186 : Ghost moved
+GM 1 330 202 : Ghost moved
+PCM 22 405 : PacMan moved
+GM 0 176 187 : Ghost moved
+GM 1 330 201 : Ghost moved
+PCM 22 406 : PacMan moved
+PCM 22 407 : PacMan moved
+GM 0 176 188 : Ghost moved
+GM 1 330 200 : Ghost moved
+PCM 22 408 : PacMan moved
+GM 0 176 189 : Ghost moved
+GM 1 330 199 : Ghost moved
+PCM 22 409 : PacMan moved
+PCM 22 410 : PacMan moved
+GM 0 176 190 : Ghost moved
+GM 1 330 198 : Ghost moved
+PCM 22 411 : PacMan moved
+GM 0 176 191 : Ghost moved
+GM 1 330 197 : Ghost moved
+PCM 22 412 : PacMan moved
+PCM 22 413 : PacMan moved
+GM 0 176 192 : Ghost moved
+GM 1 330 196 : Ghost moved
+PCM 22 414 : PacMan moved
+GM 0 176 193 : Ghost moved
+GM 1 330 195 : Ghost moved
+PCM 22 415 : PacMan moved
+PCM 22 416 : PacMan moved
+GM 0 176 194 : Ghost moved
+GM 1 330 194 : Ghost moved
+PCM 22 417 : PacMan moved
+GM 0 176 195 : Ghost moved
+GM 1 330 193 : Ghost moved
+PCM 22 418 : PacMan moved
+PCM 22 419 : PacMan moved
+GM 0 176 196 : Ghost moved
+GM 1 330 192 : Ghost moved
+PCM 22 420 : PacMan moved
+GM 0 176 197 : Ghost moved
+GM 1 330 191 : Ghost moved
+PCM 22 421 : PacMan moved
+PCM 22 422 : PacMan moved
+GM 0 176 198 : Ghost moved
+GM 1 330 190 : Ghost moved
+PCM 22 423 : PacMan moved
+GM 0 176 199 : Ghost moved
+GM 1 330 189 : Ghost moved
+PCM 22 424 : PacMan moved
+PCM 22 425 : PacMan moved
+GM 0 176 200 : Ghost moved
+GM 1 330 188 : Ghost moved
+PCM 22 426 : PacMan moved
+GM 0 176 201 : Ghost moved
+GM 1 330 187 : Ghost moved
+PCM 22 427 : PacMan moved
+PCM 22 428 : PacMan moved
+GM 0 176 202 : Ghost moved
+GM 1 330 186 : Ghost moved
+PCM 22 429 : PacMan moved
+GM 0 176 203 : Ghost moved
+GM 1 330 185 : Ghost moved
+PCM 22 430 : PacMan moved
+PCM 22 431 : PacMan moved
+GM 0 176 204 : Ghost moved
+GM 1 330 184 : Ghost moved
+PCM 22 432 : PacMan moved
+GM 0 176 205 : Ghost moved
+GM 1 330 183 : Ghost moved
+PCM 22 433 : PacMan moved
+PCM 22 434 : PacMan moved
+GM 0 176 206 : Ghost moved
+GM 1 330 182 : Ghost moved
+PCM 22 435 : PacMan moved
+GM 0 176 207 : Ghost moved
+GM 1 330 181 : Ghost moved
+PCM 22 436 : PacMan moved
+GM 0 176 208 : Ghost moved
+GM 1 330 180 : Ghost moved
+GM 0 176 209 : Ghost moved
+GM 1 330 179 : Ghost moved
+GM 0 176 210 : Ghost moved
+GM 1 330 178 : Ghost moved
+GM 0 176 211 : Ghost moved
+GM 1 330 177 : Ghost moved
+GM 0 176 212 : Ghost moved
+GM 1 330 176 : Ghost moved
+GM 0 176 213 : Ghost moved
+GM 1 330 175 : Ghost moved
+GM 0 176 214 : Ghost moved
+GM 1 330 174 : Ghost moved
+GM 0 176 215 : Ghost moved
+GM 1 330 173 : Ghost moved
+GM 0 176 216 : Ghost moved
+GM 1 330 172 : Ghost moved
+GM 0 176 217 : Ghost moved
+GM 1 330 171 : Ghost moved
+GM 0 176 218 : Ghost moved
+GM 1 330 170 : Ghost moved
+GM 0 176 219 : Ghost moved
+GM 1 330 169 : Ghost moved
+GM 0 176 220 : Ghost moved
+GM 1 330 168 : Ghost moved
+GM 0 176 221 : Ghost moved
+GM 1 330 167 : Ghost moved
+GM 0 176 222 : Ghost moved
+GM 1 330 166 : Ghost moved
+GM 0 176 223 : Ghost moved
+GM 1 330 165 : Ghost moved
+GM 0 176 224 : Ghost moved
+GM 1 330 164 : Ghost moved
+GM 0 176 225 : Ghost moved
+GM 1 330 163 : Ghost moved
+GM 0 176 226 : Ghost moved
+GM 1 330 162 : Ghost moved
+GM 0 176 227 : Ghost moved
+GM 1 330 161 : Ghost moved
+PCM 23 436 : PacMan moved
+GM 0 176 228 : Ghost moved
+GM 1 330 160 : Ghost moved
+PCM 24 436 : PacMan moved
+GM 0 176 229 : Ghost moved
+GM 1 330 159 : Ghost moved
+PCM 25 436 : PacMan moved
+PCM 26 436 : PacMan moved
+GM 0 176 230 : Ghost moved
+GM 1 330 158 : Ghost moved
+PCM 27 436 : PacMan moved
+GM 0 176 231 : Ghost moved
+GM 1 330 157 : Ghost moved
+PCM 28 436 : PacMan moved
+PCM 29 436 : PacMan moved
+GM 0 176 232 : Ghost moved
+GM 1 330 156 : Ghost moved
+PCM 30 436 : PacMan moved
+GM 0 176 233 : Ghost moved
+GM 1 330 155 : Ghost moved
+PCM 31 436 : PacMan moved
+PCM 32 436 : PacMan moved
+GM 0 176 234 : Ghost moved
+GM 1 330 154 : Ghost moved
+PCM 33 436 : PacMan moved
+GM 0 176 235 : Ghost moved
+GM 1 330 153 : Ghost moved
+PCM 34 436 : PacMan moved
+PCM 35 436 : PacMan moved
+GM 0 176 236 : Ghost moved
+GM 1 330 152 : Ghost moved
+PCM 36 436 : PacMan moved
+GM 0 176 237 : Ghost moved
+GM 1 330 151 : Ghost moved
+PCM 37 436 : PacMan moved
+PCM 38 436 : PacMan moved
+GM 0 176 238 : Ghost moved
+GM 1 330 150 : Ghost moved
+PCM 39 436 : PacMan moved
+GM 0 176 239 : Ghost moved
+GM 1 330 149 : Ghost moved
+PCM 40 436 : PacMan moved
+PCM 41 436 : PacMan moved
+GM 0 176 240 : Ghost moved
+GM 1 330 148 : Ghost moved
+PCM 42 436 : PacMan moved
+GM 0 176 241 : Ghost moved
+GM 1 330 147 : Ghost moved
+PCM 43 436 : PacMan moved
+PCM 44 436 : PacMan moved
+GM 0 176 242 : Ghost moved
+GM 1 330 146 : Ghost moved
+PCM 45 436 : PacMan moved
+GM 0 176 243 : Ghost moved
+GM 1 330 145 : Ghost moved
+PCM 46 436 : PacMan moved
+PCM 47 436 : PacMan moved
+GM 0 176 244 : Ghost moved
+GM 1 330 144 : Ghost moved
+PCM 48 436 : PacMan moved
+GM 0 176 245 : Ghost moved
+GM 1 330 143 : Ghost moved
+PCM 49 436 : PacMan moved
+PCM 50 436 : PacMan moved
+GM 0 176 246 : Ghost moved
+GM 1 330 142 : Ghost moved
+PCM 51 436 : PacMan moved
+GM 0 176 247 : Ghost moved
+GM 1 330 141 : Ghost moved
+PCM 52 436 : PacMan moved
+PCM 53 436 : PacMan moved
+GM 0 176 248 : Ghost moved
+GM 1 330 140 : Ghost moved
+PCM 54 436 : PacMan moved
+GM 0 176 249 : Ghost moved
+GM 1 330 139 : Ghost moved
+PCM 55 436 : PacMan moved
+PCM 56 436 : PacMan moved
+GM 0 176 250 : Ghost moved
+GM 1 330 138 : Ghost moved
+PCM 57 436 : PacMan moved
+GM 0 176 251 : Ghost moved
+GM 1 330 137 : Ghost moved
+PCM 58 436 : PacMan moved
+PCM 59 436 : PacMan moved
+GM 0 176 252 : Ghost moved
+GM 1 330 136 : Ghost moved
+PCM 60 436 : PacMan moved
+GM 0 176 253 : Ghost moved
+GM 1 330 135 : Ghost moved
+PCM 61 436 : PacMan moved
+PCM 62 436 : PacMan moved
+GM 0 176 254 : Ghost moved
+GM 1 330 134 : Ghost moved
+PCM 63 436 : PacMan moved
+GM 0 176 255 : Ghost moved
+GM 1 330 133 : Ghost moved
+PCM 64 436 : PacMan moved
+PCM 65 436 : PacMan moved
+GM 0 176 256 : Ghost moved
+GM 1 330 132 : Ghost moved
+PCM 66 436 : PacMan moved
+GM 0 176 257 : Ghost moved
+GM 1 330 131 : Ghost moved
+PCM 67 436 : PacMan moved
+PCM 68 436 : PacMan moved
+GM 0 176 258 : Ghost moved
+GM 1 330 130 : Ghost moved
+PCM 69 436 : PacMan moved
+GM 0 176 259 : Ghost moved
+GM 1 330 129 : Ghost moved
+PCM 70 436 : PacMan moved
+PCM 71 436 : PacMan moved
+GM 0 176 260 : Ghost moved
+GM 1 330 128 : Ghost moved
+PCM 72 436 : PacMan moved
+GM 0 176 261 : Ghost moved
+GM 1 330 127 : Ghost moved
+PCM 73 436 : PacMan moved
+PCM 74 436 : PacMan moved
+GM 0 176 262 : Ghost moved
+GM 1 330 126 : Ghost moved
+PCM 75 436 : PacMan moved
+GM 0 176 263 : Ghost moved
+GM 1 330 125 : Ghost moved
+PCM 76 436 : PacMan moved
+PCM 77 436 : PacMan moved
+GM 0 176 264 : Ghost moved
+GM 1 330 124 : Ghost moved
+PCM 78 436 : PacMan moved
+GM 0 176 265 : Ghost moved
+GM 1 330 123 : Ghost moved
+PCM 79 436 : PacMan moved
+PCM 80 436 : PacMan moved
+GM 0 176 266 : Ghost moved
+GM 1 330 122 : Ghost moved
+PCM 81 436 : PacMan moved
+GM 0 176 267 : Ghost moved
+GM 1 330 121 : Ghost moved
+PCM 82 436 : PacMan moved
+PCM 83 436 : PacMan moved
+GM 0 176 268 : Ghost moved
+GM 1 330 120 : Ghost moved
+PCM 84 436 : PacMan moved
+GM 0 176 269 : Ghost moved
+GM 1 330 119 : Ghost moved
+PCM 85 436 : PacMan moved
+PCM 86 436 : PacMan moved
+GM 0 176 270 : Ghost moved
+GM 1 330 118 : Ghost moved
+PCM 87 436 : PacMan moved
+GM 0 176 271 : Ghost moved
+GM 1 330 117 : Ghost moved
+PCM 88 436 : PacMan moved
+PCM 89 436 : PacMan moved
+GM 0 176 272 : Ghost moved
+GM 1 330 116 : Ghost moved
+PCM 90 436 : PacMan moved
+GM 0 176 273 : Ghost moved
+GM 1 330 115 : Ghost moved
+PCM 91 436 : PacMan moved
+PCM 92 436 : PacMan moved
+GM 0 176 274 : Ghost moved
+GM 1 330 114 : Ghost moved
+PCM 93 436 : PacMan moved
+GM 0 176 275 : Ghost moved
+GM 1 330 113 : Ghost moved
+PCM 94 436 : PacMan moved
+PCM 95 436 : PacMan moved
+GM 0 176 276 : Ghost moved
+GM 1 330 112 : Ghost moved
+PCM 96 436 : PacMan moved
+GM 0 176 277 : Ghost moved
+GM 1 330 111 : Ghost moved
+PCM 97 436 : PacMan moved
+PCM 98 436 : PacMan moved
+GM 0 176 278 : Ghost moved
+GM 1 330 110 : Ghost moved
+PCM 99 436 : PacMan moved
+GM 0 176 279 : Ghost moved
+GM 1 330 109 : Ghost moved
+PCM 100 436 : PacMan moved
+PCM 101 436 : PacMan moved
+GM 0 176 280 : Ghost moved
+GM 1 330 108 : Ghost moved
+PCM 102 436 : PacMan moved
+GM 0 176 281 : Ghost moved
+GM 1 330 107 : Ghost moved
+PCM 103 436 : PacMan moved
+PCM 104 436 : PacMan moved
+GM 0 176 282 : Ghost moved
+GM 1 330 106 : Ghost moved
+PCM 105 436 : PacMan moved
+GM 0 176 283 : Ghost moved
+PCM 106 436 : PacMan moved
+PCM 107 436 : PacMan moved
+GM 0 176 284 : Ghost moved
+GM 1 330 107 : Ghost moved
+PCM 108 436 : PacMan moved
+GM 0 176 285 : Ghost moved
+GM 1 330 108 : Ghost moved
+PCM 109 436 : PacMan moved
+PCM 110 436 : PacMan moved
+GM 0 176 286 : Ghost moved
+GM 1 330 109 : Ghost moved
+PCM 111 436 : PacMan moved
+GM 0 176 287 : Ghost moved
+GM 1 330 110 : Ghost moved
+PCM 112 436 : PacMan moved
+PCM 113 436 : PacMan moved
+GM 0 176 288 : Ghost moved
+GM 1 330 111 : Ghost moved
+PCM 114 436 : PacMan moved
+GM 0 176 289 : Ghost moved
+GM 1 330 112 : Ghost moved
+PCM 115 436 : PacMan moved
+PCM 116 436 : PacMan moved
+GM 0 176 290 : Ghost moved
+GM 1 330 113 : Ghost moved
+PCM 117 436 : PacMan moved
+GM 0 176 291 : Ghost moved
+GM 1 330 114 : Ghost moved
+PCM 118 436 : PacMan moved
+PCM 119 436 : PacMan moved
+GM 0 176 292 : Ghost moved
+GM 1 330 115 : Ghost moved
+PCM 120 436 : PacMan moved
+GM 0 176 293 : Ghost moved
+GM 1 330 116 : Ghost moved
+PCM 121 436 : PacMan moved
+PCM 122 436 : PacMan moved
+GM 0 176 294 : Ghost moved
+GM 1 330 117 : Ghost moved
+PCM 123 436 : PacMan moved
+GM 0 176 295 : Ghost moved
+GM 1 330 118 : Ghost moved
+PCM 124 436 : PacMan moved
+PCM 125 436 : PacMan moved
+GM 0 176 296 : Ghost moved
+GM 1 330 119 : Ghost moved
+PCM 126 436 : PacMan moved
+GM 0 176 297 : Ghost moved
+GM 1 330 120 : Ghost moved
+PCM 127 436 : PacMan moved
+PCM 128 436 : PacMan moved
+GM 0 176 298 : Ghost moved
+GM 1 330 121 : Ghost moved
+PCM 129 436 : PacMan moved
+GM 0 176 299 : Ghost moved
+GM 1 330 122 : Ghost moved
+PCM 130 436 : PacMan moved
+PCM 131 436 : PacMan moved
+GM 0 176 300 : Ghost moved
+GM 1 330 123 : Ghost moved
+PCM 132 436 : PacMan moved
+GM 0 176 301 : Ghost moved
+GM 1 330 124 : Ghost moved
+PCM 133 436 : PacMan moved
+PCM 134 436 : PacMan moved
+GM 0 176 302 : Ghost moved
+GM 1 330 125 : Ghost moved
+PCM 135 436 : PacMan moved
+GM 0 176 303 : Ghost moved
+GM 1 330 126 : Ghost moved
+PCM 136 436 : PacMan moved
+PCM 137 436 : PacMan moved
+GM 0 176 304 : Ghost moved
+GM 1 330 127 : Ghost moved
+PCM 138 436 : PacMan moved
+GM 0 176 305 : Ghost moved
+GM 1 330 128 : Ghost moved
+PCM 139 436 : PacMan moved
+PCM 140 436 : PacMan moved
+GM 0 176 306 : Ghost moved
+GM 1 330 129 : Ghost moved
+PCM 141 436 : PacMan moved
+GM 0 176 307 : Ghost moved
+GM 1 330 130 : Ghost moved
+PCM 142 436 : PacMan moved
+PCM 143 436 : PacMan moved
+GM 0 176 308 : Ghost moved
+GM 1 330 131 : Ghost moved
+PCM 144 436 : PacMan moved
+GM 0 176 309 : Ghost moved
+GM 1 330 132 : Ghost moved
+PCM 145 436 : PacMan moved
+PCM 146 436 : PacMan moved
+GM 0 176 310 : Ghost moved
+GM 1 330 133 : Ghost moved
+PCM 147 436 : PacMan moved
+GM 0 176 311 : Ghost moved
+GM 1 330 134 : Ghost moved
+PCM 148 436 : PacMan moved
+PCM 149 436 : PacMan moved
+GM 0 176 312 : Ghost moved
+GM 1 330 135 : Ghost moved
+PCM 150 436 : PacMan moved
+GM 0 176 313 : Ghost moved
+GM 1 330 136 : Ghost moved
+PCM 151 436 : PacMan moved
+PCM 152 436 : PacMan moved
+GM 0 176 314 : Ghost moved
+GM 1 330 137 : Ghost moved
+PCM 153 436 : PacMan moved
+GM 0 176 315 : Ghost moved
+GM 1 330 138 : Ghost moved
+PCM 154 436 : PacMan moved
+PCM 155 436 : PacMan moved
+GM 0 176 316 : Ghost moved
+GM 1 330 139 : Ghost moved
+PCM 156 436 : PacMan moved
+GM 0 176 317 : Ghost moved
+GM 1 330 140 : Ghost moved
+PCM 157 436 : PacMan moved
+PCM 158 436 : PacMan moved
+GM 0 176 318 : Ghost moved
+GM 1 330 141 : Ghost moved
+PCM 159 436 : PacMan moved
+GM 0 176 319 : Ghost moved
+GM 1 330 142 : Ghost moved
+PCM 160 436 : PacMan moved
+PCM 161 436 : PacMan moved
+GM 0 176 320 : Ghost moved
+GM 1 330 143 : Ghost moved
+PCM 162 436 : PacMan moved
+GM 0 176 321 : Ghost moved
+GM 1 330 144 : Ghost moved
+PCM 163 436 : PacMan moved
+PCM 164 436 : PacMan moved
+GM 0 176 322 : Ghost moved
+GM 1 330 145 : Ghost moved
+PCM 165 436 : PacMan moved
+GM 0 176 323 : Ghost moved
+GM 1 330 146 : Ghost moved
+PCM 166 436 : PacMan moved
+PCM 167 436 : PacMan moved
+GM 0 176 324 : Ghost moved
+GM 1 330 147 : Ghost moved
+PCM 168 436 : PacMan moved
+GM 0 176 325 : Ghost moved
+GM 1 330 148 : Ghost moved
+PCM 169 436 : PacMan moved
+PCM 170 436 : PacMan moved
+GM 0 176 326 : Ghost moved
+GM 1 330 149 : Ghost moved
+PCM 171 436 : PacMan moved
+GM 0 176 327 : Ghost moved
+GM 1 330 150 : Ghost moved
+PCM 172 436 : PacMan moved
+PCM 173 436 : PacMan moved
+GM 0 176 328 : Ghost moved
+GM 1 330 151 : Ghost moved
+PCM 174 436 : PacMan moved
+GM 0 176 329 : Ghost moved
+GM 1 330 152 : Ghost moved
+PCM 175 436 : PacMan moved
+PCM 176 436 : PacMan moved
+GM 0 176 330 : Ghost moved
+GM 1 330 153 : Ghost moved
+PCM 177 436 : PacMan moved
+GM 0 176 331 : Ghost moved
+GM 1 330 154 : Ghost moved
+PCM 178 436 : PacMan moved
+PCM 179 436 : PacMan moved
+GM 0 176 332 : Ghost moved
+GM 1 330 155 : Ghost moved
+PCM 180 436 : PacMan moved
+GM 0 176 333 : Ghost moved
+GM 1 330 156 : Ghost moved
+PCM 181 436 : PacMan moved
+PCM 182 436 : PacMan moved
+GM 0 176 334 : Ghost moved
+GM 1 330 157 : Ghost moved
+PCM 183 436 : PacMan moved
+GM 0 176 335 : Ghost moved
+GM 1 330 158 : Ghost moved
+PCM 184 436 : PacMan moved
+PCM 185 436 : PacMan moved
+GM 0 176 336 : Ghost moved
+GM 1 330 159 : Ghost moved
+PCM 186 436 : PacMan moved
+GM 0 176 337 : Ghost moved
+GM 1 330 160 : Ghost moved
+PCM 187 436 : PacMan moved
+PCM 188 436 : PacMan moved
+GM 0 176 338 : Ghost moved
+GM 1 330 161 : Ghost moved
+PCM 189 436 : PacMan moved
+GM 0 176 339 : Ghost moved
+GM 1 330 162 : Ghost moved
+PCM 190 436 : PacMan moved
+PCM 191 436 : PacMan moved
+GM 0 176 340 : Ghost moved
+GM 1 330 163 : Ghost moved
+PCM 192 436 : PacMan moved
+GM 0 176 341 : Ghost moved
+GM 1 330 164 : Ghost moved
+PCM 193 436 : PacMan moved
+PCM 194 436 : PacMan moved
+GM 0 176 342 : Ghost moved
+GM 1 330 165 : Ghost moved
+PCM 195 436 : PacMan moved
+GM 0 176 343 : Ghost moved
+GM 1 330 166 : Ghost moved
+PCM 196 436 : PacMan moved
+PCM 197 436 : PacMan moved
+GM 0 176 344 : Ghost moved
+GM 1 330 167 : Ghost moved
+PCM 198 436 : PacMan moved
+GM 0 176 345 : Ghost moved
+GM 1 330 168 : Ghost moved
+PCM 199 436 : PacMan moved
+PCM 200 436 : PacMan moved
+GM 0 176 346 : Ghost moved
+GM 1 330 169 : Ghost moved
+PCM 201 436 : PacMan moved
+GM 0 176 347 : Ghost moved
+GM 1 330 170 : Ghost moved
+PCM 202 436 : PacMan moved
+PCM 203 436 : PacMan moved
+GM 0 176 348 : Ghost moved
+GM 1 330 171 : Ghost moved
+PCM 204 436 : PacMan moved
+GM 0 176 349 : Ghost moved
+GM 1 330 172 : Ghost moved
+PCM 205 436 : PacMan moved
+PCM 206 436 : PacMan moved
+GM 0 176 350 : Ghost moved
+GM 1 330 173 : Ghost moved
+PCM 207 436 : PacMan moved
+GM 0 176 351 : Ghost moved
+GM 1 330 174 : Ghost moved
+PCM 208 436 : PacMan moved
+PCM 209 436 : PacMan moved
+GM 0 176 352 : Ghost moved
+GM 1 330 175 : Ghost moved
+PCM 210 436 : PacMan moved
+GM 0 176 353 : Ghost moved
+GM 1 330 176 : Ghost moved
+PCM 211 436 : PacMan moved
+PCM 212 436 : PacMan moved
+GM 0 176 354 : Ghost moved
+GM 1 330 177 : Ghost moved
+PCM 213 436 : PacMan moved
+GM 0 176 355 : Ghost moved
+GM 1 330 178 : Ghost moved
+PCM 214 436 : PacMan moved
+PCM 215 436 : PacMan moved
+GM 0 176 356 : Ghost moved
+GM 1 330 179 : Ghost moved
+PCM 216 436 : PacMan moved
+GM 0 176 357 : Ghost moved
+GM 1 330 180 : Ghost moved
+PCM 217 436 : PacMan moved
+PCM 218 436 : PacMan moved
+GM 0 176 358 : Ghost moved
+GM 1 330 181 : Ghost moved
+PCM 219 436 : PacMan moved
+GM 0 176 359 : Ghost moved
+GM 1 330 182 : Ghost moved
+PCM 220 436 : PacMan moved
+PCM 221 436 : PacMan moved
+GM 0 176 360 : Ghost moved
+GM 1 330 183 : Ghost moved
+PCM 222 436 : PacMan moved
+GM 0 176 361 : Ghost moved
+GM 1 330 184 : Ghost moved
+PCM 223 436 : PacMan moved
+PCM 224 436 : PacMan moved
+GM 0 176 362 : Ghost moved
+GM 1 330 185 : Ghost moved
+PCM 225 436 : PacMan moved
+GM 0 176 363 : Ghost moved
+GM 1 330 186 : Ghost moved
+PCM 226 436 : PacMan moved
+PCM 227 436 : PacMan moved
+GM 0 176 364 : Ghost moved
+GM 1 330 187 : Ghost moved
+PCM 228 436 : PacMan moved
+GM 0 176 365 : Ghost moved
+GM 1 330 188 : Ghost moved
+PCM 229 436 : PacMan moved
+PCM 230 436 : PacMan moved
+GM 0 176 366 : Ghost moved
+GM 1 330 189 : Ghost moved
+PCM 231 436 : PacMan moved
+GM 0 176 367 : Ghost moved
+GM 1 330 190 : Ghost moved
+PCM 232 436 : PacMan moved
+PCM 233 436 : PacMan moved
+GM 0 176 368 : Ghost moved
+GM 1 330 191 : Ghost moved
+PCM 234 436 : PacMan moved
+GM 0 176 369 : Ghost moved
+GM 1 330 192 : Ghost moved
+PCM 235 436 : PacMan moved
+PCM 236 436 : PacMan moved
+GM 0 176 370 : Ghost moved
+GM 1 330 193 : Ghost moved
+PCM 237 436 : PacMan moved
+GM 0 176 371 : Ghost moved
+GM 1 330 194 : Ghost moved
+PCM 238 436 : PacMan moved
+PCM 239 436 : PacMan moved
+GM 0 176 372 : Ghost moved
+GM 1 330 195 : Ghost moved
+PCM 240 436 : PacMan moved
+GM 0 176 373 : Ghost moved
+GM 1 330 196 : Ghost moved
+PCM 241 436 : PacMan moved
+PCM 242 436 : PacMan moved
+GM 0 176 374 : Ghost moved
+GM 1 330 197 : Ghost moved
+PCM 243 436 : PacMan moved
+GM 0 176 375 : Ghost moved
+GM 1 330 198 : Ghost moved
+PCM 244 436 : PacMan moved
+PCM 245 436 : PacMan moved
+GM 0 176 376 : Ghost moved
+GM 1 330 199 : Ghost moved
+PCM 246 436 : PacMan moved
+GM 0 176 377 : Ghost moved
+GM 1 330 200 : Ghost moved
+PCM 247 436 : PacMan moved
+PCM 248 436 : PacMan moved
+GM 0 176 378 : Ghost moved
+GM 1 330 201 : Ghost moved
+PCM 249 436 : PacMan moved
+GM 0 176 379 : Ghost moved
+GM 1 330 202 : Ghost moved
+PCM 250 436 : PacMan moved
+PCM 251 436 : PacMan moved
+GM 0 176 380 : Ghost moved
+GM 1 330 203 : Ghost moved
+PCM 252 436 : PacMan moved
+GM 0 176 381 : Ghost moved
+GM 1 330 204 : Ghost moved
+PCM 253 436 : PacMan moved
+PCM 254 436 : PacMan moved
+GM 0 176 382 : Ghost moved
+GM 1 330 205 : Ghost moved
+PCM 255 436 : PacMan moved
+GM 0 176 383 : Ghost moved
+GM 1 330 206 : Ghost moved
+PCM 256 436 : PacMan moved
+PCM 257 436 : PacMan moved
+GM 0 176 384 : Ghost moved
+GM 1 330 207 : Ghost moved
+PCM 258 436 : PacMan moved
+GM 0 176 385 : Ghost moved
+GM 1 330 208 : Ghost moved
+PCM 259 436 : PacMan moved
+PCM 260 436 : PacMan moved
+GM 0 176 386 : Ghost moved
+GM 1 330 209 : Ghost moved
+PCM 261 436 : PacMan moved
+GM 0 176 387 : Ghost moved
+GM 1 330 210 : Ghost moved
+PCM 262 436 : PacMan moved
+PCM 263 436 : PacMan moved
+GM 0 176 388 : Ghost moved
+GM 1 330 211 : Ghost moved
+PCM 264 436 : PacMan moved
+GM 0 176 389 : Ghost moved
+GM 1 330 212 : Ghost moved
+PCM 265 436 : PacMan moved
+PCM 266 436 : PacMan moved
+GM 0 176 390 : Ghost moved
+GM 1 330 213 : Ghost moved
+PCM 267 436 : PacMan moved
+GM 0 176 391 : Ghost moved
+GM 1 330 214 : Ghost moved
+PCM 268 436 : PacMan moved
+PCM 269 436 : PacMan moved
+GM 0 176 392 : Ghost moved
+GM 1 330 215 : Ghost moved
+PCM 270 436 : PacMan moved
+GM 0 176 393 : Ghost moved
+GM 1 330 216 : Ghost moved
+PCM 271 436 : PacMan moved
+PCM 272 436 : PacMan moved
+GM 0 176 394 : Ghost moved
+GM 1 330 217 : Ghost moved
+PCM 273 436 : PacMan moved
+GM 0 176 395 : Ghost moved
+GM 1 330 218 : Ghost moved
+PCM 274 436 : PacMan moved
+PCM 275 436 : PacMan moved
+GM 0 176 396 : Ghost moved
+GM 1 330 219 : Ghost moved
+PCM 276 436 : PacMan moved
+GM 0 176 397 : Ghost moved
+GM 1 330 220 : Ghost moved
+PCM 277 436 : PacMan moved
+PCM 278 436 : PacMan moved
+GM 0 176 398 : Ghost moved
+GM 1 330 221 : Ghost moved
+PCM 279 436 : PacMan moved
+GM 0 176 399 : Ghost moved
+GM 1 330 222 : Ghost moved
+PCM 280 436 : PacMan moved
+PCM 281 436 : PacMan moved
+GM 0 176 400 : Ghost moved
+GM 1 330 223 : Ghost moved
+PCM 282 436 : PacMan moved
+GM 0 176 401 : Ghost moved
+GM 1 330 224 : Ghost moved
+PCM 283 436 : PacMan moved
+PCM 284 436 : PacMan moved
+GM 0 176 402 : Ghost moved
+GM 1 330 225 : Ghost moved
+PCM 285 436 : PacMan moved
+GM 0 176 403 : Ghost moved
+GM 1 330 226 : Ghost moved
+PCM 286 436 : PacMan moved
+PCM 287 436 : PacMan moved
+GM 0 176 404 : Ghost moved
+GM 1 330 227 : Ghost moved
+PCM 288 436 : PacMan moved
+GM 0 176 405 : Ghost moved
+GM 1 330 228 : Ghost moved
+PCM 289 436 : PacMan moved
+PCM 290 436 : PacMan moved
+GM 0 176 406 : Ghost moved
+GM 1 330 229 : Ghost moved
+PCM 291 436 : PacMan moved
+GM 0 176 407 : Ghost moved
+GM 1 330 230 : Ghost moved
+PCM 292 436 : PacMan moved
+PCM 293 436 : PacMan moved
+GM 0 176 408 : Ghost moved
+GM 1 330 231 : Ghost moved
+PCM 294 436 : PacMan moved
+GM 0 176 409 : Ghost moved
+GM 1 330 232 : Ghost moved
+PCM 295 436 : PacMan moved
+PCM 296 436 : PacMan moved
+GM 0 176 410 : Ghost moved
+GM 1 330 233 : Ghost moved
+PCM 297 436 : PacMan moved
+GM 0 176 411 : Ghost moved
+GM 1 330 234 : Ghost moved
+PCM 298 436 : PacMan moved
+PCM 299 436 : PacMan moved
+GM 0 176 412 : Ghost moved
+GM 1 330 235 : Ghost moved
+PCM 300 436 : PacMan moved
+GM 0 176 413 : Ghost moved
+GM 1 330 236 : Ghost moved
+PCM 301 436 : PacMan moved
+PCM 302 436 : PacMan moved
+GM 0 176 414 : Ghost moved
+GM 1 330 237 : Ghost moved
+PCM 303 436 : PacMan moved
+GM 0 176 415 : Ghost moved
+GM 1 330 238 : Ghost moved
+PCM 304 436 : PacMan moved
+PCM 305 436 : PacMan moved
+GM 0 176 416 : Ghost moved
+GM 1 330 239 : Ghost moved
+PCM 306 436 : PacMan moved
+GM 0 176 417 : Ghost moved
+GM 1 330 240 : Ghost moved
+PCM 307 436 : PacMan moved
+PCM 308 436 : PacMan moved
+GM 0 176 418 : Ghost moved
+GM 1 330 241 : Ghost moved
+PCM 309 436 : PacMan moved
+GM 0 176 419 : Ghost moved
+GM 1 330 242 : Ghost moved
+PCM 310 436 : PacMan moved
+PCM 311 436 : PacMan moved
+GM 0 176 420 : Ghost moved
+GM 1 330 243 : Ghost moved
+PCM 312 436 : PacMan moved
+GM 0 176 421 : Ghost moved
+GM 1 330 244 : Ghost moved
+PCM 313 436 : PacMan moved
+PCM 314 436 : PacMan moved
+GM 0 176 422 : Ghost moved
+GM 1 330 245 : Ghost moved
+PCM 315 436 : PacMan moved
+GM 0 176 423 : Ghost moved
+GM 1 330 246 : Ghost moved
+PCM 316 436 : PacMan moved
+PCM 317 436 : PacMan moved
+GM 0 176 424 : Ghost moved
+GM 1 330 247 : Ghost moved
+PCM 318 436 : PacMan moved
+GM 0 176 425 : Ghost moved
+GM 1 330 248 : Ghost moved
+PCM 319 436 : PacMan moved
+PCM 320 436 : PacMan moved
+GM 0 176 426 : Ghost moved
+GM 1 330 249 : Ghost moved
+PCM 321 436 : PacMan moved
+GM 0 176 427 : Ghost moved
+GM 1 330 250 : Ghost moved
+PCM 322 436 : PacMan moved
+PCM 323 436 : PacMan moved
+GM 0 176 428 : Ghost moved
+GM 1 330 251 : Ghost moved
+PCM 324 436 : PacMan moved
+GM 0 176 429 : Ghost moved
+GM 1 330 252 : Ghost moved
+PCM 325 436 : PacMan moved
+PCM 326 436 : PacMan moved
+GM 0 176 430 : Ghost moved
+GM 1 330 253 : Ghost moved
+PCM 327 436 : PacMan moved
+GM 0 176 431 : Ghost moved
+GM 1 330 254 : Ghost moved
+PCM 328 436 : PacMan moved
+PCM 329 436 : PacMan moved
+GM 0 176 432 : Ghost moved
+GM 1 330 255 : Ghost moved
+PCM 330 436 : PacMan moved
+GM 0 176 433 : Ghost moved
+GM 1 330 256 : Ghost moved
+PCM 331 436 : PacMan moved
+PCM 332 436 : PacMan moved
+GM 0 176 434 : Ghost moved
+GM 1 330 257 : Ghost moved
+PCM 333 436 : PacMan moved
+GM 0 176 435 : Ghost moved
+GM 1 330 258 : Ghost moved
+PCM 334 436 : PacMan moved
+PCM 335 436 : PacMan moved
+GM 0 176 436 : Ghost moved
+GM 1 330 259 : Ghost moved
+PCM 336 436 : PacMan moved
+GM 1 330 260 : Ghost moved
+PCM 337 436 : PacMan moved
+PCM 338 436 : PacMan moved
+GM 0 177 436 : Ghost moved
+PCM 339 436 : PacMan moved
+GM 0 178 436 : Ghost moved
+GM 1 329 260 : Ghost moved
+PCM 340 436 : PacMan moved
+PCM 341 436 : PacMan moved
+GM 0 179 436 : Ghost moved
+GM 1 328 260 : Ghost moved
+PCM 342 436 : PacMan moved
+GM 0 180 436 : Ghost moved
+GM 1 327 260 : Ghost moved
+PCM 343 436 : PacMan moved
+PCM 344 436 : PacMan moved
+GM 0 181 436 : Ghost moved
+GM 1 326 260 : Ghost moved
+PCM 345 436 : PacMan moved
+GM 0 182 436 : Ghost moved
+GM 1 325 260 : Ghost moved
+PCM 346 436 : PacMan moved
+PCM 347 436 : PacMan moved
+GM 0 183 436 : Ghost moved
+GM 1 324 260 : Ghost moved
+PCM 348 436 : PacMan moved
+GM 0 184 436 : Ghost moved
+GM 1 323 260 : Ghost moved
+PCM 349 436 : PacMan moved
+PCM 350 436 : PacMan moved
+GM 0 185 436 : Ghost moved
+GM 1 322 260 : Ghost moved
+PCM 351 436 : PacMan moved
+GM 0 186 436 : Ghost moved
+GM 1 321 260 : Ghost moved
+PCM 352 436 : PacMan moved
+PCM 353 436 : PacMan moved
+GM 0 187 436 : Ghost moved
+GM 1 320 260 : Ghost moved
+PCM 354 436 : PacMan moved
+GM 0 188 436 : Ghost moved
+GM 1 319 260 : Ghost moved
+PCM 355 436 : PacMan moved
+PCM 356 436 : PacMan moved
+GM 0 189 436 : Ghost moved
+GM 1 318 260 : Ghost moved
+PCM 357 436 : PacMan moved
+GM 0 190 436 : Ghost moved
+GM 1 317 260 : Ghost moved
+PCM 358 436 : PacMan moved
+PCM 359 436 : PacMan moved
+GM 0 191 436 : Ghost moved
+GM 1 316 260 : Ghost moved
+PCM 360 436 : PacMan moved
+GM 0 192 436 : Ghost moved
+GM 1 315 260 : Ghost moved
+PCM 361 436 : PacMan moved
+PCM 362 436 : PacMan moved
+GM 0 193 436 : Ghost moved
+GM 1 314 260 : Ghost moved
+PCM 363 436 : PacMan moved
+GM 0 194 436 : Ghost moved
+GM 1 313 260 : Ghost moved
+PCM 364 436 : PacMan moved
+PCM 365 436 : PacMan moved
+GM 0 195 436 : Ghost moved
+GM 1 312 260 : Ghost moved
+PCM 366 436 : PacMan moved
+GM 0 196 436 : Ghost moved
+GM 1 311 260 : Ghost moved
+PCM 367 436 : PacMan moved
+PCM 368 436 : PacMan moved
+GM 0 197 436 : Ghost moved
+GM 1 310 260 : Ghost moved
+PCM 369 436 : PacMan moved
+GM 0 198 436 : Ghost moved
+GM 1 309 260 : Ghost moved
+PCM 370 436 : PacMan moved
+PCM 371 436 : PacMan moved
+GM 0 199 436 : Ghost moved
+GM 1 308 260 : Ghost moved
+PCM 372 436 : PacMan moved
+GM 0 200 436 : Ghost moved
+GM 1 307 260 : Ghost moved
+PCM 373 436 : PacMan moved
+PCM 374 436 : PacMan moved
+GM 0 201 436 : Ghost moved
+GM 1 306 260 : Ghost moved
+PCM 375 436 : PacMan moved
+GM 0 202 436 : Ghost moved
+GM 1 305 260 : Ghost moved
+PCM 376 436 : PacMan moved
+PCM 377 436 : PacMan moved
+GM 0 203 436 : Ghost moved
+GM 1 304 260 : Ghost moved
+PCM 378 436 : PacMan moved
+GM 0 204 436 : Ghost moved
+GM 1 303 260 : Ghost moved
+PCM 379 436 : PacMan moved
+PCM 380 436 : PacMan moved
+GM 0 205 436 : Ghost moved
+GM 1 302 260 : Ghost moved
+PCM 381 436 : PacMan moved
+GM 0 206 436 : Ghost moved
+GM 1 301 260 : Ghost moved
+PCM 382 436 : PacMan moved
+PCM 383 436 : PacMan moved
+GM 0 207 436 : Ghost moved
+GM 1 300 260 : Ghost moved
+PCM 384 436 : PacMan moved
+GM 0 208 436 : Ghost moved
+GM 1 299 260 : Ghost moved
+PCM 385 436 : PacMan moved
+PCM 386 436 : PacMan moved
+GM 0 209 436 : Ghost moved
+GM 1 298 260 : Ghost moved
+PCM 387 436 : PacMan moved
+GM 0 210 436 : Ghost moved
+GM 1 297 260 : Ghost moved
+PCM 388 436 : PacMan moved
+PCM 389 436 : PacMan moved
+GM 0 211 436 : Ghost moved
+GM 1 296 260 : Ghost moved
+PCM 390 436 : PacMan moved
+GM 0 212 436 : Ghost moved
+GM 1 295 260 : Ghost moved
+PCM 391 436 : PacMan moved
+PCM 392 436 : PacMan moved
+GM 0 213 436 : Ghost moved
+GM 1 294 260 : Ghost moved
+PCM 393 436 : PacMan moved
+GM 0 214 436 : Ghost moved
+GM 1 293 260 : Ghost moved
+PCM 394 436 : PacMan moved
+PCM 395 436 : PacMan moved
+GM 0 215 436 : Ghost moved
+GM 1 292 260 : Ghost moved
+PCM 396 436 : PacMan moved
+GM 0 216 436 : Ghost moved
+GM 1 291 260 : Ghost moved
+PCM 397 436 : PacMan moved
+PCM 398 436 : PacMan moved
+GM 0 217 436 : Ghost moved
+GM 1 290 260 : Ghost moved
+PCM 399 436 : PacMan moved
+GM 0 218 436 : Ghost moved
+GM 1 289 260 : Ghost moved
+PCM 400 436 : PacMan moved
+PCM 401 436 : PacMan moved
+GM 0 219 436 : Ghost moved
+GM 1 288 260 : Ghost moved
+PCM 402 436 : PacMan moved
+GM 0 220 436 : Ghost moved
+GM 1 287 260 : Ghost moved
+PCM 403 436 : PacMan moved
+PCM 404 436 : PacMan moved
+GM 0 221 436 : Ghost moved
+GM 1 286 260 : Ghost moved
+PCM 405 436 : PacMan moved
+GM 0 222 436 : Ghost moved
+GM 1 285 260 : Ghost moved
+PCM 406 436 : PacMan moved
+PCM 407 436 : PacMan moved
+GM 0 223 436 : Ghost moved
+GM 1 284 260 : Ghost moved
+PCM 408 436 : PacMan moved
+GM 0 224 436 : Ghost moved
+GM 1 283 260 : Ghost moved
+PCM 409 436 : PacMan moved
+PCM 410 436 : PacMan moved
+GM 0 225 436 : Ghost moved
+GM 1 282 260 : Ghost moved
+PCM 411 436 : PacMan moved
+GM 0 226 436 : Ghost moved
+GM 1 281 260 : Ghost moved
+PCM 412 436 : PacMan moved
+PCM 413 436 : PacMan moved
+GM 0 227 436 : Ghost moved
+GM 1 280 260 : Ghost moved
+PCM 414 436 : PacMan moved
+GM 0 228 436 : Ghost moved
+GM 1 279 260 : Ghost moved
+PCM 415 436 : PacMan moved
+PCM 416 436 : PacMan moved
+GM 0 229 436 : Ghost moved
+GM 1 278 260 : Ghost moved
+PCM 417 436 : PacMan moved
+GM 0 230 436 : Ghost moved
+GM 1 277 260 : Ghost moved
+PCM 418 436 : PacMan moved
+PCM 419 436 : PacMan moved
+GM 0 231 436 : Ghost moved
+GM 1 276 260 : Ghost moved
+PCM 420 436 : PacMan moved
+GM 0 232 436 : Ghost moved
+GM 1 275 260 : Ghost moved
+PCM 421 436 : PacMan moved
+PCM 422 436 : PacMan moved
+GM 0 233 436 : Ghost moved
+GM 1 274 260 : Ghost moved
+PCM 423 436 : PacMan moved
+GM 0 234 436 : Ghost moved
+GM 1 273 260 : Ghost moved
+PCM 424 436 : PacMan moved
+PCM 425 436 : PacMan moved
+GM 0 235 436 : Ghost moved
+GM 1 272 260 : Ghost moved
+PCM 426 436 : PacMan moved
+GM 0 236 436 : Ghost moved
+GM 1 271 260 : Ghost moved
+PCM 427 436 : PacMan moved
+PCM 428 436 : PacMan moved
+GM 0 237 436 : Ghost moved
+GM 1 270 260 : Ghost moved
+PCM 429 436 : PacMan moved
+GM 0 238 436 : Ghost moved
+GM 1 269 260 : Ghost moved
+PCM 430 436 : PacMan moved
+PCM 431 436 : PacMan moved
+GM 0 239 436 : Ghost moved
+GM 1 268 260 : Ghost moved
+PCM 432 436 : PacMan moved
+GM 0 240 436 : Ghost moved
+GM 1 267 260 : Ghost moved
+PCM 433 436 : PacMan moved
+PCM 434 436 : PacMan moved
+GM 0 241 436 : Ghost moved
+GM 1 266 260 : Ghost moved
+PCM 435 436 : PacMan moved
+GM 0 242 436 : Ghost moved
+GM 1 265 260 : Ghost moved
+PCM 436 436 : PacMan moved
+PCM 437 436 : PacMan moved
+GM 0 243 436 : Ghost moved
+GM 1 264 260 : Ghost moved
+PCM 438 436 : PacMan moved
+GM 0 244 436 : Ghost moved
+PCM 439 436 : PacMan moved
+PCM 440 436 : PacMan moved
+GM 0 245 436 : Ghost moved
+GM 1 264 259 : Ghost moved
+PCM 441 436 : PacMan moved
+GM 0 246 436 : Ghost moved
+GM 1 264 258 : Ghost moved
+PCM 442 436 : PacMan moved
+PCM 443 436 : PacMan moved
+GM 0 247 436 : Ghost moved
+GM 1 264 257 : Ghost moved
+PCM 444 436 : PacMan moved
+GM 0 248 436 : Ghost moved
+GM 1 264 256 : Ghost moved
+PCM 445 436 : PacMan moved
+PCM 446 436 : PacMan moved
+GM 0 249 436 : Ghost moved
+GM 1 264 255 : Ghost moved
+PCM 447 436 : PacMan moved
+GM 0 250 436 : Ghost moved
+GM 1 264 254 : Ghost moved
+PCM 448 436 : PacMan moved
+PCM 449 436 : PacMan moved
+GM 0 251 436 : Ghost moved
+GM 1 264 253 : Ghost moved
+PCM 450 436 : PacMan moved
+GM 0 252 436 : Ghost moved
+GM 1 264 252 : Ghost moved
+PCM 451 436 : PacMan moved
+PCM 452 436 : PacMan moved
+GM 0 253 436 : Ghost moved
+GM 1 264 251 : Ghost moved
+PCM 453 436 : PacMan moved
+GM 0 254 436 : Ghost moved
+GM 1 264 250 : Ghost moved
+PCM 454 436 : PacMan moved
+PCM 455 436 : PacMan moved
+GM 0 255 436 : Ghost moved
+GM 1 264 249 : Ghost moved
+PCM 456 436 : PacMan moved
+GM 0 256 436 : Ghost moved
+GM 1 264 248 : Ghost moved
+PCM 457 436 : PacMan moved
+PCM 458 436 : PacMan moved
+GM 0 257 436 : Ghost moved
+GM 1 264 247 : Ghost moved
+PCM 459 436 : PacMan moved
+GM 0 258 436 : Ghost moved
+GM 1 264 246 : Ghost moved
+PCM 460 436 : PacMan moved
+PCM 461 436 : PacMan moved
+GM 0 259 436 : Ghost moved
+GM 1 264 245 : Ghost moved
+PCM 462 436 : PacMan moved
+GM 0 260 436 : Ghost moved
+GM 1 264 244 : Ghost moved
+PCM 463 436 : PacMan moved
+PCM 464 436 : PacMan moved
+GM 0 261 436 : Ghost moved
+GM 1 264 243 : Ghost moved
+PCM 465 436 : PacMan moved
+GM 0 262 436 : Ghost moved
+GM 1 264 242 : Ghost moved
+PCM 466 436 : PacMan moved
+PCM 467 436 : PacMan moved
+GM 0 263 436 : Ghost moved
+GM 1 264 241 : Ghost moved
+PCM 468 436 : PacMan moved
+GM 0 264 436 : Ghost moved
+GM 1 264 240 : Ghost moved
+PCM 469 436 : PacMan moved
+PCM 470 436 : PacMan moved
+GM 0 265 436 : Ghost moved
+GM 1 264 239 : Ghost moved
+PCM 471 436 : PacMan moved
+GM 0 266 436 : Ghost moved
+GM 1 264 238 : Ghost moved
+PCM 472 436 : PacMan moved
+PCM 473 436 : PacMan moved
+GM 0 267 436 : Ghost moved
+PCM 474 436 : PacMan moved
+GM 0 268 436 : Ghost moved
+PCM 475 436 : PacMan moved
+PCM 476 436 : PacMan moved
+GM 0 269 436 : Ghost moved
+PCM 477 436 : PacMan moved
+GM 0 270 436 : Ghost moved
+GM 1 264 239 : Ghost moved
+PCM 478 436 : PacMan moved
+PCM 479 436 : PacMan moved
+GM 0 271 436 : Ghost moved
+GM 1 264 240 : Ghost moved
+PCM 480 436 : PacMan moved
+GM 0 272 436 : Ghost moved
+GM 1 264 241 : Ghost moved
+PCM 481 436 : PacMan moved
+PCM 482 436 : PacMan moved
+GM 0 273 436 : Ghost moved
+GM 1 264 242 : Ghost moved
+PCM 483 436 : PacMan moved
+GM 0 274 436 : Ghost moved
+GM 1 264 243 : Ghost moved
+PCM 484 436 : PacMan moved
+PCM 485 436 : PacMan moved
+GM 0 275 436 : Ghost moved
+GM 1 264 244 : Ghost moved
+PCM 486 436 : PacMan moved
+GM 0 276 436 : Ghost moved
+GM 1 264 245 : Ghost moved
+PCM 487 436 : PacMan moved
+PCM 488 436 : PacMan moved
+GM 0 277 436 : Ghost moved
+GM 1 264 246 : Ghost moved
+PCM 489 436 : PacMan moved
+GM 0 278 436 : Ghost moved
+GM 1 264 247 : Ghost moved
+PCM 490 436 : PacMan moved
+PCM 491 436 : PacMan moved
+GM 0 279 436 : Ghost moved
+GM 1 264 248 : Ghost moved
+PCM 492 436 : PacMan moved
+GM 0 280 436 : Ghost moved
+GM 1 264 249 : Ghost moved
+PCM 493 436 : PacMan moved
+PCM 494 436 : PacMan moved
+GM 0 281 436 : Ghost moved
+GM 1 264 250 : Ghost moved
+PCM 495 436 : PacMan moved
+GM 0 282 436 : Ghost moved
+GM 1 264 251 : Ghost moved
+PCM 496 436 : PacMan moved
+PCM 497 436 : PacMan moved
+GM 0 283 436 : Ghost moved
+GM 1 264 252 : Ghost moved
+PCM 498 436 : PacMan moved
+GM 0 284 436 : Ghost moved
+GM 1 264 253 : Ghost moved
+PCM 499 436 : PacMan moved
+PCM 500 436 : PacMan moved
+GM 0 285 436 : Ghost moved
+GM 1 264 254 : Ghost moved
+PCM 501 436 : PacMan moved
+GM 0 286 436 : Ghost moved
+GM 1 264 255 : Ghost moved
+PCM 502 436 : PacMan moved
+PCM 503 436 : PacMan moved
+GM 0 287 436 : Ghost moved
+GM 1 264 256 : Ghost moved
+PCM 504 436 : PacMan moved
+GM 0 288 436 : Ghost moved
+GM 1 264 257 : Ghost moved
+PCM 505 436 : PacMan moved
+PCM 506 436 : PacMan moved
+GM 0 289 436 : Ghost moved
+GM 1 264 258 : Ghost moved
+PCM 507 436 : PacMan moved
+GM 0 290 436 : Ghost moved
+GM 1 264 259 : Ghost moved
+PCM 508 436 : PacMan moved
+PCM 509 436 : PacMan moved
+GM 0 291 436 : Ghost moved
+GM 1 264 260 : Ghost moved
+PCM 510 436 : PacMan moved
+GM 0 292 436 : Ghost moved
+PCM 511 436 : PacMan moved
+PCM 512 436 : PacMan moved
+GM 0 293 436 : Ghost moved
+GM 1 265 260 : Ghost moved
+PCM 513 436 : PacMan moved
+GM 0 294 436 : Ghost moved
+GM 1 266 260 : Ghost moved
+PCM 514 436 : PacMan moved
+PCM 515 436 : PacMan moved
+GM 0 295 436 : Ghost moved
+GM 1 267 260 : Ghost moved
+PCM 516 436 : PacMan moved
+GM 0 296 436 : Ghost moved
+GM 1 268 260 : Ghost moved
+PCM 517 436 : PacMan moved
+PCM 518 436 : PacMan moved
+GM 0 297 436 : Ghost moved
+GM 1 269 260 : Ghost moved
+PCM 519 436 : PacMan moved
+GM 0 298 436 : Ghost moved
+GM 1 270 260 : Ghost moved
+PCM 520 436 : PacMan moved
+PCM 521 436 : PacMan moved
+GM 0 299 436 : Ghost moved
+GM 1 271 260 : Ghost moved
+PCM 522 436 : PacMan moved
+GM 0 300 436 : Ghost moved
+GM 1 272 260 : Ghost moved
+PCM 523 436 : PacMan moved
+PCM 524 436 : PacMan moved
+GM 0 301 436 : Ghost moved
+GM 1 273 260 : Ghost moved
+PCM 525 436 : PacMan moved
+GM 0 302 436 : Ghost moved
+GM 1 274 260 : Ghost moved
+PCM 526 436 : PacMan moved
+PCM 527 436 : PacMan moved
+GM 0 303 436 : Ghost moved
+GM 1 275 260 : Ghost moved
+PCM 528 436 : PacMan moved
+GM 0 304 436 : Ghost moved
+GM 1 276 260 : Ghost moved
+PCM 529 436 : PacMan moved
+PCM 530 436 : PacMan moved
+GM 0 305 436 : Ghost moved
+GM 1 277 260 : Ghost moved
+PCM 531 436 : PacMan moved
+GM 0 306 436 : Ghost moved
+GM 1 278 260 : Ghost moved
+PCM 532 436 : PacMan moved
+PCM 533 436 : PacMan moved
+GM 0 307 436 : Ghost moved
+GM 1 279 260 : Ghost moved
+PCM 534 436 : PacMan moved
+GM 0 308 436 : Ghost moved
+GM 1 280 260 : Ghost moved
+PCM 535 436 : PacMan moved
+PCM 536 436 : PacMan moved
+GM 0 309 436 : Ghost moved
+GM 1 281 260 : Ghost moved
+PCM 537 436 : PacMan moved
+GM 0 310 436 : Ghost moved
+GM 1 282 260 : Ghost moved
+PCM 538 436 : PacMan moved
+PCM 539 436 : PacMan moved
+GM 0 311 436 : Ghost moved
+GM 1 283 260 : Ghost moved
+PCM 540 436 : PacMan moved
+GM 0 312 436 : Ghost moved
+GM 1 284 260 : Ghost moved
+PCM 541 436 : PacMan moved
+PCM 542 436 : PacMan moved
+GM 0 313 436 : Ghost moved
+GM 1 285 260 : Ghost moved
+PCM 543 436 : PacMan moved
+GM 0 314 436 : Ghost moved
+GM 1 286 260 : Ghost moved
+PCM 544 436 : PacMan moved
+PCM 545 436 : PacMan moved
+GM 0 315 436 : Ghost moved
+GM 1 287 260 : Ghost moved
+PCM 546 436 : PacMan moved
+GM 0 316 436 : Ghost moved
+GM 1 288 260 : Ghost moved
+PCM 547 436 : PacMan moved
+PCM 548 436 : PacMan moved
+GM 0 317 436 : Ghost moved
+GM 1 289 260 : Ghost moved
+PCM 549 436 : PacMan moved
+GM 0 318 436 : Ghost moved
+GM 1 290 260 : Ghost moved
+PCM 550 436 : PacMan moved
+PCM 551 436 : PacMan moved
+GM 0 319 436 : Ghost moved
+GM 1 291 260 : Ghost moved
+PCM 552 436 : PacMan moved
+GM 0 320 436 : Ghost moved
+GM 1 292 260 : Ghost moved
+PCM 553 436 : PacMan moved
+PCM 554 436 : PacMan moved
+GM 0 321 436 : Ghost moved
+GM 1 293 260 : Ghost moved
+PCM 555 436 : PacMan moved
+GM 0 322 436 : Ghost moved
+GM 1 294 260 : Ghost moved
+PCM 556 436 : PacMan moved
+PCM 557 436 : PacMan moved
+GM 0 323 436 : Ghost moved
+GM 1 295 260 : Ghost moved
+PCM 558 436 : PacMan moved
+GM 0 324 436 : Ghost moved
+GM 1 296 260 : Ghost moved
+PCM 559 436 : PacMan moved
+PCM 560 436 : PacMan moved
+GM 0 325 436 : Ghost moved
+GM 1 297 260 : Ghost moved
+PCM 561 436 : PacMan moved
+GM 0 326 436 : Ghost moved
+GM 1 298 260 : Ghost moved
+PCM 562 436 : PacMan moved
+PCM 563 436 : PacMan moved
+GM 0 327 436 : Ghost moved
+GM 1 299 260 : Ghost moved
+PCM 564 436 : PacMan moved
+GM 0 328 436 : Ghost moved
+GM 1 300 260 : Ghost moved
+PCM 565 436 : PacMan moved
+PCM 566 436 : PacMan moved
+GM 0 329 436 : Ghost moved
+GM 1 301 260 : Ghost moved
+PCM 567 436 : PacMan moved
+GM 0 330 436 : Ghost moved
+GM 1 302 260 : Ghost moved
+PCM 568 436 : PacMan moved
+PCM 569 436 : PacMan moved
+GM 0 331 436 : Ghost moved
+GM 1 303 260 : Ghost moved
+PCM 570 436 : PacMan moved
+GM 0 332 436 : Ghost moved
+GM 1 304 260 : Ghost moved
+PCM 571 436 : PacMan moved
+PCM 572 436 : PacMan moved
+GM 0 333 436 : Ghost moved
+GM 1 305 260 : Ghost moved
+PCM 573 436 : PacMan moved
+GM 0 334 436 : Ghost moved
+GM 1 306 260 : Ghost moved
+PCM 574 436 : PacMan moved
+PCM 575 436 : PacMan moved
+GM 0 335 436 : Ghost moved
+GM 1 307 260 : Ghost moved
+PCM 576 436 : PacMan moved
+GM 0 336 436 : Ghost moved
+GM 1 308 260 : Ghost moved
+PCM 577 436 : PacMan moved
+PCM 578 436 : PacMan moved
+GM 0 337 436 : Ghost moved
+GM 1 309 260 : Ghost moved
+PCM 579 436 : PacMan moved
+GM 0 338 436 : Ghost moved
+GM 1 310 260 : Ghost moved
+PCM 580 436 : PacMan moved
+PCM 581 436 : PacMan moved
+GM 0 339 436 : Ghost moved
+GM 1 311 260 : Ghost moved
+PCM 582 436 : PacMan moved
+GM 0 340 436 : Ghost moved
+GM 1 312 260 : Ghost moved
+PCM 583 436 : PacMan moved
+PCM 584 436 : PacMan moved
+GM 0 341 436 : Ghost moved
+GM 1 313 260 : Ghost moved
+PCM 585 436 : PacMan moved
+GM 0 342 436 : Ghost moved
+GM 1 314 260 : Ghost moved
+PCM 586 436 : PacMan moved
+PCM 587 436 : PacMan moved
+GM 0 343 436 : Ghost moved
+GM 1 315 260 : Ghost moved
+PCM 588 436 : PacMan moved
+GM 0 344 436 : Ghost moved
+GM 1 316 260 : Ghost moved
+PCM 589 436 : PacMan moved
+PCM 590 436 : PacMan moved
+GM 0 345 436 : Ghost moved
+GM 1 317 260 : Ghost moved
+PCM 591 436 : PacMan moved
+GM 0 346 436 : Ghost moved
+GM 1 318 260 : Ghost moved
+PCM 592 436 : PacMan moved
+PCM 593 436 : PacMan moved
+GM 0 347 436 : Ghost moved
+GM 1 319 260 : Ghost moved
+PCM 594 436 : PacMan moved
+GM 0 348 436 : Ghost moved
+GM 1 320 260 : Ghost moved
+GE : Game ended

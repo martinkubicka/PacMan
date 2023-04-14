@@ -8,6 +8,7 @@
 #include <QtDebug>
 #include <QPushButton>
 #include <QApplication>
+#include "replay.h"
 
 class MainWindow;
 

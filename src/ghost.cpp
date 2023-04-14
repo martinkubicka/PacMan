@@ -12,10 +12,11 @@
 #include "ghost.h"
 #include "map.h"
 
-
 Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QString srcPath) : Field (x1, y1, x2, y2, map, GHOST) {
     this->startX = x1;
     this->startY = y1;
+
+    this->id = static_cast<int>(this->map->ghosts.size());
 
     QImage ghostImage(srcPath + "/images/ghost.png");
     ghostImage = ghostImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
@@ -27,14 +28,13 @@ Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QS
 }
 
 void Ghost::move(int x, int y){
+    if (!this->map->replay) {
+        writeToLog("GM " + to_string(this->id) + " " +to_string(x) + " " + to_string(y) + " : Ghost moved", this->map->log);
+    }
     item->setPos(x, y);
-
-    // Field *f = this->map->getField(0, 0);
-//    this->scene->addItem(pathItem);
 }
 
 bool Ghost::ghostMove( Ghost *ghost){
-
     int x1 = ghost->x1;
     int x2 = ghost->x2;
     int y1 = ghost->y1;

@@ -31,6 +31,10 @@ void Pacman::setNextDirection(Direction dir){
 }
 
 void Pacman::move(int x, int y){
+    if (!this->map->replay) {
+        writeToLog("PCM " + to_string(x) + " " + to_string(y) + " : PacMan moved", this->map->log);
+    }
+
     item->setPos(x, y);
 }
 
@@ -83,9 +87,6 @@ bool Pacman::pacmanMove(Direction direction){
         // chodnik
     } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
         qDebug() << "key";
-        this->map->score++;
-        this->map->numberOfKeysLeft--;
-        this->map->scoreLabel->setText(QString("Score: %1").arg(this->map->score));
         //delete key from map
         this->map->deleteKey(FirstCorner);
     } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
@@ -95,6 +96,7 @@ bool Pacman::pacmanMove(Direction direction){
     } else if(FirstCorner->type == END && SecondCorner->type == END){
         if(this->map->numberOfKeysLeft == 0){
             this->map->handleWin();
+            return true;
         }
     }else{
         return false;
