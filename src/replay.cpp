@@ -138,6 +138,10 @@ void Replay::performInstruction() {
             ++this->map->numberOfKeysLeft;
             --this->map->score;
             this->map->scoreLabel->setText(QString("Score: %1").arg(this->map->score));
+            this->map->keys[stoul(next->arg1)]->x1 = this->map->keys[stoul(next->arg1)]->startX1;
+            this->map->keys[stoul(next->arg1)]->x2 = this->map->keys[stoul(next->arg1)]->startX2;
+            this->map->keys[stoul(next->arg1)]->y1 = this->map->keys[stoul(next->arg1)]->startY1;
+            this->map->keys[stoul(next->arg1)]->y2 = this->map->keys[stoul(next->arg1)]->startY2;
             this->map->scene->addItem(this->map->keys[stoul(next->arg1)]->item);
         } else if (next->type == KILL) {
             ++this->map->numberOfLives;

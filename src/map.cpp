@@ -161,8 +161,8 @@ void Map::deleteKey(Field *key){
 
 void Map::getSizeOfBlock() {
     try {
-        this->x = std::stoi(this->getWord()); // get x size from map file
-        this->y = std::stoi(this->getWord()); // get y size from map file
+        this->y = std::stoi(this->getWord()); // get x size from map file
+        this->x = std::stoi(this->getWord()); // get y size from map file
     } catch (const std::exception& e) {
         std::cerr << "Invalid argument: " << e.what() << std::endl;
         exit(EXIT_FAILURE);
@@ -336,7 +336,7 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
 
     // bottom border
     for (int i = 0; i < this->x + 2; i++) {
-        wall = new Wall(scene, this->sizeOfBlock*i + i, this->sizeOfBlock*(this->y+2)+40 + this->y + 2, this->sizeOfBlock*(i+1) + i, this->sizeOfBlock*(this->y+3) + this->y + 2 + 40, this, srcPath); //x,y (left top) + x,y (right bottom)
+        wall = new Wall(scene, this->sizeOfBlock*i + i, this->sizeOfBlock*(this->y+1)+40 + this->y + 1, this->sizeOfBlock*(i+1) + i, this->sizeOfBlock*(this->y+2) + this->y + 1 + 40, this, srcPath); //x,y (left top) + x,y (right bottom)
         walls.push_back(wall);
     }
 
