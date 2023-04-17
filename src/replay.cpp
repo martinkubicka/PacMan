@@ -119,7 +119,6 @@ void Replay::handleKey(QKeyEvent* event)
             this->handleNextInstruction();
         }
     } else if (event->key() == Qt::Key_P) {
-        qDebug() << this->stop;
         if (this->stop) {
             this->handlePrevInstruction();
         }

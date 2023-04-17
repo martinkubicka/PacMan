@@ -22,8 +22,7 @@ void EndGameWindow::playAgain(MainWindow *mainwindow) {
 
 EndGameWindow::EndGameWindow(MainWindow *mainwindow, endGameType type)
 {
-    // you win label
-    QLabel *label;
+    // background
     if (type == WIN) {
         QString backgroundPath = "background-image:url(%1%2)";
         mainwindow->setStyleSheet(backgroundPath.arg(mainwindow->srcPath, "/images/win.png"));

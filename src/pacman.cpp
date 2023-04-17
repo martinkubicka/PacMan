@@ -10,7 +10,6 @@
 
 #include "pacman.h"
 #include "map.h"
-#include "QDebug" // TODO REMOVE ME
 
 Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QString srcPath) : Field (x1, y1, x2, y2, map, PACMAN) {
     this->startX = x1;
@@ -86,11 +85,9 @@ bool Pacman::pacmanMove(Direction direction){
     } else if (FirstCorner->type == PATH && SecondCorner->type == PATH) {
         // chodnik
     } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
-        qDebug() << "key";
         //delete key from map
         this->map->deleteKey(FirstCorner);
     } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
-        qDebug() << "pacman died";
         this->map->handleGameOver();
         return true;
     } else if(FirstCorner->type == END && SecondCorner->type == END){

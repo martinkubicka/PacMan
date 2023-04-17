@@ -77,28 +77,23 @@ bool Ghost::ghostMove( Ghost *ghost){
     }
 
     //todo there is a problem with the pacman position at start how to edit every step position of pacman on map or maybe dont
-    if(FirstCorner->type == PATH && SecondCorner->type == PATH or 
-        FirstCorner->type == KEY && SecondCorner->type == KEY or
-        FirstCorner->type == END && SecondCorner->type == END or
-        FirstCorner->type == GHOST && SecondCorner->type == GHOST){
+    if((FirstCorner->type == PATH && SecondCorner->type == PATH) ||
+        (FirstCorner->type == KEY && SecondCorner->type == KEY) ||
+        (FirstCorner->type == END && SecondCorner->type == END) ||
+        (FirstCorner->type == GHOST && SecondCorner->type == GHOST)){
 
         ghost->x1 = x1;
         ghost->x2 = x2;
         ghost->y1 = y1;
         ghost->y2 = y2;
         ghost->move(x1,y1);
-        // qDebug() << "ghost turn!";
-        // qDebug() << "x1: " << x1 << " y1: " << y1;
 
         return true;
-    }else if(FirstCorner->type == PACMAN && SecondCorner->type == PACMAN){
-        qDebug() << "Ghost Hit Pacman";
+    } else if(FirstCorner->type == PACMAN && SecondCorner->type == PACMAN){
         this->map->handleGameOver();
         return false;
     }
-    else{
-        // qDebug() << "WALL";
-
+    else {
         // Generate a random number between 0 and 3
         int ghostDirection = std::rand() % 4;
 

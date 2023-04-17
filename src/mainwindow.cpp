@@ -14,8 +14,6 @@ void MainWindow::createUi() {
     // set background image
     QString backgroundPath = "background-image:url(%1%2)";
 
-    cout << backgroundPath.toStdString() << endl;
-
     this->setStyleSheet(backgroundPath.arg(this->srcPath, "/images/background.jpg"));
 
     // create objects
@@ -153,10 +151,7 @@ void MainWindow::start() {
 
 void MainWindow::keyPressEvent(QKeyEvent *event)
 {
-        qDebug() << "Key pressed!"; // TODO na vsetky ostatne keys to reaguje po vykliknuti
-
     // Handle the key press event
-
     if (this->replayObj != nullptr) {
         this->replayObj->handleKey(event);
     } else if (this->mapObject != nullptr) {

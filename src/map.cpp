@@ -377,13 +377,11 @@ void Map::Start(){
 
 void Map::gameStart()
 {
-    qDebug() << "timer initialized!";
     pacman_timer = new QTimer(this);
     connect(pacman_timer, SIGNAL(timeout()), this , SLOT(pacmanHandler()));
     pacman_timer->start(DELAY);
 
     for (int i = 0; i < int(ghosts.size()); i++) {
-        qDebug() << "Ghost initialized!";
         ghost_timer[i] = new QTimer(this);
         connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
         ghost_timer[i]->start(DELAYGHOST);
