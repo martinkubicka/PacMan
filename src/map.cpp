@@ -30,6 +30,28 @@ void Map::copyMap(string map, ofstream& outputFile) {
     inputFile.close();
 }
 
+void Map::handleExit() {
+    foreach (QTimer* timer, findChildren<QTimer*>()) {
+        timer->stop();
+    }
+
+    this->deleteAll();
+    this->mainwindow->createUi();
+}
+
+void Map::createExitButton() {
+    this->exitButton = new QPushButton("Exit");
+    exitButton->setGeometry(570, 0, 80, 30);
+    exitButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px; background-color: black;}  QPushButton:pressed{border: 1px solid gray;}");
+
+    QFont exitButtonFont("Arial Black", 16);
+    exitButton->setFont(exitButtonFont);
+
+    this->scene->addWidget(exitButton);
+
+    connect(exitButton, &QPushButton::clicked, this, &Map::handleExit);
+}
+
 Map::Map(MainWindow *parent, std::string map, QString srcPath, bool replay) : QWidget(parent), replay(replay) {
     this->openFile(map);
 
@@ -45,14 +67,17 @@ Map::Map(MainWindow *parent, std::string map, QString srcPath, bool replay) : QW
     scene = this->createScene();
 
     this->createMap(scene, srcPath);
+
+    if (!this->replay) {
+        this->createExitButton();
+    }
+
     this->copyMap(map, this->log);
     if (!this->replay) {
         writeToLog("MAP " + map, this->log);
     }
 
-    CustomGraphicsView* view = this->createView(parent, scene);
-
-    (void)view; // todo remove me - maybe not needed
+    this->createView(parent, scene);
 }
 
 Map::~Map() {
@@ -62,7 +87,7 @@ Map::~Map() {
 
 QGraphicsScene* Map::createScene() {
     QGraphicsScene* scene = new QGraphicsScene;
-    scene->setSceneRect(0, 0, this->sizeOfBlock*(this->x+2) + this->x + 1, this->sizeOfBlock*(this->y+2) + this->y + 1 + 40);
+    scene->setSceneRect(0, 0, this->sizeOfBlock*(this->x+2) + this->x + 1, this->sizeOfBlock*(this->y+2) + this->y + 1 + 130);
 
     return scene;
 }
@@ -379,7 +404,7 @@ void Map::pacmanHandler()
 
 void Map::ghostHandler(int ghostNum){
     auto ghost = ghosts.at(static_cast<uint>(ghostNum));
-    bool hasMoved = this->ghost->ghostMove(ghost);
+    this->ghost->ghostMove(ghost);
 }
 
 void Map::deleteAll() {
@@ -388,6 +413,8 @@ void Map::deleteAll() {
             this->scene->removeItem(item);
         }
     }
+
+    this->exitButton->deleteLater();
 
     this->scoreLabel->deleteLater();
 

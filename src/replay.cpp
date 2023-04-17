@@ -9,8 +9,6 @@ Replay::Replay(QString srcPath, MainWindow *mainwindow) : srcPath(srcPath), main
 
     this->getAllInstructions();
 
-    qDebug() << this->instructions.size();
-
     if (this->instructions.size() == 0) {
         cout << "Last game not found." << endl;
         return;
@@ -54,7 +52,7 @@ void Replay::handleExit() {
 
 void Replay::createExitButton() {
     this->exitButton = new QPushButton("Exit");
-    exitButton->setGeometry(260, 380, 80, 30);
+    exitButton->setGeometry(240, 380, 80, 30);
     exitButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px; background-color: black;}  QPushButton:pressed{border: 1px solid gray;}");
 
     QFont exitButtonFont("Arial Black", 16);
@@ -76,11 +74,11 @@ void Replay::handleConnect() {
 }
 
 void Replay::runForward() {
-    runTimer->start(4);
+    runTimer->start(static_cast<int>(this->map->x / this->map->y * 4));
 }
 
 void Replay::runBackward() {
-    runTimer->start(4);
+    runTimer->start(static_cast<int>(this->map->x / this->map->y * 4));
 }
 
 void Replay::handleKey(QKeyEvent* event)

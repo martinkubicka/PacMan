@@ -13,6 +13,9 @@
 void MainWindow::createUi() {
     // set background image
     QString backgroundPath = "background-image:url(%1%2)";
+
+    cout << backgroundPath.toStdString() << endl;
+
     this->setStyleSheet(backgroundPath.arg(this->srcPath, "/images/background.jpg"));
 
     // create objects

@@ -46,6 +46,8 @@ class MainWindow;
 class Map : public QWidget {
     Q_OBJECT
 public:
+    int x, y; /** map resolution (number of blocks) */
+
     // vectors of objects which map contains
     std::vector<Wall *> walls;
     std::vector<Path *> paths;
@@ -59,6 +61,8 @@ public:
 
     QLabel *scoreLabel;
     int score = 0;
+
+    QPushButton* exitButton;
 
     int numberOfLives = 3;
     std::vector<QGraphicsPixmapItem*> liveItems;
@@ -107,7 +111,6 @@ private:
     // attributes
     std::ifstream file; /** file with map */
     int sizeOfBlock; /** size in px of one block (path, pacman, wall..) */
-    int x, y; /** map resolution (number of blocks) */
 
     Wall *wall;
     Path *path;
@@ -116,12 +119,17 @@ private:
     QTimer *pacman_timer;
     QTimer *ghost_timer[];
 
+
     void gameEnd();
     void createScore();
     void createLives();
     void restartPositions();
 
     // methods
+
+    void createExitButton();
+
+    void handleExit();
 
     void copyMap(string map, ofstream& outputFile);
 

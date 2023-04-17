@@ -27,23 +27,14 @@ EndGameWindow::EndGameWindow(MainWindow *mainwindow, endGameType type)
     if (type == WIN) {
         QString backgroundPath = "background-image:url(%1%2)";
         mainwindow->setStyleSheet(backgroundPath.arg(mainwindow->srcPath, "/images/win.png"));
-        label = new QLabel("You win!", mainwindow);
-        label->setGeometry(250, 100, 250, 50);
     } else {
         QString backgroundPath = "background-image:url(%1%2)";
-        mainwindow->setStyleSheet(backgroundPath.arg(mainwindow->srcPath, "/images/gameover.png"));
-        label = new QLabel("Game over!", mainwindow);
-        label->setGeometry(230, 100, 250, 50);
+        mainwindow->setStyleSheet(backgroundPath.arg(mainwindow->srcPath, "/images/gameover.png"));;
     }
-
-    QFont labelFont("Arial Black", 40);
-    label->setFont(labelFont);
-    label->setStyleSheet("color:white;");
-    label->show();
 
     // play again button
     QPushButton *playAgainButton = new QPushButton("Play again", mainwindow);
-    playAgainButton->setGeometry(290, 530, 120, 30);
+    playAgainButton->setGeometry(290, 280, 120, 30);
     playAgainButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px;}  QPushButton:pressed{border: 1px solid gray;}");
 
     QFont playAgainFont("Arial Black", 16);
@@ -57,7 +48,7 @@ EndGameWindow::EndGameWindow(MainWindow *mainwindow, endGameType type)
 
     // back to menu button
     QPushButton *backToMenuButton = new QPushButton("Back to menu", mainwindow);
-    backToMenuButton->setGeometry(280, 580, 140, 30);
+    backToMenuButton->setGeometry(280, 320, 140, 30);
     backToMenuButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px;}  QPushButton:pressed{border: 1px solid gray;}");
 
     backToMenuButton->setFont(playAgainFont);
@@ -70,7 +61,7 @@ EndGameWindow::EndGameWindow(MainWindow *mainwindow, endGameType type)
 
     // replay game button
     QPushButton *replayButton = new QPushButton("Replay game", mainwindow);
-    replayButton->setGeometry(280, 620, 140, 30);
+    replayButton->setGeometry(280, 360, 140, 30);
     replayButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px;}  QPushButton:pressed{border: 1px solid gray;}");
 
     replayButton->setFont(playAgainFont);
