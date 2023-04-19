@@ -28,12 +28,16 @@ Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QS
 }
 
 void Ghost::move(int x, int y){
+    // log
     if (!this->map->replay) {
         writeToLog("GM " + to_string(this->id) + " " +to_string(x) + " " + to_string(y) + " : Ghost moved", this->map->log);
     }
+
+    // setting position
     item->setPos(x, y);
 }
 
+// TODO COMMENT
 bool Ghost::ghostMove( Ghost *ghost){
     int x1 = ghost->x1;
     int x2 = ghost->x2;

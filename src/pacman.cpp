@@ -17,7 +17,6 @@ Pacman::Pacman(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, 
 
     QImage pacmanImage(srcPath + "/images/pacman.png");
     pacmanImage = pacmanImage.scaled(QSize(x2-x1, y2-y1), Qt::KeepAspectRatio);
-    // this->scene = scene; // to mi dava err tak som zakomentoval
 
     this->item = new QGraphicsPixmapItem(QPixmap::fromImage(pacmanImage));
     this->item->setZValue(1);
@@ -30,13 +29,16 @@ void Pacman::setNextDirection(Direction dir){
 }
 
 void Pacman::move(int x, int y){
+    // log
     if (!this->map->replay) {
         writeToLog("PCM " + to_string(x) + " " + to_string(y) + " : PacMan moved", this->map->log);
     }
 
+    // setting position
     item->setPos(x, y);
 }
 
+// TODO COMMENT
 bool Pacman::pacmanMove(Direction direction){
         int x1 = this->x1;
         int x2 = this->x2;
@@ -107,4 +109,4 @@ bool Pacman::pacmanMove(Direction direction){
     return true;
 }
 
-    /*** End of pacman.cpp ***/
+/*** End of pacman.cpp ***/

@@ -21,7 +21,6 @@
 class CustomGraphicsView : public QGraphicsView {
 public:
     CustomGraphicsView(QWidget* parent = nullptr) : QGraphicsView(parent) {}
-
 protected:
     /**
      * @brief Function for disabling mouse wheel event.

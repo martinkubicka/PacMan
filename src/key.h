@@ -21,6 +21,7 @@
  */
 class Key : public Field {
 public:
+    /** Attributes used to store default positions -> needed when replaying */
     int startX1, startX2, startY1, startY2;
 
     /**

@@ -1,3 +1,13 @@
+/**
+ * @file log.cpp
+ *
+ * @author  Martin Kubička (xkubic45@stud.fit.vutbr.cz)
+ * @author  Matěj Macek (xmacek27@stud.fit.vutbr.cz)
+ *
+ * @date 2023-05-08
+ * @brief Definitions of functions declared in log.h file.
+ */
+
 #include "log.h"
 
 void openLogRead(string path, ifstream& file) {
@@ -67,3 +77,5 @@ Instruction* getInstruction(ifstream& file) {
 
     return inst;
 }
+
+/*** End of log.cpp ***/

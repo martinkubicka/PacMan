@@ -176,12 +176,6 @@ void Map::deleteKey(Field *key){
     this->scene->removeItem(key->item);
 
     key->x1 = key->x2 = key->y1 = key->y2 = -1; // replay previous step -> cant delete
-
-//    // delete key from arr
-//    auto index = std::find(this->keys.begin(), this->keys.end(), key);
-//    if (index != this->keys.end()) {
-//        this->keys.erase(index);
-//    }
 }
 
 void Map::getSizeOfBlock() {
@@ -226,21 +220,22 @@ void Map::createLives() {
 }
 
 void Map::deleteLive() {
-    if (this->liveItems.size() != 0) { // TODO MAYBE REMOVE THIS CONDITION
+    if (this->liveItems.size() != 0) {
         this->scene->removeItem(this->liveItems[static_cast<unsigned long>(this->numberOfLives)]);
-        //delete this->liveItems.back();
-        //this->liveItems.pop_back();
     }
     this->restartPositions();
 }
 
 void Map::restartPositions() {
+    // stopping all timers
     foreach (QTimer* timer, findChildren<QTimer*>()) {
         timer->stop();
     }
 
+    // paused
     this->gameStarted = 0;
 
+    // default positions
     pacman->x1 = pacman->startX;
     pacman->y1 = pacman->startY;
     pacman->x2 = pacman->startX + this->sizeOfBlock;

@@ -19,35 +19,66 @@
 #include <QDir>
 #include <iostream>
 #include <string>
+#include <QDebug>
 #include "ui_mainwindow.h"
 #include "map.h"
 #include "pacman.h"
-#include <QDebug>
 #include "replay.h"
 
 namespace Ui {
-    class MainWindow;
+    class MainWindow; // forward declaration
 }
 
+/**
+ * @brief Declaration of methods and attributes of MainWindow class which represents
+          MainWindow (menu).
+ */
 class MainWindow : public QMainWindow {
     Q_OBJECT
 
 public:
-    QString srcPath; // path of src folder set by findImageDirPath method.
+    /** path of src folder set by findImageDirPath method. */
+    QString srcPath;
+    /** pointer to Map object */
     Map *mapObject = nullptr;
+    /** Pointer to Replay object if replay is active */
     Replay* replayObj = nullptr;
 
+    /**
+     * @brief Overriding closeEvent function (clicking X button).
+     *
+     * @param event event
+     */
     void closeEvent(QCloseEvent *event) override;
 
+    /**
+     * @brief Constructor of MainWindow object.
+     *
+     * @param parent QWidget parent
+     */
     explicit MainWindow(QWidget *parent = nullptr);
-    ~MainWindow();
+
+    /**
+     * @brief Overriding destructor of MainWindow object.
+     */
+    ~MainWindow() override;
+
+    /**
+     * @brief Method which creates UI (buttons, labels etc..).
+     */
     void createUi();
 
+    /**
+     * @brief Method which handle replaying (creating Replay object etc..).
+     */
     void replay();
 
 private:
-    std::string map; // selected map
+    /** selected map */
+    std::string map;
+    /** pointer to mainwindow ui */
     Ui::MainWindow *ui;
+
     /**
      * @brief Functions which creates a Choose Map Label;
      */
@@ -69,11 +100,18 @@ private:
      */
     void findImageDirPath();
 
+    /**
+     * @brief Method which creates replay button.
+     */
     void createReplayButton();
 protected:
+    /**
+     * @brief Overriding keyPressEvent function for handling user keys input.
+     *
+     * @param event event
+     */
     void keyPressEvent(QKeyEvent* event) override;
 private slots:
-
     /**
      * @brief Function for setting map attribute when map is selected from dropdown menu.
      * 

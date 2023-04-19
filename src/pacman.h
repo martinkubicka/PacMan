@@ -22,12 +22,13 @@
  */
 class Pacman : public Field {
 public:
+    /** attributes which specifies actaul and next direction of pacman */
     Direction direction = Direction::STOP;
     Direction nextDirection = Direction::STOP;
     
+    /** Attributes which store default position of pacman -> used in replay mode */
     int startX, startY;
 
-    int keysEaten = 0;
     /**
      * @brief Constructructor of Pacman object.
      * 
@@ -40,6 +41,8 @@ public:
      * @param srcPath src directory path
      */
     explicit Pacman(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, Map *map = nullptr, QString srcPath = "");
+
+    // TODO
     void setNextDirection(Direction dir);
     void move(int x,int y);
     bool pacmanMove(Direction direction);

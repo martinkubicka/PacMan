@@ -32,13 +32,22 @@
 #include "replay.h"
 #include <QGraphicsProxyWidget>
 
-#define EDGE_OFFSET 20 // offset which prevents creating map at [0, 0] etc..
-#define HEIGHT 700 // height of window
-#define WIDTH 700 // width of window
-#define DELAY 10 // move DELAY pacman
-#define DELAYGHOST 15 // move DELAY ghost
+/** offset which prevents creating map at [0, 0] etc.. */
+#define EDGE_OFFSET 20
 
-class MainWindow;
+/** height of window */
+#define HEIGHT 700
+
+/** width of window */
+#define WIDTH 700
+
+/** move delay pacman */
+#define DELAY 10
+
+/** move delay ghost */
+#define DELAYGHOST 15
+
+class MainWindow; // forward declaration
 
 /**
  * @brief Class used to create map.
@@ -46,9 +55,10 @@ class MainWindow;
 class Map : public QWidget {
     Q_OBJECT
 public:
-    int x, y; /** map resolution (number of blocks) */
+    /** map resolution (number of blocks) */
+    int x, y;
 
-    // vectors of objects which map contains
+    /** vectors of objects which map contains */
     std::vector<Wall *> walls;
     std::vector<Path *> paths;
     std::vector<Ghost *> ghosts;
@@ -56,24 +66,24 @@ public:
     Pacman *pacman;
     End *end;
 
-    MainWindow *mainwindow;
-    QGraphicsScene *scene;
+    MainWindow *mainwindow; /// pointer to mainwindow
+    QGraphicsScene *scene; /// pointer to scene where map objects are created
 
-    QLabel *scoreLabel;
-    int score = 0;
+    QLabel *scoreLabel; /// label in map with score
+    int score = 0; /// actual score
 
-    QPushButton* exitButton;
+    QPushButton* exitButton; /// pointer to exitbutton
 
-    int numberOfLives = 3;
-    std::vector<QGraphicsPixmapItem*> liveItems;
+    int numberOfLives = 3; /// number of lives
+    std::vector<QGraphicsPixmapItem*> liveItems; /// vector hearth images
 
-    int gameStarted = 0;
+    int gameStarted = 0; /// if 0 game paused if 1 game is running
 
-    int numberOfKeysLeft = 0; /** auxiliary counter which helps us to know how many keys are left on map */
+    int numberOfKeysLeft = 0; /// auxiliary counter which helps us to know how many keys are left on map
 
-    bool replay;
+    bool replay; /// if true replay mode is active otherwise flase
 
-    ofstream log;
+    ofstream log; /// ofstream log file for writing
     
     /**
      * @brief Constructor of Map object
@@ -84,6 +94,9 @@ public:
      */
     explicit Map(MainWindow *parent = nullptr, std::string map = "map01.txt", QString srcPath = "", bool replay = false);
     
+    /**
+     * @brief Custom map destructor.
+    */
     ~Map();
 
     /**
@@ -95,42 +108,95 @@ public:
      * @return T Wall|Path|End|Ghost|Pacman|Key pointer object
      */
     Field* getField(int x, int y, FieldType calledBy);
+
+    // TODO
     void Start();
+
+    // TODO
     void gameStart();
+
+    /**
+     * @brief Method which deletes key from map and decreases number of keys left etc..
+     *
+     * @param key pointer to Key Field
+     */
     void deleteKey(Field *key);
-    void handleWin();
+
+    /**
+     * @brief Method which deletes all objects from map
+     */
     void deleteAll();
+
+    /**
+     * @brief Method which deletes hearth icon and decreases number of lives left etc..
+     */
+    void deleteLive();
+
+    /**
+     * @brief Method which delete all object and call function for creating win end game window.
+     */
+    void handleWin();
+
+    /**
+     * @brief Method which delete all object and call function for creating game over end game window.
+     */
     void handleGameOver();
 
-    void deleteLive();
 private slots:
+    // TODO
     void pacmanHandler();
+
+    // TODO
     void ghostHandler(int ghostNum);
 
 private:
     // attributes
-    std::ifstream file; /** file with map */
-    int sizeOfBlock; /** size in px of one block (path, pacman, wall..) */
+    std::ifstream file; /// file with map
+    int sizeOfBlock; /// size in px of one block (path, pacman, wall..)
 
+    /** Temporary objects which are used for creating map */
     Wall *wall;
     Path *path;
     Ghost *ghost;
     Key *key;
+
+    /** Timers */
     QTimer *pacman_timer;
     QTimer *ghost_timer[];
 
-
-    void gameEnd();
-    void createScore();
-    void createLives();
-    void restartPositions();
-
     // methods
 
+    /**
+     * @brief Method which creates score label etc..
+     */
+    void createScore();
+
+    /**
+     * @brief Method which creates hearths icons etc..
+     */
+    void createLives();
+
+    /**
+     * @brief Method which restart positions of ghosts and pacman to default.
+     */
+    void restartPositions();
+
+    /**
+     * @brief Method which creates exit button.
+     */
     void createExitButton();
 
+    /**
+     * @brief Method which is called after clicking exit button.
+     */
     void handleExit();
 
+    /**
+     * @brief copyMap Method which copies map txt to log
+     *
+     * @param map map txt name
+     * @param outputFile log file
+     */
     void copyMap(string map, ofstream& outputFile);
 
     /**

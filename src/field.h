@@ -1,10 +1,20 @@
+/**
+ * @file field.h
+ *
+ * @author  Martin Kubička (xkubic45@stud.fit.vutbr.cz)
+ * @author  Matěj Macek (xmacek27@stud.fit.vutbr.cz)
+ *
+ * @date 2023-05-08
+ * @brief Declaration of Field class used to identify types of fields in map.
+ */
+
 #ifndef FIELD_H
 #define FIELD_H
 
 #include <QWidget>
 #include <QGraphicsScene>
 
-// field type
+/** Enum which specifies type of every field of the map */
 enum FieldType {
     PATH,
     WALL,
@@ -15,6 +25,7 @@ enum FieldType {
     DEFAULT
 };
 
+/** Enum which specifies direction of pacman/ghost */
 enum Direction {
     UP,
     LEFT,
@@ -22,17 +33,23 @@ enum Direction {
     RIGHT,
     STOP
 };
-class Map;
+
+class Map; // forward declaration
 
 /**
  * @brief Field object which represents a base class of wall, pacman etc..
  */
 class Field : public QWidget {
 public:
+    /** Pointer to item created on map -> so we can delete if needed */
     QGraphicsPixmapItem* item;
-    int x1, y1, x2, y2; /** Field object position attributes */
-    Map *map; /** pointer to map */
-    FieldType type; /** Type of field */
+    /** Field object position attributes */
+    int x1, y1, x2, y2;
+    /** pointer to map */
+    Map *map;
+    /** Type of field */
+    FieldType type;
+    /** Id of item -> needed in some types of fields in replay mode */
     int id;
 
     /**
@@ -48,3 +65,5 @@ public:
     explicit Field(int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, Map *map = nullptr, FieldType type = DEFAULT);
  };
 #endif // FIELD_H
+
+/*** End of field.h ***/

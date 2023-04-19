@@ -1,3 +1,13 @@
+/**
+ * @file endgamewindow.cpp
+ *
+ * @author  Martin Kubička (xkubic45@stud.fit.vutbr.cz)
+ * @author  Matěj Macek (xmacek27@stud.fit.vutbr.cz)
+ *
+ * @date 2023-05-08
+ * @brief Definitions of methods declared in EndGameWindow class.
+ */
+
 #include "endgamewindow.h"
 #include "mainwindow.h"
 
@@ -71,3 +81,5 @@ EndGameWindow::EndGameWindow(MainWindow *mainwindow, endGameType type)
         mainwindow->replay();
     });
 }
+
+/*** End of endgamewindow.cpp ***/

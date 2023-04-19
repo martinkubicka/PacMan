@@ -1,10 +1,19 @@
+/**
+ * @file replay.cpp
+ *
+ * @author  Martin Kubička (xkubic45@stud.fit.vutbr.cz)
+ * @author  Matěj Macek (xmacek27@stud.fit.vutbr.cz)
+ *
+ * @date 2023-05-08
+ * @brief Definitions of methods declared in Replay class.
+ */
+
 #include "replay.h"
 #include "map.h"
 #include "mainwindow.h"
 
 Replay::Replay(QString srcPath, MainWindow *mainwindow) : srcPath(srcPath), mainwindow(mainwindow)
 {
-
     this->runTimer = new QTimer(this);
 
     this->getAllInstructions();
@@ -74,16 +83,18 @@ void Replay::handleConnect() {
 }
 
 void Replay::runForward() {
+    // custom delay for every map
     runTimer->start(static_cast<int>(this->map->x / this->map->y * 4));
 }
 
 void Replay::runBackward() {
+    // custom delay for every map
     runTimer->start(static_cast<int>(this->map->x / this->map->y * 4));
 }
 
 void Replay::handleKey(QKeyEvent* event)
 {
-    if (event->key() == Qt::Key_R)
+    if (event->key() == Qt::Key_R) // RUN
     {
         if (this->runback) {
             this->runTimer->stop();
@@ -96,12 +107,12 @@ void Replay::handleKey(QKeyEvent* event)
             this->run = true;
             this->runForward();
         }
-    } else if (event->key() == Qt::Key_E) {
+    } else if (event->key() == Qt::Key_E) { // STOP
         this->runTimer->stop();
         this->stop = true;
         this->run = false;
         this->runback = false;
-    } else if (event->key() == Qt::Key_B) {
+    } else if (event->key() == Qt::Key_B) { // RUN BACKWARDS
         if (this->run) {
             this->runTimer->stop();
             this->run = false;
@@ -114,11 +125,11 @@ void Replay::handleKey(QKeyEvent* event)
             this->runback = true;
             this->runBackward();
         }
-    } else if (event->key() == Qt::Key_N) {
+    } else if (event->key() == Qt::Key_N) { // NEXT STEP
         if (this->stop) {
             this->handleNextInstruction();
         }
-    } else if (event->key() == Qt::Key_P) {
+    } else if (event->key() == Qt::Key_P) { // PREVIOUS STEP
         if (this->stop) {
             this->handlePrevInstruction();
         }
@@ -128,10 +139,11 @@ void Replay::handleKey(QKeyEvent* event)
 void Replay::performInstruction() {
     Instruction *actual = this->instructions[this->instructionIndex];
 
+    // IN PREVIOUS MODE
     if (this->prev) {
         Instruction* next = this->instructions[this->instructionIndex + 1];
 
-        if (next->type == KEYL) {
+        if (next->type == KEYL) { // KEYL
             ++this->map->numberOfKeysLeft;
             --this->map->score;
             this->map->scoreLabel->setText(QString("Score: %1").arg(this->map->score));
@@ -140,19 +152,19 @@ void Replay::performInstruction() {
             this->map->keys[stoul(next->arg1)]->y1 = this->map->keys[stoul(next->arg1)]->startY1;
             this->map->keys[stoul(next->arg1)]->y2 = this->map->keys[stoul(next->arg1)]->startY2;
             this->map->scene->addItem(this->map->keys[stoul(next->arg1)]->item);
-        } else if (next->type == KILL) {
+        } else if (next->type == KILL) { // KILL
             ++this->map->numberOfLives;
             this->map->scene->addItem(this->map->liveItems[static_cast<unsigned long>(this->map->numberOfLives - 1)]);
         }
     }
 
-    if (actual->type == PCM) {
+    if (actual->type == PCM) { // PCM
         this->map->pacman->move(stoi(actual->arg1), stoi(actual->arg2));
-    } else if (actual->type == GM) {
+    } else if (actual->type == GM) { // GM
         this->map->ghosts[stoul(actual->arg1)]->move(stoi(actual->arg2), stoi(actual->arg3));
-    } else if (actual->type == KEYL && !this->prev) {
+    } else if (actual->type == KEYL && !this->prev) { // KEYL
         this->map->deleteKey(this->map->getField(this->map->keys[stoul(actual->arg1)]->x1, this->map->keys[stoul(actual->arg1)]->y1, DEFAULT));
-    } else if (actual->type == KILL && !this->prev) {
+    } else if (actual->type == KILL && !this->prev) { // KILL
         this->map->handleGameOver();
     }
 }
@@ -205,3 +217,5 @@ void Replay::deleteAllInstructions() {
         delete inst;
     }
 }
+
+/*** End of replay.cpp ***/
