@@ -46,7 +46,7 @@ EndGameWindow::EndGameWindow(MainWindow *mainwindow, endGameType type)
     playAgainButton->setGeometry(290, 280, 120, 30);
     playAgainButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px;}  QPushButton:pressed{border: 1px solid gray;}");
 
-    QFont playAgainFont("Arial Black", 16);
+    QFont playAgainFont("Arial Black", 13);
     playAgainButton->setFont(playAgainFont);
 
     playAgainButton->show();

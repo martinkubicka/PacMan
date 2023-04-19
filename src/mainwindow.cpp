@@ -61,7 +61,7 @@ void MainWindow::createChooseMapLabel() {
     QLabel *label = new QLabel("Choose map", this);
     label->setGeometry(280, 250, 135, 20);
 
-    QFont labelFont("Arial Black", 20);
+    QFont labelFont("Arial Black", 15);
     label->setFont(labelFont);
 
     label->setStyleSheet("color:white;");
@@ -76,12 +76,12 @@ void MainWindow::createComboBox() {
     comboBox->addItem("Ghostly Maze");
     comboBox->addItem("Endless Journey");
 
-    QFont comboBoxFont("Arial Black", 13);
+    QFont comboBoxFont("Arial Black", 10);
     comboBox->setFont(comboBoxFont);
 
     QIcon icon(this->srcPath + "/images/drop_down_icon.png");
 
-    comboBox->setStyleSheet("QComboBox{background-color: rgb(27,27,27); border: 1px solid white; border-radius: 3px; color: white;} QComboBox::drop-down {border:none; image: url(/Users/martinkubicka/Documents/ICP/PacMan/images/drop_down_icon.png); padding-top: 3px; padding-right: 5px;}");
+    comboBox->setStyleSheet("QComboBox{background-color: rgb(27,27,27); border: 1px solid white; border-radius: 3px; color: white;} QComboBox::drop-down {border:none; image: url(" + this->srcPath + "/images/drop_down_icon.png); padding-top: 3px; padding-right: 5px;}");
     comboBox->setGeometry(250, 290, 200, 30);
 
     comboBox->show();
@@ -99,7 +99,7 @@ void MainWindow::createStartButton() {
     startButton->setGeometry(290, 340, 120, 30);
     startButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px;}  QPushButton:pressed{border: 1px solid gray;}");
     
-    QFont startButtonFont("Arial Black", 16);
+    QFont startButtonFont("Arial Black", 13);
     startButton->setFont(startButtonFont);
 
     startButton->show();
@@ -112,7 +112,7 @@ void MainWindow::createReplayButton() {
     replayButton->setGeometry(260, 380, 180, 30);
     replayButton->setStyleSheet("QPushButton{color:white; border: 1px solid white; border-radius: 3px; padding-bottom: 3px;}  QPushButton:pressed{border: 1px solid gray;}");
 
-    QFont startButtonFont("Arial Black", 16);
+    QFont startButtonFont("Arial Black", 13);
     replayButton->setFont(startButtonFont);
 
     replayButton->show();
