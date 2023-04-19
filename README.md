@@ -1,24 +1,13 @@
 # TODO
 ### pacman
 - naprogramovat aby kdyz se zmackla mys tak aby pacman dojel na pozici kde se kliklo
-    -A* / nejaky podobny algoritmus -> bude to v pacman handler pak volani pacman move 
+    -A* / nejaky podobny algoritmus -> bude to v pacman handler pak volani pacman move - MATEJ
 
 ### ghost
-- doresit pohyb pacmana -> slo by zvolit taky A* 
+- doresit pohyb pacmana -> slo by zvolit taky A* - MATEJ
 
-### bugs
-- celkovo UI pomenit - MARTIN
-
-### Ostatne
-- ked spustim zo /src tak sa nenajdu grafiky - MARTIN
-- velkost pisma na mainpage je zly na inych platformach - MARTIN
-
-- spustit ako ./pacman -> spravit spravny makefile (make, make clean, make run, make pack, make doxygen)
-- warningy fixnut??
-- komentare
-- dokumentacia -> doxygen (make doxygen)
-- skusit ci funguje na linuxe aj na windowse
-- README.txt
+### comments
+- pridaj komentare do ghost.h, pacman.h, map.h, ghost.cpp, pacman.cpp (mas tam TODO) - MATEJ 
 
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # PacMan
