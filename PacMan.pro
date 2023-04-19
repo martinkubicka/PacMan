@@ -19,33 +19,33 @@ DEFINES += QT_DEPRECATED_WARNINGS
 # You can also make your code fail to compile if you use deprecated APIs.
 # In order to do so, uncomment the following line.
 # You can also select to disable deprecated APIs only up to a certain version of Qt.
-#DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
+# DEFINES += QT_DISABLE_DEPRECATED_BEFORE=0x060000    # disables all the APIs deprecated before Qt 6.0.0
 
 # Input
-HEADERS += customgraphicsview.h \
-           end.h \
-           field.h \
-           ghost.h \
-           key.h \
-           mainwindow.h \
-           map.h \
-           pacman.h \
-           path.h \
-           wall.h \
-    endgamewindow.h \
-    log.h \
-    replay.h
-FORMS += mainwindow.ui
-SOURCES += end.cpp \
-           field.cpp \
-           ghost.cpp \
-           key.cpp \
-           main.cpp \
-           mainwindow.cpp \
-           map.cpp \
-           pacman.cpp \
-           path.cpp \
-           wall.cpp \
-    endgamewindow.cpp \
-    log.cpp \
-    replay.cpp
+HEADERS += src/customgraphicsview.h \
+           src/end.h \
+           src/field.h \
+           src/ghost.h \
+           src/key.h \
+           src/mainwindow.h \
+           src/map.h \
+           src/pacman.h \
+           src/path.h \
+           src/wall.h \
+    src/endgamewindow.h \
+    src/log.h \
+    src/replay.h
+FORMS += src/mainwindow.ui
+SOURCES += src/end.cpp \
+           src/field.cpp \
+           src/ghost.cpp \
+           src/key.cpp \
+           src/main.cpp \
+           src/mainwindow.cpp \
+           src/map.cpp \
+           src/pacman.cpp \
+           src/path.cpp \
+           src/wall.cpp \
+    src/endgamewindow.cpp \
+    src/log.cpp \
+    src/replay.cpp
