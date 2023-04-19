@@ -377,9 +377,10 @@ void Map::gameStart()
     pacman_timer->start(DELAY);
 
     for (int i = 0; i < int(ghosts.size()); i++) {
-        ghost_timer[i] = new QTimer(this);
-        connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
-        ghost_timer[i]->start(DELAYGHOST);
+        // TODO
+        // ghost_timer[i] = new QTimer(this);
+        // connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
+        // ghost_timer[i]->start(DELAYGHOST);
     }
 }
 
@@ -428,7 +429,9 @@ void Map::deleteAll() {
     }
 
     for (auto keyI : keys) {
-        this->scene->removeItem(keyI->item);
+        if (keyI->x1 != -1) {
+            this->scene->removeItem(keyI->item);
+        }
         delete keyI;
     }
 
