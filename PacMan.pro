@@ -3,7 +3,7 @@
 ######################################################################
 
 TEMPLATE = app
-TARGET = src
+TARGET = PacMan
 INCLUDEPATH += .
 
 CONFIG -= app_bundle
