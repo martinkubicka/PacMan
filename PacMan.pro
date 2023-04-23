@@ -8,6 +8,7 @@ INCLUDEPATH += .
 
 CONFIG -= app_bundle
 QT += gui widgets
+QT += core gui
 QT += widgets
 
 # The following define makes your compiler warn you if you use any

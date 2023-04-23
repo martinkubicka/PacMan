@@ -15,6 +15,24 @@
 ### comments
 - pridaj komentare do ghost.h, pacman.h, map.h, ghost.cpp, pacman.cpp (mas tam TODO) - MATEJ 
 
+### segfault
+Tam kde mas toto tam to sposobuje segfault -> tam bude problem s tym array
+
+void Map::gameStart()
+{
+    pacman_timer = new QTimer(this);
+    connect(pacman_timer, SIGNAL(timeout()), this , SLOT(pacmanHandler()));
+    pacman_timer->start(DELAY);
+
+    for (int i = 0; i < int(ghosts.size()); i++) {
+        // TODO
+        // ghost_timer[i] = new QTimer(this);
+        // connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
+        // ghost_timer[i]->start(DELAYGHOST);
+    }
+}
+
+
 ---------------------------------------------------------------------------------------------------------------------------------------------------------------
 # PacMan
 
