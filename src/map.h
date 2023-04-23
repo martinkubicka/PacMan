@@ -162,7 +162,7 @@ private:
 
     /** Timers */
     QTimer *pacman_timer;
-    QTimer *ghost_timer[];
+    vector<QTimer*> ghost_timer;
 
     // methods
 

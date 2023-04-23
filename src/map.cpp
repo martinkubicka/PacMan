@@ -377,10 +377,9 @@ void Map::gameStart()
     pacman_timer->start(DELAY);
 
     for (int i = 0; i < int(ghosts.size()); i++) {
-        // TODO
-        // ghost_timer[i] = new QTimer(this);
-        // connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
-        // ghost_timer[i]->start(DELAYGHOST);
+        ghost_timer.push_back(new QTimer(this));
+        connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
+        ghost_timer[i]->start(DELAYGHOST);
     }
 }
 
