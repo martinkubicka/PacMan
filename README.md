@@ -1,4 +1,10 @@
 # TODO
+
+- nestopuje se timer pri kill ghostem 
+- zacatek hry a hned exit replay segfault
+- zmenit mapu aby nemeli 2 volna policka vedle sebe 
+- otocit pacmana podle smeru 
+
 ### pacman
 - naprogramovat aby kdyz se zmackla mys tak aby pacman dojel na pozici kde se kliklo
     -A* / nejaky podobny algoritmus -> bude to v pacman handler pak volani pacman move - MATEJ
