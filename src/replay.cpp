@@ -56,6 +56,7 @@ void Replay::handleExit() {
     this->runback = false;
     this->runTimer->stop();
     this->mainwindow->replayObj = nullptr;
+    this->mainwindow->mapObject = nullptr;
     this->mainwindow->createUi();
 }
 
@@ -185,10 +186,12 @@ void Replay::getAllInstructions() {
 void Replay::handlePrevInstruction() {
     if (this->instructionIndex - 1 != 0) {
         if ((this->runback && !this->stop) || (!this->runback && this->stop)) {
-            --this->instructionIndex;
-            this->prev = true;
-            this->performInstruction();
-            this->prev = false;
+            if (this->instructionIndex - 1 > 0) {
+                --this->instructionIndex;
+                this->prev = true;
+                this->performInstruction();
+                this->prev = false;
+            }
         }
     } else {
         this->runTimer->stop();
@@ -201,8 +204,10 @@ void Replay::handlePrevInstruction() {
 void Replay::handleNextInstruction() {
     if (this->instructionIndex + 1 != this->instructions.size() - 1) {
         if ((this->run && !this->stop) || (!this->run && this->stop)) {
-            ++this->instructionIndex;
-            this->performInstruction();
+            if (this->instructionIndex + 1 < this->instructions.size()) {
+                ++this->instructionIndex;
+                this->performInstruction();
+            }
         }
     } else {
         this->runTimer->stop();

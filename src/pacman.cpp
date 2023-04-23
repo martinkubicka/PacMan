@@ -97,7 +97,7 @@ bool Pacman::pacmanMove(Direction direction){
             this->map->handleWin();
             return true;
         }
-    }else{
+    } else {
         return false;
     }
     

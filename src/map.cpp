@@ -297,6 +297,8 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
                     // creating ghost
                     ghost = new Ghost(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
                     ghosts.push_back(ghost);
+
+                    ghost_timer.push_back(new QTimer(this));
                     break;
 
                 case 'K':
@@ -376,11 +378,13 @@ void Map::gameStart()
     connect(pacman_timer, SIGNAL(timeout()), this , SLOT(pacmanHandler()));
     pacman_timer->start(DELAY);
 
-    for (int i = 0; i < int(ghosts.size()); i++) {
-        ghost_timer.push_back(new QTimer(this));
-        connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(i);} );
+    for (unsigned long i = 0; i < ghosts.size(); i++) {
+        if (this->numberOfLives == 3) {
+            connect(ghost_timer[i], &QTimer::timeout, [=](){ghostHandler(static_cast<int>(i));} );
+        }
         ghost_timer[i]->start(DELAYGHOST);
     }
+
 }
 
 void Map::pacmanHandler()

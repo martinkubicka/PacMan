@@ -47,6 +47,7 @@ void writeToLog(string str, ofstream& file) {
 Instruction* getInstruction(ifstream& file) {
     string word;
     Instruction *inst = new Instruction;
+    inst->type = NONE;
 
     while (file >> word && word != "MAP" && word != "GS" && word != "PCM" && word != "GM" && word != "KEYL" && word != "KILL" && word != "GE") {}
 
