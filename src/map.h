@@ -109,10 +109,16 @@ public:
      */
     Field* getField(int x, int y, FieldType calledBy);
 
-    // TODO
+    /**
+     * @brief Function calls method which creates timers for pacman and ghosts.
+     * 
+     */
     void Start();
 
-    // TODO
+    /**
+     * @brief Function which creates timers for pacman and ghosts.
+     * 
+     */
     void gameStart();
 
     /**
@@ -143,10 +149,17 @@ public:
     void handleGameOver();
 
 private slots:
-    // TODO
+    /**
+     * @brief Method which handles pacman. It is called every DELAY ms.
+     * 
+     */
     void pacmanHandler();
 
-    // TODO
+    /**
+     * @brief Method which handles ghost. It is called every DELAYGHOST ms.
+     * 
+     * @param ghostNum number of ghost
+     */
     void ghostHandler(int ghostNum);
 
 private:

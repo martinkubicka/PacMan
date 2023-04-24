@@ -12,10 +12,10 @@
 #include "ghost.h"
 #include "map.h"
 
-Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QString srcPath) : Field (x1, y1, x2, y2, map, GHOST) {
+Ghost::Ghost(QGraphicsScene* scene, int x1, int y1, int x2, int y2, Map *map, QString srcPath, int sizeOfBlock) : Field (x1, y1, x2, y2, map, GHOST) {
     this->startX = x1;
     this->startY = y1;
-
+    this->sizeOfBlock = sizeOfBlock;
     this->id = static_cast<int>(this->map->ghosts.size());
 
     QImage ghostImage(srcPath + "/images/ghost.png");
@@ -37,7 +37,6 @@ void Ghost::move(int x, int y){
     item->setPos(x, y);
 }
 
-// TODO COMMENT
 bool Ghost::ghostMove( Ghost *ghost){
     int x1 = ghost->x1;
     int x2 = ghost->x2;
@@ -80,7 +79,6 @@ bool Ghost::ghostMove( Ghost *ghost){
         return false;
     }
 
-    //todo there is a problem with the pacman position at start how to edit every step position of pacman on map or maybe dont
     if((FirstCorner->type == PATH && SecondCorner->type == PATH) ||
         (FirstCorner->type == KEY && SecondCorner->type == KEY) ||
         (FirstCorner->type == END && SecondCorner->type == END) ||
@@ -97,7 +95,7 @@ bool Ghost::ghostMove( Ghost *ghost){
         this->map->handleGameOver();
         return false;
     }
-    else {
+    else{ 
         // Generate a random number between 0 and 3
         int ghostDirection = std::rand() % 4;
 

@@ -34,7 +34,7 @@ public:
      * @param map pointer to map object
      * @param srcPath src directory path
      */
-    explicit Ghost(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, Map *map = nullptr, QString srcPath = "");
+    explicit Ghost(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, Map *map = nullptr, QString srcPath = "", int sizeOfBlock = 0);
 
     /** setting default direction of ghost */
     Direction nextDirection = Direction::UP;
@@ -58,6 +58,12 @@ public:
      * @return TODO
      */
     bool ghostMove(Ghost *ghost);
+private: 
+    /** size of block in px */
+    int sizeOfBlock;
+
+    /** id of ghost */
+    int id;
 };
 
 #endif // GHOST_H

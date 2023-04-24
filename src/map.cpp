@@ -295,7 +295,7 @@ void Map::createMap(QGraphicsScene* scene, QString srcPath) {
                     paths.push_back(path);
 
                     // creating ghost
-                    ghost = new Ghost(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath);
+                    ghost = new Ghost(scene, actualX, actualY,  actualX + this->sizeOfBlock, actualY + this->sizeOfBlock, this, srcPath, this->sizeOfBlock);
                     ghosts.push_back(ghost);
 
                     ghost_timer.push_back(new QTimer(this));
