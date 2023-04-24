@@ -80,6 +80,9 @@ EndGameWindow::EndGameWindow(MainWindow *mainwindow, endGameType type)
     QObject::connect(replayButton, &QPushButton::clicked, [=]() {
         mainwindow->replay();
     });
+
+    mainwindow->replayObj = nullptr;
+    mainwindow->mapObject = nullptr;
 }
 
 /*** End of endgamewindow.cpp ***/

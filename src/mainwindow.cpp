@@ -11,6 +11,8 @@
 #include "mainwindow.h"
 
 void MainWindow::createUi() {
+    this->map = this->srcPath.toStdString() + "/maps/map01.txt"; // selected map by default
+
     // set background image
     QString backgroundPath = "background-image:url(%1%2)";
 
@@ -31,8 +33,6 @@ MainWindow::MainWindow(QWidget *parent) : QMainWindow(parent), ui(new Ui::MainWi
     ui->setupUi(this);
     this->setFixedSize(HEIGHT, WIDTH); // set size + cannot resize
     this->findImageDirPath();
-
-    this->map = this->srcPath.toStdString() + "/maps/map01.txt"; // selected map by default
 
     this->createUi();
 }
