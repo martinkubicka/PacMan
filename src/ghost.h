@@ -51,11 +51,9 @@ public:
     void move(int x, int y);
 
     /**
-     * @brief ghostMove TODO
+     * @brief Method which moves Ghost object on a scene.
      *
-     * @param ghost TODO
-     *
-     * @return TODO
+     * @param ghost ghost object which will be moved
      */
     bool ghostMove(Ghost *ghost);
 private: 
