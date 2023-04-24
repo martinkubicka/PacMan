@@ -25,6 +25,8 @@ public:
     /** attributes which specifies actaul and next direction of pacman */
     Direction direction = Direction::STOP;
     Direction nextDirection = Direction::STOP;
+
+    bool rotate = false; /// auxiliary attribute used to know if rotation of pacman image needed
     
     /** Attributes which store default position of pacman -> used in replay mode */
     int startX, startY;
@@ -43,9 +45,14 @@ public:
     explicit Pacman(QGraphicsScene* scene = nullptr, int x1 = 0, int y1 = 0, int x2 = 0, int y2 = 0, Map *map = nullptr, QString srcPath = "");
 
     /**
+     * @brief Function which rotates pacman image if direction is changed.
+     */
+    void handleRotate(Direction direction);
+
+    /**
      * @brief Set the Next Direction object
-     * 
-     * @param dir 
+     *
+     * @param dir
      */
     void setNextDirection(Direction dir);
 

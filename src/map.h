@@ -58,6 +58,8 @@ public:
     /** map resolution (number of blocks) */
     int x, y;
 
+    int sizeOfBlock; /// size in px of one block (path, pacman, wall..)
+
     /** vectors of objects which map contains */
     std::vector<Wall *> walls;
     std::vector<Path *> paths;
@@ -165,7 +167,6 @@ private slots:
 private:
     // attributes
     std::ifstream file; /// file with map
-    int sizeOfBlock; /// size in px of one block (path, pacman, wall..)
 
     /** Temporary objects which are used for creating map */
     Wall *wall;

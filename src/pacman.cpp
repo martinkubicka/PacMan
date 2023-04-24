@@ -29,6 +29,9 @@ void Pacman::setNextDirection(Direction dir){
 }
 
 void Pacman::move(int x, int y){
+    this->rotate = true;
+    this->handleRotate(direction);
+
     // log
     if (!this->map->replay) {
         writeToLog("PCM " + to_string(x) + " " + to_string(y) + " : PacMan moved", this->map->log);
@@ -38,7 +41,22 @@ void Pacman::move(int x, int y){
     item->setPos(x, y);
 }
 
-// TODO COMMENT
+void Pacman::handleRotate(Direction direction) {
+    if (this->rotate) {
+        QPointF center = item->boundingRect().center();
+        item->setTransformOriginPoint(center);
+        item->setRotation(0);
+        this->rotate = false;
+        if (direction == Direction::DOWN) {
+            item->setRotation(90);
+        } else if (direction == Direction::UP) {
+            item->setRotation(-90);
+        } else if (direction == Direction::LEFT) {
+           item->setRotation(-180);
+        }
+    }
+}
+
 bool Pacman::pacmanMove(Direction direction){
         int x1 = this->x1;
         int x2 = this->x2;
@@ -81,13 +99,11 @@ bool Pacman::pacmanMove(Direction direction){
         return false;
     }
 
-    if (FirstCorner->type == WALL or SecondCorner->type == WALL) {
+    if (FirstCorner->type == WALL or SecondCorner->type == WALL) { // wall
         return false;
-        // viem ze tam je stena
     } else if (FirstCorner->type == PATH && SecondCorner->type == PATH) {
-        // chodnik
+        // path
     } else if(FirstCorner->type == KEY && SecondCorner->type == KEY){
-        //delete key from map
         this->map->deleteKey(FirstCorner);
     } else if(FirstCorner->type == GHOST && SecondCorner->type == GHOST){
         this->map->handleGameOver();
@@ -100,7 +116,7 @@ bool Pacman::pacmanMove(Direction direction){
     } else {
         return false;
     }
-    
+
     this->x1 = x1;
     this->x2 = x2;
     this->y1 = y1;

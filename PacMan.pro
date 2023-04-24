@@ -10,6 +10,7 @@ CONFIG -= app_bundle
 QT += gui widgets
 QT += core gui
 QT += widgets
+QMAKE_CXXFLAGS += -std=c++17
 
 # The following define makes your compiler warn you if you use any
 # feature of Qt which has been marked as deprecated (the exact warnings
